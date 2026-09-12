@@ -24,7 +24,7 @@
   --s-6: 6rem;
   --s-7: 8rem;
 
-  --container: 68rem;
+  --container: 86rem;
   --gutter: clamp(1.25rem, 4vw, 3rem);
   --nav-h: 4.5rem;
   --ease: cubic-bezier(.2,.7,.2,1);
