@@ -328,6 +328,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .split, .split--reverse, .contact { grid-template-columns: 1fr; }
   .split--reverse .split__media { order: 0; }
   .split__media img { max-height: 28rem; }
+  .split__media--full { max-width: 26rem; }
   .split__media--full img { max-height: none; }
   .section { padding-block: var(--s-6); }
 }
@@ -344,6 +345,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .nav__menu > a:not(.btn) { padding: .9rem 0; border-bottom: 1px solid var(--steel); font-size: 1.05rem; }
   .nav__menu .btn { margin-top: var(--s-2); justify-content: center; }
 
+  .split__media--full { max-width: none; }
   .hero { min-height: 0; }
   .hero__media { position: relative; height: 15rem; order: 2; }
   .hero__media::after { display: none; }
