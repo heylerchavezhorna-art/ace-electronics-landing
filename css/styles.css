@@ -234,13 +234,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .carousel__btn:hover { border-color: var(--ink); background: var(--paper); }
 .carousel__track {
-  display: flex; gap: var(--s-4); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
+  display: flex; gap: var(--s-4); overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
   padding-block: var(--s-2); min-width: 0;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
 .carousel__track::-webkit-scrollbar { display: none; }
-.carousel__track li { flex: 0 0 auto; scroll-snap-align: start; display: flex; align-items: center; height: 4.25rem; }
+.carousel__track li { flex: 0 0 auto; display: flex; align-items: center; height: 4.25rem; }
 .carousel__track img { height: 3.5rem; width: auto; max-width: 12rem; object-fit: contain; filter: grayscale(1); opacity: .85; transition: filter .25s var(--ease), opacity .25s var(--ease); }
 .carousel__track li:hover img, .carousel:focus-within img { filter: none; opacity: 1; }
 
@@ -282,7 +282,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .footer nav a:hover { color: var(--ink); text-decoration: underline; }
 
 /* WhatsApp flotante con globo de bienvenida */
-.wa { position: fixed; right: max(var(--s-3), env(safe-area-inset-right)); bottom: max(var(--s-3), env(safe-area-inset-bottom)); z-index: 40; display: flex; flex-direction: column; align-items: flex-end; gap: .75rem; }
+.wa { position: fixed; right: var(--s-3); bottom: var(--s-3); right: max(var(--s-3), env(safe-area-inset-right)); bottom: max(var(--s-3), env(safe-area-inset-bottom)); z-index: 40; display: flex; flex-direction: column; align-items: flex-end; gap: .75rem; }
 .wa__btn {
   display: inline-flex; align-items: center; gap: .55rem;
   min-height: 3.25rem; padding: 0 1.1rem 0 .9rem;
@@ -351,8 +351,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   .stats__grid { grid-template-columns: 1fr; row-gap: 0; padding-block: var(--s-3); }
   .stat { padding: var(--s-3) 0; border-left: 0 !important; padding-left: 0 !important; }
   .stat + .stat { border-top: 1px solid rgba(255,255,255,.18); }
-  .carousel { grid-template-columns: 1fr; }
-  .carousel__btn { display: none; }
+  .carousel { gap: .5rem; }
+  .carousel__btn { width: 2.5rem; height: 2.5rem; }
   .carousel__track { gap: var(--s-4); }
 
   .form__grid { grid-template-columns: 1fr; }

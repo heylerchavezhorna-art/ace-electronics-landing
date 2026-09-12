@@ -429,8 +429,12 @@
   let timer = null, inView = false;
   const play = () => { if (inView && !reduced.matches && !timer) timer = setInterval(() => move(1), 4000); };
   const pause = () => { clearInterval(timer); timer = null; };
-  ['mouseenter','focusin','touchstart'].forEach(e => car.addEventListener(e, pause, { passive: true }));
+  ['mouseenter','focusin'].forEach(e => car.addEventListener(e, pause));
   ['mouseleave','focusout'].forEach(e => car.addEventListener(e, play));
+  // Táctil: pausa mientras se toca y reanuda 3 s después de soltar
+  let resume = null;
+  car.addEventListener('touchstart', () => { pause(); clearTimeout(resume); }, { passive: true });
+  ['touchend','touchcancel'].forEach(e => car.addEventListener(e, () => { clearTimeout(resume); resume = setTimeout(play, 3000); }, { passive: true }));
   document.addEventListener('visibilitychange', () => document.hidden ? pause() : play());
   // Solo avanza cuando la sección está en pantalla
   new IntersectionObserver(([e]) => { inView = e.isIntersecting; inView ? play() : pause(); }, { threshold: .4 }).observe(car);
