@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACE Electronics — Sistemas UPS y energía crítica en Perú</title>
+  <meta name="description" content="Diseño, instalación y mantenimiento de sistemas UPS, baterías y respaldo eléctrico para data centers, industria, banca y salud. Centro Autorizado de Servicio Schneider Electric en Perú desde 2001.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#soluciones">Ir al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="#" aria-label="ACE Electronics, inicio">
+      <span class="brand__ace">ACE</span><span class="brand__rest">Electronics</span>
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true">
+        <path class="ico-open" d="M4 7h16M4 12h16M4 17h16"/>
+        <path class="ico-close" d="M6 6l12 12M18 6L6 18"/>
+      </svg>
+    </button>
+
+    <nav class="nav__menu" id="navMenu" aria-label="Principal">
+      <a href="#soluciones">Soluciones</a>
+      <a href="#servicio">Servicio técnico</a>
+      <a href="#equipos">Equipos</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn btn--primary btn--nav" href="#contacto">Solicitar cotización</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__media">
+      <img src="img/hero.webp" width="1672" height="941" alt="Sala eléctrica con gabinetes UPS y bancos de baterías industriales" fetchpriority="high">
+    </div>
+    <div class="container hero__content">
+      <h1 id="hero-title">Energía que no se interrumpe.</h1>
+      <p class="hero__lead">Diseñamos, instalamos y mantenemos sistemas UPS y de respaldo eléctrico para data centers, industria, banca y salud en todo el Perú. Centro Autorizado de Servicio Schneider Electric.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contacto">Solicitar cotización</a>
+        <a class="btn btn--ghost" href="https://wa.me/51950091893?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n%20de%20UPS" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.5 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2l-.5-.3Z"/></svg>
+          Escribir por WhatsApp
+        </a>
+      </div>
+      <p class="hero__phone">WhatsApp <a href="https://wa.me/51950091893" target="_blank" rel="noopener">+51 950 091 893</a> · Central <a href="tel:+5115000383">(01) 500 0383</a></p>
+    </div>
+  </section>
+
+  <!-- Cifras -->
+  <section class="stats" id="cifras" aria-label="Cifras de la empresa">
+    <div class="container stats__grid">
+      <div class="stat"><strong><span class="num" data-count="25">25</span></strong><span>años protegiendo cargas críticas en el Perú</span></div>
+      <div class="stat"><strong>+<span class="num" data-count="1200">1 200</span></strong><span>equipos UPS instalados y en mantenimiento</span></div>
+      <div class="stat"><strong><span class="num" data-count="5">5</span></strong><span>sedes: Lima, Piura, Trujillo, Arequipa y Puno</span></div>
+      <div class="stat"><strong><span class="num" data-count="7">7</span>×<span class="num" data-count="24">24</span></strong><span>mesa de ayuda y técnicos en campo</span></div>
+    </div>
+  </section>
+
+  <!-- Soluciones -->
+  <section class="section" id="soluciones" aria-labelledby="sol-title">
+    <div class="container">
+      <div class="section__head">
+        <h2 id="sol-title">Lo que hacemos</h2>
+        <p>Tres frentes que cubren la energía de una operación crítica: el equipo, la instalación y su continuidad en el tiempo.</p>
+      </div>
+      <div class="solutions">
+        <article class="solution">
+          <img src="img/ups-rack.webp" width="1024" height="683" alt="Tres UPS de torre junto a un rack de servidores" loading="lazy">
+          <h3>Sistemas UPS y respaldo</h3>
+          <p>Equipos monofásicos y trifásicos de 1 a 40 kVA, con redundancia N+1 y baterías VRLA o de ion-litio. Dimensionamos según la carga, el tiempo de autonomía y las condiciones eléctricas de tu sede.</p>
+        </article>
+        <article class="solution">
+          <img src="img/datacenter.webp" width="1344" height="768" alt="Fila de gabinetes en un centro de datos con técnicos trabajando" loading="lazy">
+          <h3>Data center e instalaciones eléctricas</h3>
+          <p>Micro data centers, tableros, transformadores, estabilizadores y redes. Ingeniería, montaje, pruebas de carga y puesta en marcha cumpliendo las normas de instalación eléctrica vigentes.</p>
+        </article>
+        <article class="solution">
+          <img src="img/tecnico.webp" width="1400" height="931" alt="Técnico midiendo con pinza amperimétrica en un tablero eléctrico Schneider" loading="lazy">
+          <h3>Servicio técnico y mantenimiento</h3>
+          <p>Personal capacitado en fábrica. Mantenimiento preventivo y correctivo, cambio de baterías, repuestos originales y monitoreo remoto para que la falla nunca llegue a la carga.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marcas -->
+  <section class="brands" id="marcas" aria-labelledby="br-title">
+    <div class="container brands__inner">
+      <div class="brands__intro">
+        <h2 id="br-title">Marcas autorizadas</h2>
+        <p>Trabajamos con fabricantes líderes en energía crítica para garantizar repuestos, garantía y soporte de fábrica.</p>
+      </div>
+      <div class="carousel" id="brandCarousel">
+        <button class="carousel__btn" type="button" data-dir="-1" aria-label="Marcas anteriores">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <ul class="carousel__track" aria-label="Marcas que representamos">
+          <li><img src="img/marcas/schneider-apc.png" width="114" height="60" alt="Schneider Electric · APC"></li>
+          <li><img src="img/marcas/eaton.png" width="186" height="60" alt="Eaton"></li>
+          <li><img src="img/marcas/vertiv.png" width="243" height="60" alt="Vertiv"></li>
+          <li><img src="img/marcas/cdp.png" width="154" height="60" alt="CDP Chicago Digital Power"></li>
+          <li><img src="img/marcas/salicru.png" width="431" height="60" alt="Salicru"></li>
+          <li><img src="img/marcas/forza.png" width="256" height="60" alt="Forza Power Technologies"></li>
+          <li><img src="img/marcas/smartbitt.png" width="142" height="60" alt="Smartbitt"></li>
+        </ul>
+        <button class="carousel__btn" type="button" data-dir="1" aria-label="Marcas siguientes">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicio técnico -->
+  <section class="section section--tint" id="servicio" aria-labelledby="serv-title">
+    <div class="container split">
+      <figure class="split__media">
+        <img src="img/easy-ups.webp" width="1000" height="1772" alt="Técnico de ACE Electronics junto a un Easy UPS 3S de Schneider Electric recién instalado" loading="lazy">
+      </figure>
+      <div class="split__body">
+        <h2 id="serv-title">Servicio técnico certificado por Schneider Electric</h2>
+        <p>Somos Centro Autorizado de Servicio. Eso significa repuestos originales, procedimientos de fábrica y garantía respaldada por la marca, con un equipo propio que atiende en Lima y provincias.</p>
+        <ul class="list">
+          <li>Mantenimiento preventivo y correctivo en campo</li>
+          <li>Contratos de garantía y soporte 7×24</li>
+          <li>Integración, puesta en marcha y pruebas de carga</li>
+          <li>Reemplazo de baterías y repuestos originales</li>
+          <li>Monitoreo remoto y capacitación al personal de planta</li>
+        </ul>
+        <a class="link" href="#contacto">Coordinar una visita técnica</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- En campo -->
+  <section class="section" id="campo" aria-labelledby="campo-title">
+    <div class="container">
+      <div class="section__head">
+        <h2 id="campo-title">En campo</h2>
+        <p>Instalaciones, pruebas y puestas en marcha hechas por nuestro propio equipo técnico.</p>
+      </div>
+      <div class="gallery">
+        <figure class="gallery__item gallery__item--tall">
+          <img src="img/pruebas-tablero.webp" width="1000" height="1405" alt="Tablero de distribución abierto con interruptores Schneider y laptop registrando mediciones de calidad de energía" loading="lazy">
+          <figcaption>Pruebas de calidad de energía en tablero de distribución antes de conectar la carga.</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="img/sala-servidores.webp" width="1400" height="1111" alt="Sala de servidores con gabinetes sobre piso técnico elevado" loading="lazy">
+          <figcaption>Sala de servidores con piso técnico y gabinetes listos para equipamiento.</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="img/tecnico-datacenter.webp" width="1400" height="875" alt="Técnico operando el panel de un UPS trifásico en un centro de datos" loading="lazy">
+          <figcaption>Configuración y arranque de UPS trifásico en centro de datos.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipos -->
+  <section class="section" id="equipos" aria-labelledby="eq-title">
+    <div class="container">
+      <div class="section__head">
+        <h2 id="eq-title">Equipos</h2>
+        <p>Líneas APC by Schneider Electric que instalamos con mayor frecuencia. Todas con tecnología online de doble conversión.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="spec">
+          <thead>
+            <tr>
+              <th scope="col">Equipo</th>
+              <th scope="col">Potencia</th>
+              <th scope="col">Batería</th>
+              <th scope="col">Formato</th>
+              <th scope="col">Uso típico</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Smart-UPS SRT 2200XLI</th><td>2.2 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Servidores, redes, oficinas</td></tr>
+            <tr><th scope="row">Smart-UPS SRT 5KXLI</th><td>5 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Salas de cómputo, clínicas</td></tr>
+            <tr><th scope="row">Smart-UPS SRT 10KXLI</th><td>10 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Data center pequeño</td></tr>
+            <tr><th scope="row">Smart-UPS SRTG 20KXLI</th><td>20 kVA</td><td>VRLA</td><td>Torre</td><td>Data center, industria</td></tr>
+            <tr><th scope="row">Smart-UPS SRTL 3KRM1UINC</th><td>3 kVA</td><td>Ion-litio</td><td>Rack 1U</td><td>Edge, espacios reducidos</td></tr>
+            <tr><th scope="row">Easy UPS 3S</th><td>10 – 40 kVA</td><td>VRLA</td><td>Torre trifásica</td><td>Industria, hospitales</td></tr>
+            <tr><th scope="row">Symmetra LX</th><td>2 – 20 kVA</td><td>VRLA modular</td><td>Torre / rack</td><td>Redundancia N+1</td></tr>
+            <tr><th scope="row">Micro Data Center</th><td>Según diseño</td><td>Integrada</td><td>Gabinete cerrado</td><td>Sucursales, edge</td></tr>
+            <tr><th scope="row">Baterías CSB · NP / NPX</th><td>12 V</td><td>VRLA AGM</td><td>Bloque</td><td>Reemplazo y bancos</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">¿Otra potencia, marca o configuración? <a class="link" href="#contacto">Cotizamos a medida</a>.</p>
+    </div>
+  </section>
+
+  <!-- Empresa -->
+  <section class="section section--tint" id="empresa" aria-labelledby="emp-title">
+    <div class="container split split--reverse">
+      <figure class="split__media">
+        <img src="img/rack.webp" width="1000" height="1333" alt="Rack de comunicaciones ordenado con UPS APC en la base" loading="lazy">
+      </figure>
+      <div class="split__body">
+        <h2 id="emp-title">Desde 2001 en el sector eléctrico peruano</h2>
+        <p>ACE Electronics es una empresa 100% peruana. Empezamos el 14 de marzo de 2001 y desde entonces protegemos la energía de bancos, mineras, hospitales, operadores de telecomunicaciones y plantas industriales.</p>
+        <p>Cada proyecto se dimensiona según voltaje, frecuencia y normas de instalación del cliente, y lo ejecuta personal propio capacitado en fábrica. Ensamblamos y adaptamos los equipos de nuestros partners a especificaciones a medida.</p>
+        <dl class="meta">
+          <div><dt>Sectores</dt><dd>Banca, minería, salud, telecomunicaciones, gobierno e industria</dd></div>
+          <div><dt>Sedes</dt><dd>Lima (Jesús María), Piura, Trujillo, Arequipa y Puno</dd></div>
+          <div><dt>Partners</dt><dd>Schneider Electric, APC, CSB, Yuasa</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas frecuentes -->
+  <section class="section" id="preguntas" aria-labelledby="faq-title">
+    <div class="container faq">
+      <div class="faq__intro">
+        <h2 id="faq-title">Preguntas frecuentes</h2>
+        <p>Lo que más nos consultan antes de comprar o contratar un mantenimiento. Si tu caso no está aquí, escríbenos.</p>
+      </div>
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary>¿Cómo sé qué potencia de UPS necesito?</summary>
+          <div class="faq__body"><p>Sumamos la carga real de los equipos que quieres proteger (en vatios o kVA) y añadimos un margen de 20 a 30 % para crecimiento y factor de potencia. Un ingeniero puede medir en sitio si no tienes el dato exacto.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>¿Cuánto tiempo de autonomía da un UPS?</summary>
+          <div class="faq__body"><p>Depende de la carga y del banco de baterías. Un UPS estándar da entre 5 y 15 minutos a plena carga, suficiente para un apagado ordenado o el arranque de un grupo electrógeno. Con bancos externos se llega a una hora o más.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>¿Cada cuánto se cambian las baterías?</summary>
+          <div class="faq__body"><p>Las baterías VRLA duran entre 3 y 5 años según temperatura y ciclos de descarga; las de ion-litio, entre 8 y 10. En cada mantenimiento medimos su estado y te avisamos con anticipación cuando conviene reemplazarlas.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>¿Dan mantenimiento a UPS de otras marcas?</summary>
+          <div class="faq__body"><p>Sí. Somos Centro Autorizado de Servicio Schneider Electric y APC, y además atendemos equipos Eaton, Vertiv, CDP, Salicru, Forza y Smartbitt, entre otros.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>¿Qué incluye un contrato de mantenimiento?</summary>
+          <div class="faq__body"><p>Visitas preventivas programadas, atención correctiva 7×24 con tiempos de respuesta definidos, informe técnico después de cada visita, repuestos originales y monitoreo remoto opcional. Se dimensiona según la cantidad de equipos y sedes.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>¿Atienden fuera de Lima?</summary>
+          <div class="faq__body"><p>Sí. Tenemos oficinas en Piura, Trujillo, Arequipa y Puno, y personal que se desplaza a cualquier ciudad del país para instalaciones y contratos de servicio.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>¿Cuánto demora una cotización?</summary>
+          <div class="faq__body"><p>Para equipos de catálogo, el mismo día hábil. Para proyectos con ingeniería o visita técnica, entre 2 y 5 días según la complejidad.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="section section--tint" id="contacto" aria-labelledby="con-title">
+    <div class="container contact">
+      <div class="contact__intro">
+        <h2 id="con-title">Cuéntanos qué necesitas proteger</h2>
+        <p>Un ingeniero revisa tu consulta y te responde con una propuesta técnica. Si es urgente, escríbenos por WhatsApp.</p>
+        <address class="contact__data">
+          <p><span>Teléfono</span><a href="tel:+5115000383">(01) 500 0383</a></p>
+          <p><span>WhatsApp</span><a href="https://wa.me/51950091893" target="_blank" rel="noopener">+51 950 091 893</a></p>
+          <p><span>Ventas</span><a href="mailto:ventas@aceelectronicsperu.com">ventas@aceelectronicsperu.com</a></p>
+          <p><span>Soporte</span><a href="mailto:soportetecnico@aceelectronicsperu.com">soportetecnico@aceelectronicsperu.com</a></p>
+          <p><span>Oficina</span><a href="https://maps.app.goo.gl/yHYduNvwiDocKw8E7" target="_blank" rel="noopener">Av. Cayetano Heredia 381, Jesús María, Lima</a></p>
+        </address>
+      </div>
+
+      <form class="form" id="contactForm" novalidate>
+        <div class="form__row">
+          <label for="f-nombre">Nombre</label>
+          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+        </div>
+        <div class="form__row">
+          <label for="f-empresa">Empresa</label>
+          <input id="f-empresa" name="empresa" type="text" autocomplete="organization">
+        </div>
+        <div class="form__grid">
+          <div class="form__row">
+            <label for="f-correo">Correo</label>
+            <input id="f-correo" name="correo" type="email" autocomplete="email" required>
+          </div>
+          <div class="form__row">
+            <label for="f-tel">Teléfono</label>
+            <input id="f-tel" name="telefono" type="tel" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form__row">
+          <label for="f-msg">¿Qué equipo o carga necesitas proteger?</label>
+          <textarea id="f-msg" name="mensaje" rows="5" required></textarea>
+          <p class="form__hint">Potencia aproximada, tiempo de autonomía y ciudad nos ayudan a cotizar más rápido.</p>
+        </div>
+        <p class="form__error" id="formError" hidden>Completa nombre, correo y mensaje para enviar.</p>
+        <button class="btn btn--primary" type="submit">Enviar solicitud</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>ACE Electronics S.A.C. · Jesús María, Lima, Perú</p>
+    <p>Centro Autorizado de Servicio Schneider Electric · WhatsApp <a href="https://wa.me/51950091893" target="_blank" rel="noopener">+51 950 091 893</a></p>
+    <nav aria-label="Pie de página">
+      <a href="#soluciones">Soluciones</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#servicio">Servicio técnico</a>
+      <a href="#equipos">Equipos</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/51950091893?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n%20de%20UPS" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.5 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2l-.5-.3Z"/></svg>
+  <span>WhatsApp +51 950 091 893</span>
+</a>
+
+<script>
+  // Menú móvil
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+    menu.classList.toggle('is-open', !open);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    toggle.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('is-open');
+  }));
+
+  // Borde del header al hacer scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Formulario: arma un correo a ventas con los datos (sin backend)
+  const form = document.getElementById('contactForm');
+  const err = document.getElementById('formError');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(form).entries());
+    if (!d.nombre.trim() || !d.correo.trim() || !d.mensaje.trim()) {
+      err.hidden = false;
+      form.querySelector(':invalid')?.focus();
+      return;
+    }
+    err.hidden = true;
+    const subject = encodeURIComponent(`Solicitud de cotización — ${d.nombre}${d.empresa ? ' (' + d.empresa + ')' : ''}`);
+    const body = encodeURIComponent(
+      `Nombre: ${d.nombre}\nEmpresa: ${d.empresa || '-'}\nCorreo: ${d.correo}\nTeléfono: ${d.telefono || '-'}\n\n${d.mensaje}`
+    );
+    window.location.href = `mailto:ventas@aceelectronicsperu.com?subject=${subject}&body=${body}`;
+  });
+
+  // Carrusel de marcas: bucle continuo (clones), flechas, avance cada 4 s con pausa
+  const car = document.getElementById('brandCarousel');
+  const track = car.querySelector('.carousel__track');
+  const originals = [...track.children];
+  originals.forEach(li => { const c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); });
+  const loopWidth = () => track.children[originals.length].offsetLeft - track.children[0].offsetLeft;
+  const step = () => track.children[1].offsetLeft - track.children[0].offsetLeft;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let anim = null;
+  const normalize = () => {
+    const w = loopWidth();
+    if (track.scrollLeft >= w) track.scrollLeft -= w;
+    else if (track.scrollLeft < 0) track.scrollLeft += w;
+  };
+  const animateTo = (target) => {
+    cancelAnimationFrame(anim);
+    if (reduced.matches) { track.scrollLeft = target; normalize(); return; }
+    const from = track.scrollLeft, dist = target - from, t0 = performance.now(), dur = 450;
+    const tick = (now) => {
+      const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      track.scrollLeft = from + dist * e;
+      if (p < 1) anim = requestAnimationFrame(tick); else { anim = null; normalize(); }
+    };
+    anim = requestAnimationFrame(tick);
+  };
+  const move = (dir) => {
+    if (dir < 0 && track.scrollLeft < step()) track.scrollLeft += loopWidth();
+    animateTo(Math.round(track.scrollLeft + dir * step()));
+  };
+  car.querySelectorAll('.carousel__btn').forEach(b => b.addEventListener('click', () => move(Number(b.dataset.dir))));
+  track.addEventListener('scroll', () => { if (!anim) normalize(); }, { passive: true });
+  let timer = null, inView = false;
+  const play = () => { if (inView && !reduced.matches && !timer) timer = setInterval(() => move(1), 4000); };
+  const pause = () => { clearInterval(timer); timer = null; };
+  ['mouseenter','focusin','touchstart'].forEach(e => car.addEventListener(e, pause, { passive: true }));
+  ['mouseleave','focusout'].forEach(e => car.addEventListener(e, play));
+  document.addEventListener('visibilitychange', () => document.hidden ? pause() : play());
+  // Solo avanza cuando la sección está en pantalla
+  new IntersectionObserver(([e]) => { inView = e.isIntersecting; inView ? play() : pause(); }, { threshold: .4 }).observe(car);
+
+  // Cifras: cuentan desde 0 al entrar en pantalla (una sola vez)
+  const stats = document.getElementById('cifras');
+  const fmt = (n) => Math.round(n).toLocaleString('es-PE').replace(/[.,]/g, ' ');
+  const countUp = (el) => {
+    const target = Number(el.dataset.count), dur = 1800, t0 = performance.now();
+    const tick = (now) => {
+      const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(target * e);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  if (reduced.matches) {
+    stats.classList.add('is-visible');
+  } else {
+    new IntersectionObserver(([e], obs) => {
+      if (!e.isIntersecting) return;
+      stats.classList.add('is-visible');
+      stats.querySelectorAll('.num').forEach(countUp);
+      obs.disconnect();
+    }, { threshold: .5 }).observe(stats);
+  }
+
+  // Secciones: aparecen al entrar en pantalla (una sola vez)
+  const revealTargets = document.querySelectorAll('.section__head, .solution, .brands__inner, .split__media, .split__body, .gallery__item, .table-wrap, .note, .faq__intro, .faq__list, .contact__intro, .form');
+  revealTargets.forEach(el => el.classList.add('reveal'));
+  document.querySelectorAll('.solutions, .gallery').forEach(g => [...g.children].forEach((el, i) => el.style.setProperty('--d', (i * 0.12) + 's')));
+  if (reduced.matches) {
+    revealTargets.forEach(el => el.classList.add('is-in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: .15, rootMargin: '0px 0px -8% 0px' });
+    revealTargets.forEach(el => io.observe(el));
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Originales pesados: las versiones optimizadas están en img/
+FOTOS/
+logos de marcas/
+# Local
+.claude/
+Thumbs.db
+.DS_Store
