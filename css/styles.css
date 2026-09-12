@@ -31,9 +31,9 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 a, button, summary { -webkit-tap-highlight-color: transparent; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
-  margin: 0; overflow-x: hidden;
+  margin: 0; overflow-x: clip;
   font-family: var(--font);
   font-size: 1.0625rem;
   line-height: 1.6;
