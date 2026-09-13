@@ -58,8 +58,8 @@
         </a>
       </div>
     </div>
-    <figure class="hero__product">
-      <img src="img/equipos/srtg10kxli.webp" width="1077" height="1400" alt="APC Smart-UPS SRT 10 kVA en formato torre" fetchpriority="high">
+    <figure class="hero__product" id="heroProduct">
+      <div class="hero__stage"><img class="hero__spin" src="img/equipos/srtg10kxli.webp" width="1077" height="1400" alt="APC Smart-UPS SRT 10 kVA en formato torre" fetchpriority="high"></div>
       <figcaption><span>APC Smart-UPS SRT</span>10 kVA · online doble conversión · torre / rack</figcaption>
     </figure>
     </div>
@@ -530,6 +530,21 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
     }, { threshold: .15, rootMargin: '0px 0px -8% 0px' });
     revealTargets.forEach(el => io.observe(el));
+  }
+
+  // Equipo del hero: en escritorio se inclina siguiendo el cursor (sobre la oscilación en CSS)
+  const stage = document.getElementById('heroProduct');
+  if (stage && matchMedia('(hover: hover) and (pointer: fine)').matches && !reduced.matches) {
+    const hero = stage.closest('.hero');
+    let raf = null, tx = 0, ty = 0;
+    const apply = () => { stage.style.setProperty('--tx', tx.toFixed(2) + 'deg'); stage.style.setProperty('--ty', ty.toFixed(2) + 'deg'); raf = null; };
+    hero.addEventListener('pointermove', (e) => {
+      const r = hero.getBoundingClientRect();
+      ty = ((e.clientX - r.left) / r.width - .5) * 28;   // giro horizontal según X
+      tx = -((e.clientY - r.top) / r.height - .5) * 10;  // inclinación según Y
+      if (!raf) raf = requestAnimationFrame(apply);
+    });
+    hero.addEventListener('pointerleave', () => { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(apply); });
   }
 
   // Globo de WhatsApp: abre/cierra el mensaje de bienvenida
