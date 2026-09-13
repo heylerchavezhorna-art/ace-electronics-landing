@@ -117,7 +117,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: linear-gradient(180deg, rgba(11,27,51,.55) 0%, rgba(11,27,51,.35) 45%, rgba(11,27,51,.75) 80%, var(--ink) 100%);
 }
 .hero__stage { position: absolute; inset: 0; }
-.hero__title { margin: 0; font-weight: 400; letter-spacing: -0.04em; line-height: .95; font-size: clamp(3.5rem, 10.5vw, 11rem); }
+.hero__title { margin: 0; font-family: "Readex Pro", var(--font); font-weight: 400; letter-spacing: -0.04em; line-height: .95; font-size: clamp(3.5rem, 9.6vw, 10rem); }
 .hero__word { position: absolute; white-space: nowrap; }
 .hero__word--1 { left: var(--gutter); top: 16%; }
 .hero__word--2 { right: var(--gutter); top: 37%; }
@@ -127,7 +127,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero .btn--ghost { color: var(--white); border-color: rgba(255,255,255,.55); }
 .hero .btn--ghost:hover { background: var(--white); color: var(--ink); border-color: var(--white); }
 .hero__stat { position: absolute; font-size: .85rem; color: rgba(255,255,255,.7); }
-.hero__stat strong { display: block; font-weight: 500; font-size: clamp(2rem, 3.6vw, 3.25rem); letter-spacing: -0.03em; line-height: 1; color: var(--white); }
+.hero__stat strong { display: block; font-family: "Readex Pro", var(--font); font-weight: 500; font-size: clamp(2rem, 3.6vw, 3.25rem); letter-spacing: -0.03em; line-height: 1; color: var(--white); }
 .hero__stat-row { display: flex; align-items: center; gap: .75rem; }
 .hero__stat--tr { right: clamp(var(--gutter), 6vw, 6rem); top: 15%; text-align: right; }
 .hero__stat--tr .hero__stat-row { justify-content: flex-end; }
@@ -372,7 +372,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero__title, .hero__lead, .hero__actions { grid-column: 1 / -1; }
   .hero__actions { order: 1; }
   .hero__stat { order: 2; margin-top: var(--s-2); }
-  .hero__title { font-size: 15vw; display: grid; gap: .05em; }
+  .hero__title { font-size: 13.5vw; display: grid; gap: .05em; }
   .hero__word { position: static; }
   .hero__word--2 { justify-self: end; }
   .hero__word--3 { padding-left: 12%; }
