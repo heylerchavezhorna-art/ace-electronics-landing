@@ -131,16 +131,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero .btn--ghost:hover { background: var(--white); color: var(--ink); border-color: var(--white); }
 .hero__product { margin: 0; justify-self: center; text-align: center; padding-block: var(--s-4); }
 .hero__stage { perspective: 1200px; --tx: 0deg; --ty: 0deg; }
-.hero__product img { width: auto; max-width: 100%; height: clamp(18rem, 44vh, 30rem); margin-inline: auto; filter: drop-shadow(0 30px 40px rgba(0,0,0,.55)); }
-.hero__spin { transform-style: preserve-3d; transform: rotateX(var(--tx)) rotateY(var(--ty)); transition: transform .35s var(--ease); will-change: transform; }
-@media (prefers-reduced-motion: no-preference) {
-  .hero__spin { animation: spin 9s ease-in-out infinite; }
-  .hero__stage:hover .hero__spin { animation-play-state: paused; }
-}
-@keyframes spin {
-  0%   { transform: rotateX(var(--tx)) rotateY(calc(var(--ty) - 14deg)) translateY(0); }
-  50%  { transform: rotateX(var(--tx)) rotateY(calc(var(--ty) + 14deg)) translateY(-10px); }
-  100% { transform: rotateX(var(--tx)) rotateY(calc(var(--ty) - 14deg)) translateY(0); }
+.hero__spin {
+  display: block; width: auto; max-width: 100%; height: clamp(20rem, 48vh, 32rem); margin-inline: auto; background: var(--ink);
+  -webkit-mask-image: radial-gradient(ellipse 72% 68% at 50% 50%, #000 42%, transparent 92%);
+  mask-image: radial-gradient(ellipse 72% 68% at 50% 50%, #000 42%, transparent 92%);
+  transform: rotateX(var(--tx)) rotateY(var(--ty)); transition: transform .35s var(--ease); will-change: transform;
 }
 .hero__product figcaption { margin-top: var(--s-3); font-size: .9rem; color: rgba(255,255,255,.65); }
 .hero__product figcaption span { display: block; color: var(--white); font-weight: 500; font-size: 1rem; }
@@ -376,7 +371,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .section { padding-block: var(--s-6); }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .hero__grid { grid-template-columns: 1fr; gap: 0; }
-  .hero__product img { height: clamp(16rem, 40vh, 24rem); }
+  .hero__spin { height: clamp(18rem, 42vh, 26rem); }
   .products { grid-template-columns: 1fr 1fr; }
 }
 
@@ -398,7 +393,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero__content { padding-block: var(--s-5) var(--s-2); }
   .hero__content h1 { max-width: none; }
   .hero__product { padding-block: var(--s-3) var(--s-4); }
-  .hero__product img { height: 16rem; }
+  .hero__spin { height: 18rem; }
   .hero__meta { grid-template-columns: 1fr 1fr; gap: var(--s-2) var(--s-3); }
   .products { grid-template-columns: 1fr 1fr; gap: var(--s-3) var(--s-2); }
 

@@ -59,7 +59,12 @@
       </div>
     </div>
     <figure class="hero__product" id="heroProduct">
-      <div class="hero__stage"><img class="hero__spin" src="img/equipos/srtg10kxli.webp" width="1077" height="1400" alt="APC Smart-UPS SRT 10 kVA en formato torre" fetchpriority="high"></div>
+      <div class="hero__stage">
+        <video class="hero__spin" id="heroVideo" width="560" height="720" autoplay muted loop playsinline preload="auto" poster="img/video/srt-giro-poster.webp" aria-label="APC Smart-UPS SRT 10 kVA girando">
+          <source src="img/video/srt-giro.webm" type="video/webm">
+          <source src="img/video/srt-giro.mp4" type="video/mp4">
+        </video>
+      </div>
       <figcaption><span>APC Smart-UPS SRT</span>10 kVA · online doble conversión · torre / rack</figcaption>
     </figure>
     </div>
@@ -533,7 +538,8 @@
   }
 
   // Equipo del hero: en escritorio se inclina siguiendo el cursor (sobre la oscilación en CSS)
-  const stage = document.getElementById('heroProduct');
+  const stage = document.getElementById('heroProduct'), heroVideo = document.getElementById('heroVideo');
+  if (heroVideo && reduced.matches) { heroVideo.removeAttribute('autoplay'); heroVideo.pause(); }
   if (stage && matchMedia('(hover: hover) and (pointer: fine)').matches && !reduced.matches) {
     const hero = stage.closest('.hero');
     let raf = null, tx = 0, ty = 0;
