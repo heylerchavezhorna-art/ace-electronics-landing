@@ -7,7 +7,7 @@
   <meta name="description" content="Diseño, instalación y mantenimiento de sistemas UPS, baterías y respaldo eléctrico para data centers, industria, banca y salud. Centro Autorizado de Servicio Schneider Electric en Perú desde 2001.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="css/styles.css">
@@ -45,12 +45,11 @@
 
   <!-- Hero -->
   <section class="hero" aria-labelledby="hero-title">
-    <div class="hero__media">
-      <img src="img/hero.webp" width="1672" height="941" alt="Sala eléctrica con gabinetes UPS y bancos de baterías industriales" fetchpriority="high">
-    </div>
-    <div class="container hero__content">
-      <h1 id="hero-title">Energía que no se interrumpe.</h1>
-      <p class="hero__lead">Diseñamos, instalamos y mantenemos sistemas UPS y de respaldo eléctrico para data centers, industria, banca y salud en todo el Perú. Centro Autorizado de Servicio Schneider Electric.</p>
+    <div class="container hero__grid">
+    <div class="hero__content">
+      <p class="hero__kicker">Centro Autorizado de Servicio Schneider Electric · Perú</p>
+      <h1 id="hero-title">Energía que no se <em>interrumpe.</em></h1>
+      <p class="hero__lead">Diseñamos, instalamos y mantenemos sistemas UPS y de respaldo eléctrico para data centers, industria, banca y salud en todo el país.</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#contacto">Solicitar cotización</a>
         <a class="btn btn--ghost" href="https://wa.me/51950091893?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n%20de%20UPS" target="_blank" rel="noopener">
@@ -58,7 +57,17 @@
           Escribir por WhatsApp
         </a>
       </div>
-      <p class="hero__phone">WhatsApp <a href="https://wa.me/51950091893" target="_blank" rel="noopener">+51 950 091 893</a> · Central <a href="tel:+5115000383">(01) 500 0383</a></p>
+    </div>
+    <figure class="hero__product">
+      <img src="img/equipos/srtg10kxli.webp" width="1077" height="1400" alt="APC Smart-UPS SRT 10 kVA en formato torre" fetchpriority="high">
+      <figcaption><span>APC Smart-UPS SRT</span>10 kVA · online doble conversión · torre / rack</figcaption>
+    </figure>
+    </div>
+    <div class="container hero__meta">
+      <p><span>Central</span><a href="tel:+5115000383">(01) 500 0383</a></p>
+      <p><span>WhatsApp</span><a href="https://wa.me/51950091893" target="_blank" rel="noopener">+51 950 091 893</a></p>
+      <p><span>Oficina</span>Av. Cayetano Heredia 381, Jesús María, Lima</p>
+      <p><span>Sedes</span>Lima · Piura · Trujillo · Arequipa · Puno</p>
     </div>
   </section>
 
@@ -175,9 +184,32 @@
   <section class="section" id="equipos" aria-labelledby="eq-title">
     <div class="container">
       <div class="section__head">
-        <h2 id="eq-title">Equipos</h2>
-        <p>Líneas APC by Schneider Electric que instalamos con mayor frecuencia. Todas con tecnología online de doble conversión.</p>
+        <h2 id="eq-title">Equipos que instalamos a diario</h2>
+        <p>Líneas APC by Schneider Electric con mayor demanda en el Perú. Todas con tecnología online de doble conversión y respaldo del Centro Autorizado de Servicio.</p>
       </div>
+      <ul class="products">
+        <li class="product">
+          <div class="product__media"><img src="img/equipos/srtg10kxli.webp" width="1077" height="1400" alt="APC Smart-UPS SRT 10 kVA torre" loading="lazy"></div>
+          <h3>Smart-UPS SRT 10 kVA</h3>
+          <p>Torre / rack · online doble conversión · para salas de cómputo y clínicas</p>
+        </li>
+        <li class="product">
+          <div class="product__media"><img src="img/equipos/srt10krmxli.webp" width="677" height="628" alt="APC Smart-UPS SRT 10 kVA para rack" loading="lazy"></div>
+          <h3>Smart-UPS SRT 10 kVA rack</h3>
+          <p>Formato rack 6U · online doble conversión · data center y racks de comunicaciones</p>
+        </li>
+        <li class="product">
+          <div class="product__media"><img src="img/equipos/srt192rmbp2.webp" width="724" height="282" alt="Módulo de baterías APC SRT 192 V para rack" loading="lazy"></div>
+          <h3>Módulo de baterías SRT 192 V</h3>
+          <p>Rack 3U · amplía la autonomía de los Smart-UPS SRT de 8 y 10 kVA</p>
+        </li>
+        <li class="product">
+          <div class="product__media"><img src="img/equipos/apdu10000.webp" width="598" height="1400" alt="PDU de rack APC NetShelter con pantalla y puertos de sensores" loading="lazy"></div>
+          <h3>PDU de rack NetShelter</h3>
+          <p>Distribución con medición y monitoreo por red · puertos para sensores de temperatura y humedad</p>
+        </li>
+      </ul>
+      <h3 class="products__more">Otras líneas</h3>
       <div class="table-wrap">
         <table class="spec">
           <thead>
