@@ -93,11 +93,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav.is-scrolled { border-bottom-color: var(--steel); }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; min-height: var(--nav-h); gap: var(--s-3); }
 .brand { text-decoration: none; display: inline-flex; align-items: center; gap: .55rem; color: inherit; font-size: 1.25rem; letter-spacing: -0.01em; }
-.brand__mark { height: 2.4rem; width: auto; flex: none; }
-.brand__shield { fill: #9CA4AE; }
+.brand__mark { height: 2.6rem; width: auto; flex: none; }
 .brand__text { font-weight: 600; }
-.footer .brand__mark { height: 2.75rem; }
-.footer .brand__shield { fill: #C9CFD6; }
+.footer .brand__mark { height: 3rem; }
 .nav__menu { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2rem); }
 .nav__menu > a:not(.btn) {
   text-decoration: none; font-size: .95rem; color: var(--ink-soft);
