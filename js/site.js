@@ -87,7 +87,6 @@ if (contactForm) {
       _honey: d._honey || '',
       email: t(d.email),
       _replyto: t(d.email),
-      _autoresponse: 'Gracias por escribir a ACE Electronics. Recibimos tu solicitud de cotización y un ingeniero te responderá en un día hábil. Si es urgente, escríbenos por WhatsApp al +51 950 091 893.',
       ...Object.fromEntries(pares)
     });
     estadoEnvio(btn, false);
@@ -106,6 +105,9 @@ if (contactForm) {
 }
 
 // ---------- Libro de Reclamaciones ----------
+// Se envía en modo "clásico" (sin AJAX): es el único modo en que FormSubmit manda
+// copias (_cc) al consumidor y a administración. Antes de enviar se guarda la hoja
+// en sessionStorage y, al volver con #registrada, se muestra la constancia.
 const lrForm = document.getElementById('lrForm');
 if (lrForm) {
   const err = document.getElementById('lrError');
@@ -124,8 +126,27 @@ if (lrForm) {
 
   const pad = (n) => String(n).padStart(2, '0');
   const numeroHoja = (d) => `LR-${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
+  const addHidden = (name, value) => { const i = document.createElement('input'); i.type = 'hidden'; i.name = name; i.value = value; lrForm.append(i); };
 
-  lrForm.addEventListener('submit', async (e) => {
+  const mostrarConstancia = ({ num, fecha, email, pares }) => {
+    document.getElementById('lrNum').textContent = num;
+    document.getElementById('lrFecha').textContent = fecha;
+    document.getElementById('lrEmail').textContent = email;
+    const resumen = document.getElementById('lrResumen');
+    resumen.innerHTML = '';
+    pares.slice(2).forEach(([k, v]) => {
+      const div = document.createElement('div');
+      const dt = document.createElement('dt'); dt.textContent = k;
+      const dd = document.createElement('dd'); dd.textContent = v || '-';
+      div.append(dt, dd); resumen.append(div);
+    });
+    document.title = `Hoja de Reclamación ${num} — ACE Electronics`;
+    lrForm.hidden = true;
+    sheet.hidden = false;
+    sheet.focus();
+  };
+
+  lrForm.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!validar(lrForm, err)) return;
     const d = Object.fromEntries(new FormData(lrForm).entries());
@@ -133,6 +154,7 @@ if (lrForm) {
     const num = numeroHoja(ahora);
     const fecha = fechaLarga(ahora);
     const t = (v) => (v || '').trim();
+    const email = t(d.email);
 
     const pares = [
       ['Hoja de Reclamación N.º', num],
@@ -141,7 +163,7 @@ if (lrForm) {
       ['Documento', `${d.tipo_documento} ${t(d.numero_documento)}`],
       ['Domicilio', t(d.domicilio)],
       ['Teléfono', t(d.telefono)],
-      ['Correo electrónico', t(d.email)],
+      ['Correo electrónico', email],
       ...(menor.checked ? [
         ['Padre, madre o apoderado', t(d.apoderado_nombre)],
         ['Domicilio del apoderado', t(d.apoderado_domicilio)]
@@ -157,47 +179,37 @@ if (lrForm) {
     ];
     const asunto = `Libro de Reclamaciones — Hoja ${num} — ${d.tipo_reclamo}`;
 
-    // Constancia en pantalla (se usa tanto si el envío en línea funciona como si no)
-    document.getElementById('lrNum').textContent = num;
-    document.getElementById('lrFecha').textContent = fecha;
-    document.getElementById('lrEmail').textContent = t(d.email);
-    const resumen = document.getElementById('lrResumen');
-    resumen.innerHTML = '';
-    pares.slice(2).forEach(([k, v]) => {
-      const div = document.createElement('div');
-      const dt = document.createElement('dt'); dt.textContent = k;
-      const dd = document.createElement('dd'); dd.textContent = v || '-';
-      div.append(dt, dd); resumen.append(div);
-    });
+    try { sessionStorage.setItem('lr-ultima', JSON.stringify({ num, fecha, email, pares })); } catch (e) {}
 
+    // Los campos originales se desactivan y se envían las etiquetas legibles (así llega la hoja ordenada)
+    [...lrForm.elements].forEach(el => { if (el.name && el.name !== '_honey') el.disabled = true; });
+    pares.forEach(([k, v]) => addHidden(k, v));
+    addHidden('_subject', asunto);
+    addHidden('_template', 'table');
+    addHidden('_captcha', 'false');
+    addHidden('email', email);
+    addHidden('_replyto', email);
+    addHidden('_cc', `${email},${CORREO_COPIA_RECLAMOS}`);
+    addHidden('_next', location.href.split('#')[0].split('?')[0] + '#registrada');
+    lrForm.action = `https://formsubmit.co/${CORREO_RECLAMOS}`;
+    lrForm.method = 'post';
     estadoEnvio(btn, true);
-    const ok = await enviarFormulario(CORREO_RECLAMOS, {
-      _subject: asunto,
-      _template: 'table',
-      _captcha: 'false',
-      _honey: d._honey || '',
-      email: t(d.email),
-      _replyto: t(d.email),
-      _cc: `${t(d.email)},${CORREO_COPIA_RECLAMOS}`,
-      _autoresponse: `Hemos registrado tu Hoja de Reclamación N.º ${num} en el Libro de Reclamaciones de ACE Electronics S.A.C. (RUC 20501940195). Recibirás en este mismo correo una copia con el detalle. Responderemos en un plazo máximo de quince (15) días hábiles. La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI.`,
-      ...Object.fromEntries(pares)
-    });
-    estadoEnvio(btn, false);
-
-    document.getElementById('lrMsgOk').hidden = !ok;
-    document.getElementById('lrMsgFail').hidden = ok;
-    const mail = document.getElementById('lrMail');
-    mail.href = mailto(CORREO_RECLAMOS, asunto, aTexto(pares), CORREO_COPIA_RECLAMOS);
-    mail.hidden = ok;
-    document.title = `Hoja de Reclamación ${num} — ACE Electronics`;
-    lrForm.hidden = true;
-    sheet.hidden = false;
-    sheet.focus();
-    window.scrollTo({ top: sheet.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
+    lrForm.submit();
   });
 
+  // Al volver del servicio de envío
+  if (location.hash === '#registrada') {
+    let data = null;
+    try { data = JSON.parse(sessionStorage.getItem('lr-ultima') || 'null'); } catch (e) {}
+    if (data && data.pares) mostrarConstancia(data);
+    else mostrarConstancia({ num: '(ver correo)', fecha: fechaLarga(new Date()), email: 'tu correo', pares: [] });
+  }
+
   document.getElementById('lrPrint').addEventListener('click', () => window.print());
-  document.getElementById('lrBack').addEventListener('click', () => { sheet.hidden = true; lrForm.hidden = false; btn.focus(); });
+  document.getElementById('lrBack').addEventListener('click', () => {
+    try { sessionStorage.removeItem('lr-ultima'); } catch (e) {}
+    location.href = location.pathname;
+  });
 }
 
 // ---------- Menú móvil ----------
