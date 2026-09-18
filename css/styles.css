@@ -449,6 +449,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .legal__toc a { display: block; padding: .55rem 0; text-decoration: none; color: var(--ink-soft); border-bottom: 1px solid var(--steel); }
 .legal__toc a:hover { color: var(--signal); }
 .legal__aside .meta { margin-top: var(--s-4); }
+.legal__notes { margin-top: var(--s-4); }
 .legal__aside .meta div { grid-template-columns: 1fr; gap: .1rem; }
 .legal__aside .meta dt { font-size: .9rem; }
 .legal__aside .meta dd { color: var(--ink-soft); font-size: .95rem; overflow-wrap: anywhere; }
