@@ -2,15 +2,16 @@
    menú, borde del header, globo de WhatsApp y envío de formularios. */
 
 // ---------- Envío de formularios ----------
-// Servicio de envío (FormSubmit): se activa con un clic en el correo que llega
-// a esta dirección la primera vez que alguien envía un formulario. Si el servicio
-// no responde, cada formulario ofrece enviar por correo (mailto) o WhatsApp.
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/ventas@aceelectronicsperu.com';
-const FORM_MAILTO = 'ventas@aceelectronicsperu.com';
+// Servicio de envío (FormSubmit): cada dirección de destino se activa con un clic
+// en el correo que le llega la primera vez que alguien envía un formulario. Si el
+// servicio no responde, cada formulario ofrece enviar por correo (mailto) o WhatsApp.
+const CORREO_VENTAS = 'ventas@aceelectronicsperu.com';                 // cotizaciones
+const CORREO_RECLAMOS = 'libro.reclamaciones@aceelectronicsperu.com';  // Libro de Reclamaciones
+const CORREO_COPIA_RECLAMOS = 'admin@aceelectronicsperu.com';          // recibe copia de cada hoja
 
-async function enviarFormulario(payload) {
+async function enviarFormulario(destino, payload) {
   try {
-    const res = await fetch(FORM_ENDPOINT, {
+    const res = await fetch(`https://formsubmit.co/ajax/${destino}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
@@ -24,7 +25,7 @@ async function enviarFormulario(payload) {
 
 // Texto plano con los pares etiqueta: valor (para el cuerpo del correo de respaldo)
 const aTexto = (pares) => pares.map(([k, v]) => `${k}: ${v || '-'}`).join('\n');
-const mailto = (asunto, cuerpo) => `mailto:${FORM_MAILTO}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+const mailto = (destino, asunto, cuerpo, copia) => `mailto:${destino}?${copia ? 'cc=' + copia + '&' : ''}subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
 const fechaLarga = (d) => d.toLocaleString('es-PE', { dateStyle: 'long', timeStyle: 'short' });
 
 // Validación: muestra un mensaje concreto y enfoca el primer campo con error
@@ -79,7 +80,7 @@ if (contactForm) {
     const asunto = `Solicitud de cotización — ${t(d.nombre)}${t(d.empresa) ? ' (' + t(d.empresa) + ')' : ''}`;
 
     estadoEnvio(btn, true);
-    const ok = await enviarFormulario({
+    const ok = await enviarFormulario(CORREO_VENTAS, {
       _subject: asunto,
       _template: 'table',
       _captcha: 'false',
@@ -95,7 +96,7 @@ if (contactForm) {
       document.getElementById('doneEmail').textContent = t(d.email);
       mostrar(done);
     } else {
-      document.getElementById('failMail').href = mailto(asunto, aTexto(pares));
+      document.getElementById('failMail').href = mailto(CORREO_VENTAS, asunto, aTexto(pares));
       mostrar(fail);
     }
   });
@@ -170,14 +171,14 @@ if (lrForm) {
     });
 
     estadoEnvio(btn, true);
-    const ok = await enviarFormulario({
+    const ok = await enviarFormulario(CORREO_RECLAMOS, {
       _subject: asunto,
       _template: 'table',
       _captcha: 'false',
       _honey: d._honey || '',
       email: t(d.email),
       _replyto: t(d.email),
-      _cc: t(d.email),
+      _cc: `${t(d.email)},${CORREO_COPIA_RECLAMOS}`,
       _autoresponse: `Hemos registrado tu Hoja de Reclamación N.º ${num} en el Libro de Reclamaciones de ACE Electronics S.A.C. (RUC 20501940195). Recibirás en este mismo correo una copia con el detalle. Responderemos en un plazo máximo de quince (15) días hábiles. La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI.`,
       ...Object.fromEntries(pares)
     });
@@ -186,7 +187,7 @@ if (lrForm) {
     document.getElementById('lrMsgOk').hidden = !ok;
     document.getElementById('lrMsgFail').hidden = ok;
     const mail = document.getElementById('lrMail');
-    mail.href = mailto(asunto, aTexto(pares));
+    mail.href = mailto(CORREO_RECLAMOS, asunto, aTexto(pares), CORREO_COPIA_RECLAMOS);
     mail.hidden = ok;
     document.title = `Hoja de Reclamación ${num} — ACE Electronics`;
     lrForm.hidden = true;
