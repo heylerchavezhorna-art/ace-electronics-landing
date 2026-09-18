@@ -30,6 +30,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
 a, button, summary { -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
@@ -403,6 +404,118 @@ ul { margin: 0; padding: 0; list-style: none; }
   .contact__data p, .meta div { grid-template-columns: 1fr; gap: .15rem; }
   .wa__btn span { display: none; }
   .wa__btn { padding: 0; width: 3.25rem; justify-content: center; }
+}
+
+/* Formularios: casillas, grupos, estados de envío y campo trampa anti-bots */
+.form__set { border: 0; padding: var(--s-3) 0 0; margin: 0; min-width: 0; border-top: 1px solid var(--ink); }
+.form__set legend { float: left; width: 100%; padding: 0; margin: 0 0 var(--s-3); font-weight: 500; font-size: 1.15rem; }
+.form__set legend small { display: block; font-weight: 400; font-size: .95rem; color: var(--slate); margin-top: .2rem; }
+.form__fields { display: grid; gap: var(--s-3); clear: both; }
+.form__group { border: 0; padding: 0; margin: 0; min-width: 0; display: grid; gap: .6rem; }
+.form__group legend { padding: 0; font-size: .95rem; font-weight: 500; float: left; width: 100%; margin-bottom: .2rem; }
+.form__radios { display: flex; flex-wrap: wrap; gap: .6rem var(--s-3); clear: both; }
+.form__radio, .form__check { display: flex; gap: .7rem; align-items: flex-start; font-size: .95rem; color: var(--ink-soft); cursor: pointer; max-width: var(--measure); }
+.form__radio { align-items: center; }
+.form__radio input, .form__check input { -webkit-appearance: auto; appearance: auto; width: 1.15rem; height: 1.15rem; min-height: 0; padding: 0; margin: 0; border: 0; box-shadow: none; flex: none; accent-color: var(--signal); }
+.form__check input { margin-top: .2rem; }
+.form__check a { color: var(--signal); }
+.form select {
+  font: inherit; font-size: max(1rem, 1em); color: var(--ink); width: 100%; min-height: 3rem;
+  -webkit-appearance: none; appearance: none; border-radius: 0; border: 1px solid var(--steel);
+  padding: .8rem 2.4rem .8rem .9rem; cursor: pointer;
+  background: var(--white) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%230B1B33' stroke-width='1.5'/></svg>") no-repeat right .9rem center;
+}
+.form select:focus { outline: none; border-color: var(--signal); box-shadow: 0 0 0 3px rgba(27,79,216,.15); }
+.form .req { color: var(--danger); font-weight: 400; }
+.form__hp { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.form button[disabled] { opacity: .6; cursor: progress; }
+.form__done { border-top: 2px solid var(--signal); padding-top: var(--s-3); outline: none; }
+.form__done h3 { margin-bottom: var(--s-2); }
+.form__done p { color: var(--ink-soft); }
+.form__actions { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
+.form__notes { margin: 0; padding: 0; list-style: none; font-size: .9rem; color: var(--slate); border-top: 1px solid var(--steel); }
+.form__notes li { padding: .7rem 0; border-bottom: 1px solid var(--steel); max-width: var(--measure); }
+.form__notes strong { color: var(--ink); font-weight: 500; }
+
+/* Páginas legales (privacidad, términos, libro de reclamaciones) */
+.legal { padding-block: var(--s-5) var(--s-7); }
+.legal__head { margin-bottom: var(--s-5); max-width: 70ch; }
+.legal__head h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); }
+.legal__head p { margin-top: var(--s-3); color: var(--ink-soft); font-size: 1.125rem; max-width: 60ch; }
+.legal__meta { display: flex; flex-wrap: wrap; gap: .4rem var(--s-3); margin: var(--s-2) 0 0 !important; font-size: .95rem !important; color: var(--slate) !important; }
+.legal__grid { display: grid; grid-template-columns: 3fr 8fr; gap: var(--s-6); align-items: start; }
+.legal__aside { position: sticky; top: calc(var(--nav-h) + var(--s-2)); }
+.legal__toc { border-top: 1px solid var(--ink); padding-top: var(--s-1); font-size: .95rem; }
+.legal__toc a { display: block; padding: .55rem 0; text-decoration: none; color: var(--ink-soft); border-bottom: 1px solid var(--steel); }
+.legal__toc a:hover { color: var(--signal); }
+.legal__aside .meta { margin-top: var(--s-4); }
+.legal__aside .meta div { grid-template-columns: 1fr; gap: .1rem; }
+.legal__aside .meta dt { font-size: .9rem; }
+.legal__aside .meta dd { color: var(--ink-soft); font-size: .95rem; overflow-wrap: anywhere; }
+.legal__aside .meta a { text-decoration: none; }
+.legal__aside .meta a:hover { text-decoration: underline; }
+.legal__body h2 { font-size: 1.5rem; font-weight: 500; letter-spacing: -0.01em; margin: var(--s-5) 0 var(--s-2); max-width: none; scroll-margin-top: calc(var(--nav-h) + var(--s-2)); }
+.legal__body h2:first-child { margin-top: 0; }
+.legal__body h3 { font-size: 1.1rem; margin: var(--s-3) 0 var(--s-1); }
+.legal__body p, .legal__body li { color: var(--ink-soft); max-width: 68ch; }
+.legal__body ul, .legal__body ol { list-style: disc; padding-left: 1.25rem; margin: 0 0 var(--s-2); }
+.legal__body ol { list-style: decimal; }
+.legal__body li { margin-bottom: .45rem; }
+.legal__body li::marker { color: var(--slate); }
+.legal__body a { color: var(--signal); }
+.legal__body .meta { margin-top: var(--s-2); }
+.legal__body .meta div { grid-template-columns: 10rem 1fr; }
+.legal__body .meta dd { color: var(--ink-soft); }
+
+/* Hoja de reclamación: constancia en pantalla e impresión */
+.sheet { background: var(--white); border: 1px solid var(--steel); padding: var(--s-4); outline: none; }
+.sheet__head { display: flex; justify-content: space-between; gap: var(--s-3); flex-wrap: wrap; border-bottom: 1px solid var(--ink); padding-bottom: var(--s-3); margin-bottom: var(--s-3); }
+.sheet__kicker { margin: 0; font-size: .9rem; color: var(--slate); }
+.sheet__num { margin: 0; font-size: 1.5rem; font-weight: 500; letter-spacing: -0.01em; }
+.sheet__prov { margin: 0; font-size: .9rem; color: var(--ink-soft); line-height: 1.5; text-align: right; }
+.sheet__prov strong { color: var(--ink); font-weight: 600; }
+.sheet__msg { padding: 1rem 1.1rem; background: var(--paper); border-left: 3px solid var(--signal); max-width: none; }
+.sheet__msg--warn { border-left-color: var(--danger); }
+.sheet .meta { margin-top: var(--s-3); padding-top: var(--s-3); }
+.sheet .meta div { grid-template-columns: 13rem 1fr; }
+.sheet .meta dd { color: var(--ink-soft); white-space: pre-line; overflow-wrap: anywhere; }
+
+/* Pie: enlaces legales, insignia del Libro de Reclamaciones y datos del proveedor */
+.footer__legal { margin-top: var(--s-5); padding-top: var(--s-3); border-top: 1px solid rgba(255,255,255,.14); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); }
+.footer__links { display: flex; flex-wrap: wrap; gap: .4rem var(--s-3); }
+.footer__links a { color: inherit; text-decoration: none; padding-block: .35rem; }
+.footer__links a:hover { color: var(--white); text-decoration: underline; }
+.lr-badge { display: inline-flex; align-items: center; gap: .8rem; border: 1px solid rgba(255,255,255,.35); padding: .65rem 1rem .65rem .85rem; color: var(--white); text-decoration: none; transition: border-color .2s var(--ease), background-color .2s var(--ease); }
+.lr-badge:hover { border-color: var(--white); background: rgba(255,255,255,.06); }
+.lr-badge svg { flex: none; }
+.lr-badge span { display: block; font-size: .8rem; line-height: 1.3; color: rgba(255,255,255,.72); }
+.lr-badge strong { display: block; font-weight: 600; font-size: .95rem; color: var(--white); }
+.footer__bottom { margin-top: var(--s-3); }
+.footer__bottom p { max-width: none; }
+
+@media (max-width: 64rem) {
+  .legal__grid { grid-template-columns: 1fr; gap: var(--s-4); }
+  .legal__aside { position: static; }
+}
+@media (max-width: 48rem) {
+  .legal { padding-block: var(--s-4) var(--s-6); }
+  .sheet { padding: var(--s-3); }
+  .sheet .meta div, .legal__body .meta div { grid-template-columns: 1fr; gap: .15rem; }
+  .sheet__prov { text-align: left; }
+  .footer__legal { flex-direction: column; align-items: flex-start; }
+}
+
+/* Impresión: solo la constancia o el contenido legal, sin navegación */
+@media print {
+  .nav, .footer, .wa, .skip, .no-print, .legal__aside { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .legal { padding: 0; }
+  .legal__grid { display: block; }
+  .sheet { border: 0; padding: 0; }
+  .sheet .meta div { grid-template-columns: 12rem 1fr; }
+  .sheet__msg { border-left-color: #000; background: none; padding: .4rem 0 .4rem .9rem; }
+  .legal__head p:not(.legal__meta) { display: none; }
+  a { text-decoration: none; color: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Libro de Reclamaciones — ACE Electronics S.A.C.</title>
+  <meta name="description" content="Registra tu reclamo o queja en el Libro de Reclamaciones virtual de ACE Electronics S.A.C., conforme al Código de Protección y Defensa del Consumidor. Respuesta en un máximo de 15 días hábiles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="img/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="img/favicon-64.png" sizes="64x64" type="image/png">
+  <link rel="icon" href="img/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css?v=23">
+</head>
+<body>
+
+<a class="skip" href="#contenido">Ir al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="index.html" aria-label="ACE Electronics, inicio">
+      <img class="brand__mark" src="img/logo/ae-logo.png" alt="" width="555" height="480" decoding="async"><span class="brand__text">Ace Electronics</span>
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true">
+        <path class="ico-open" d="M4 7h16M4 12h16M4 17h16"/>
+        <path class="ico-close" d="M6 6l12 12M18 6L6 18"/>
+      </svg>
+    </button>
+
+    <nav class="nav__menu" id="navMenu" aria-label="Principal">
+      <a href="index.html#soluciones">Soluciones</a>
+      <a href="index.html#servicio">Servicio técnico</a>
+      <a href="index.html#equipos">Equipos</a>
+      <a href="index.html#empresa">Empresa</a>
+      <a href="index.html#preguntas">Preguntas</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a class="btn btn--primary btn--nav" href="index.html#contacto">Solicitar cotización</a>
+    </nav>
+  </div>
+</header>
+
+<main class="legal" id="contenido">
+  <div class="container">
+    <div class="legal__head">
+      <h1>Libro de Reclamaciones</h1>
+      <p>Hoja de Reclamación virtual de ACE Electronics S.A.C. Si tienes una disconformidad con un producto, un servicio o la atención recibida, regístrala aquí. Te responderemos en un plazo máximo de quince (15) días hábiles.</p>
+      <p class="legal__meta"><span>Ley N.º 29571, Código de Protección y Defensa del Consumidor</span><span>Reglamento del Libro de Reclamaciones, D.S. N.º 011-2011-PCM y modificatorias</span></p>
+    </div>
+
+    <div class="legal__grid">
+      <aside class="legal__aside">
+        <dl class="meta">
+          <div><dt>Proveedor</dt><dd>ACE Electronics S.A.C.</dd></div>
+          <div><dt>RUC</dt><dd>20501940195</dd></div>
+          <div><dt>Domicilio</dt><dd>Av. Cayetano Heredia 381, Jesús María, Lima, Perú</dd></div>
+          <div><dt>Teléfono</dt><dd><a href="tel:+5115000383">(01) 500 0383</a></dd></div>
+          <div><dt>Correo</dt><dd><a href="mailto:ventas@aceelectronicsperu.com">ventas@aceelectronicsperu.com</a></dd></div>
+        </dl>
+        <ul class="form__notes" style="margin-top: var(--s-4)">
+          <li><strong>Reclamo:</strong> disconformidad relacionada a los productos o servicios.</li>
+          <li><strong>Queja:</strong> disconformidad no relacionada a los productos o servicios, o malestar o descontento respecto a la atención al público.</li>
+          <li>La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI.</li>
+          <li>El proveedor debe dar respuesta al reclamo o queja en un plazo no mayor a quince (15) días hábiles improrrogables.</li>
+          <li>Recibirás una copia de esta hoja en el correo que indiques. También puedes imprimirla o guardarla en PDF al terminar.</li>
+        </ul>
+      </aside>
+
+      <div class="legal__body">
+        <form class="form" id="lrForm" novalidate>
+          <fieldset class="form__set">
+            <legend>1. Identificación del consumidor <small>Los campos con <span class="req">*</span> son obligatorios.</small></legend>
+            <div class="form__fields">
+              <div class="form__row">
+                <label for="lr-nombre">Nombre completo <span class="req">*</span></label>
+                <input id="lr-nombre" name="nombre" type="text" autocomplete="name" required>
+              </div>
+              <div class="form__grid">
+                <div class="form__row">
+                  <label for="lr-tipodoc">Tipo de documento <span class="req">*</span></label>
+                  <select id="lr-tipodoc" name="tipo_documento" required>
+                    <option value="DNI">DNI</option>
+                    <option value="Carné de extranjería">Carné de extranjería</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="RUC">RUC (empresa)</option>
+                  </select>
+                </div>
+                <div class="form__row">
+                  <label for="lr-numdoc">Número de documento <span class="req">*</span></label>
+                  <input id="lr-numdoc" name="numero_documento" type="text" inputmode="numeric" autocomplete="off" required>
+                </div>
+              </div>
+              <div class="form__row">
+                <label for="lr-domicilio">Domicilio <span class="req">*</span></label>
+                <input id="lr-domicilio" name="domicilio" type="text" autocomplete="street-address" required>
+              </div>
+              <div class="form__grid">
+                <div class="form__row">
+                  <label for="lr-tel">Teléfono</label>
+                  <input id="lr-tel" name="telefono" type="tel" autocomplete="tel">
+                </div>
+                <div class="form__row">
+                  <label for="lr-email">Correo electrónico <span class="req">*</span></label>
+                  <input id="lr-email" name="email" type="email" autocomplete="email" required>
+                </div>
+              </div>
+              <label class="form__check">
+                <input type="checkbox" id="lr-menor" name="menor" value="Sí">
+                <span>El consumidor es menor de edad (se registran los datos del padre, madre o apoderado).</span>
+              </label>
+              <div class="form__fields" id="lrApoderado" hidden>
+                <div class="form__row">
+                  <label for="lr-apo-nombre">Nombre del padre, madre o apoderado <span class="req">*</span></label>
+                  <input id="lr-apo-nombre" name="apoderado_nombre" type="text" disabled>
+                </div>
+                <div class="form__row">
+                  <label for="lr-apo-dom">Domicilio del padre, madre o apoderado <span class="req">*</span></label>
+                  <input id="lr-apo-dom" name="apoderado_domicilio" type="text" disabled>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="form__set">
+            <legend>2. Identificación del bien contratado</legend>
+            <div class="form__fields">
+              <fieldset class="form__group">
+                <legend>¿Qué contrataste? <span class="req">*</span></legend>
+                <div class="form__radios">
+                  <label class="form__radio"><input type="radio" name="tipo_bien" value="Producto" required> Producto</label>
+                  <label class="form__radio"><input type="radio" name="tipo_bien" value="Servicio" required> Servicio</label>
+                </div>
+              </fieldset>
+              <div class="form__grid">
+                <div class="form__row">
+                  <label for="lr-monto">Monto reclamado (S/)</label>
+                  <input id="lr-monto" name="monto" type="text" inputmode="decimal" placeholder="Opcional">
+                </div>
+              </div>
+              <div class="form__row">
+                <label for="lr-bien">Descripción <span class="req">*</span></label>
+                <textarea id="lr-bien" name="descripcion_bien" rows="3" required></textarea>
+                <p class="form__hint">Equipo o servicio, marca y modelo, número de cotización, orden o factura y fecha.</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__set">
+            <legend>3. Detalle de la reclamación y pedido del consumidor</legend>
+            <div class="form__fields">
+              <fieldset class="form__group">
+                <legend>Tipo <span class="req">*</span></legend>
+                <div class="form__radios">
+                  <label class="form__radio"><input type="radio" name="tipo_reclamo" value="Reclamo" required> Reclamo (sobre el producto o servicio)</label>
+                  <label class="form__radio"><input type="radio" name="tipo_reclamo" value="Queja" required> Queja (sobre la atención recibida)</label>
+                </div>
+              </fieldset>
+              <div class="form__row">
+                <label for="lr-detalle">Detalle <span class="req">*</span></label>
+                <textarea id="lr-detalle" name="detalle" rows="5" required></textarea>
+              </div>
+              <div class="form__row">
+                <label for="lr-pedido">Pedido <span class="req">*</span></label>
+                <textarea id="lr-pedido" name="pedido" rows="3" required></textarea>
+                <p class="form__hint">Qué esperas que hagamos: cambio, reparación, devolución, explicación, etc.</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__set">
+            <legend>4. Observaciones y acciones adoptadas por el proveedor</legend>
+            <div class="form__fields">
+              <p class="form__hint">Este espacio lo completa ACE Electronics S.A.C. en su respuesta, que recibirás en el correo indicado dentro del plazo legal.</p>
+            </div>
+          </fieldset>
+
+          <label class="form__check">
+            <input type="checkbox" name="consentimiento" value="Sí" required>
+            <span>Declaro que la información es verdadera y he leído la <a href="politica-de-privacidad.html" target="_blank" rel="noopener">Política de privacidad</a>. Autorizo a ACE Electronics S.A.C. a tratar mis datos para gestionar este reclamo o queja. <span class="req">*</span></span>
+          </label>
+          <div class="form__hp" aria-hidden="true"><label for="lr-hp">No completes este campo</label><input id="lr-hp" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+          <p class="form__error" id="lrError" hidden role="alert"></p>
+          <button class="btn btn--primary" type="submit" id="lrSubmit">Registrar hoja de reclamación</button>
+        </form>
+
+        <div class="sheet" id="lrDone" hidden tabindex="-1" aria-live="polite">
+          <div class="sheet__head">
+            <div>
+              <p class="sheet__kicker">Libro de Reclamaciones · Hoja de Reclamación</p>
+              <p class="sheet__num">N.º <span id="lrNum"></span></p>
+            </div>
+            <p class="sheet__prov"><strong>ACE Electronics S.A.C.</strong><br>RUC 20501940195<br>Av. Cayetano Heredia 381, Jesús María, Lima</p>
+          </div>
+          <p class="sheet__msg" id="lrMsgOk">Registramos tu hoja el <span id="lrFecha"></span> y enviamos una copia a <strong id="lrEmail"></strong>. Responderemos en un plazo máximo de quince (15) días hábiles. Imprime o guarda esta constancia.</p>
+          <p class="sheet__msg sheet__msg--warn" id="lrMsgFail" hidden>No pudimos registrar la hoja en línea. Envíala por correo con un clic (se abre tu programa de correo con la hoja ya escrita) y guarda o imprime esta constancia. Responderemos en un plazo máximo de quince (15) días hábiles.</p>
+          <dl class="meta" id="lrResumen"></dl>
+          <div class="form__actions no-print">
+            <a class="btn btn--primary" id="lrMail" href="#" hidden>Enviar por correo</a>
+            <button class="btn btn--ghost" type="button" id="lrPrint">Imprimir o guardar en PDF</button>
+            <button class="btn btn--ghost" type="button" id="lrBack">Volver al formulario</button>
+            <a class="btn btn--ghost" href="index.html">Ir al inicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <p class="footer__name brand"><img class="brand__mark" src="img/logo/ae-logo.png" alt="" width="555" height="480" decoding="async"><span class="brand__text">Ace Electronics</span></p>
+        <p class="footer__tag">Energía crítica y respaldo</p>
+        <p class="footer__desc">Venta, instalación y mantenimiento de UPS, baterías y soluciones para data center en el Perú. Centro Autorizado de Servicio Schneider Electric / APC desde 2001.</p>
+      </div>
+      <nav class="footer__col" aria-label="Secciones">
+        <h2>Secciones</h2>
+        <a href="index.html#empresa">Empresa</a>
+        <a href="index.html#servicio">Servicio técnico</a>
+        <a href="index.html#equipos">Equipos</a>
+        <a href="index.html#preguntas">Preguntas</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+      <nav class="footer__col" aria-label="Soluciones">
+        <h2>Soluciones</h2>
+        <a href="index.html#soluciones">Sistemas UPS y respaldo</a>
+        <a href="index.html#soluciones">Data center e instalaciones eléctricas</a>
+        <a href="index.html#servicio">Mantenimiento 7×24</a>
+        <a href="index.html#marcas">Marcas autorizadas</a>
+      </nav>
+      <div class="footer__col footer__contact">
+        <h2>Contacto</h2>
+        <p><span>WhatsApp y teléfono</span><a href="https://wa.me/51950091893" target="_blank" rel="noopener">+51 950 091 893</a><a href="tel:+5115000383">(01) 500 0383</a></p>
+        <p><span>Escríbenos</span><a href="mailto:ventas@aceelectronicsperu.com">ventas@aceelectronicsperu.com</a></p>
+        <p><span>Horario</span>Lunes a viernes, 8:30 a. m. – 5:30 p. m.<br>Soporte 7×24 para clientes con contrato</p>
+        <p><span>Sedes</span>Lima · Piura · Trujillo · Arequipa · Puno</p>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <nav class="footer__links" aria-label="Legal">
+        <a href="politica-de-privacidad.html">Política de privacidad</a>
+        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+        <a href="libro-de-reclamaciones.html">Libro de Reclamaciones</a>
+      </nav>
+      <a class="lr-badge" href="libro-de-reclamaciones.html">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.2c-1.3-1.3-3.2-1.7-5.5-1.7H3v14.3h3.5c2.3 0 4.2.4 5.5 1.7 1.3-1.3 3.2-1.7 5.5-1.7H21V4.5h-3.5c-2.3 0-4.2.4-5.5 1.7Z"/><path d="M12 6.2v14.3"/><path d="M6.2 8.6h3M6.2 11.6h3M14.8 8.6h3M14.8 11.6h3"/></svg>
+        <span><strong>Libro de Reclamaciones</strong>Registra tu reclamo o queja en línea</span>
+      </a>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 ACE Electronics S.A.C. · RUC 20501940195 · Av. Cayetano Heredia 381, Jesús María, Lima, Perú</p>
+      <p>Todos los derechos reservados</p>
+    </div>
+  </div>
+</footer>
+
+<div class="wa" id="waWidget">
+  <div class="wa__panel" id="waPanel" role="dialog" aria-labelledby="wa-title" hidden>
+    <div class="wa__head">
+      <span class="wa__avatar" aria-hidden="true">A</span>
+      <div>
+        <p class="wa__name" id="wa-title">ACE Electronics</p>
+        <p class="wa__status">Responde en minutos</p>
+      </div>
+      <button class="wa__close" type="button" id="waClose" aria-label="Cerrar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="wa__body">
+      <div class="wa__bubble">
+        <p>Hola, gracias por comunicarte con Ace Electronics.</p>
+        <p>Somos especialistas en venta, instalación y mantenimiento de UPS online para asegurar la continuidad eléctrica de tus operaciones.</p>
+        <p>Cuéntanos qué tipo de solución necesitas y con gusto te asesoramos.</p>
+      </div>
+    </div>
+    <a class="wa__start" href="https://wa.me/51950091893?text=Hola%2C%20necesito%20asesor%C3%ADa%20sobre%20UPS" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.5 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2l-.5-.3Z"/></svg>
+      Iniciar conversación
+    </a>
+  </div>
+  <button class="wa__btn" type="button" id="waToggle" aria-expanded="false" aria-controls="waPanel">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.5 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2l-.5-.3Z"/></svg>
+    <span>WhatsApp +51 950 091 893</span>
+  </button>
+</div>
+
+<script src="js/site.js"></script>
+</body>
+</html>
