@@ -7,3 +7,6 @@ Thumbs.db
 .DS_Store
 /LOGO/
 /logo/
+
+# Notas privadas con accesos: nunca al repositorio
+pendientes.txt
