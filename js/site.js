@@ -241,3 +241,38 @@ if (waToggle) {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !waPanel.hidden) setWa(false); });
   document.addEventListener('click', (e) => { if (!waPanel.hidden && !document.getElementById('waWidget').contains(e.target)) setWa(false); });
 }
+
+// ---------- Analítica (Google Analytics 4) con aviso de cookies ----------
+// La medición solo se carga si el visitante acepta. GA_ID vacío = analítica apagada
+// (no se muestra el aviso ni el enlace "Cookies" del pie).
+const GA_ID = '';
+const CONSENT_KEY = 'ace-cookies';
+const banner = document.getElementById('cookiesAviso');
+if (GA_ID && banner) {
+  const leer = () => { try { const c = JSON.parse(localStorage.getItem(CONSENT_KEY)); if (c && Date.now() - c.t < 365 * 864e5) return c.v; } catch (e) {} return null; };
+  const guardar = (v) => { try { localStorage.setItem(CONSENT_KEY, JSON.stringify({ v, t: Date.now() })); } catch (e) {} };
+  let cargado = false;
+  const cargarGA = () => {
+    if (cargado) return; cargado = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true, allow_google_signals: false });
+    const s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.append(s);
+  };
+  const apagarGA = () => {
+    if (!cargado) return;
+    gtag('consent', 'update', { analytics_storage: 'denied' });
+    // borra las cookies _ga* que ya existieran
+    document.cookie.split(';').forEach(c => { const n = c.split('=')[0].trim(); if (n.startsWith('_ga')) document.cookie = `${n}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.${location.hostname}`; });
+  };
+  const decidir = (v) => { guardar(v); banner.hidden = true; v === 'si' ? cargarGA() : apagarGA(); };
+  banner.querySelector('[data-cookies="si"]').addEventListener('click', () => decidir('si'));
+  banner.querySelector('[data-cookies="no"]').addEventListener('click', () => decidir('no'));
+  document.querySelectorAll('[data-cookies="abrir"]').forEach(a => { a.hidden = false; a.addEventListener('click', (e) => { e.preventDefault(); banner.hidden = false; banner.querySelector('button').focus(); }); });
+
+  const eleccion = leer();
+  if (eleccion === 'si') cargarGA();
+  else if (eleccion === null && !navigator.globalPrivacyControl) banner.hidden = false;   // GPC activo = rechazo silencioso
+}

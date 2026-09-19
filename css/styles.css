@@ -342,6 +342,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .wa__start:hover { background: var(--signal-strong); }
 
+/* Aviso de cookies: tarjeta abajo a la izquierda, deja libre el botón de WhatsApp */
+.cookies {
+  position: fixed; left: var(--s-3); bottom: var(--s-3); z-index: 60;
+  left: max(var(--s-3), env(safe-area-inset-left)); bottom: max(var(--s-3), env(safe-area-inset-bottom));
+  width: min(26rem, calc(100vw - var(--s-3) - 5.5rem));
+  background: var(--white); border: 1px solid var(--steel); box-shadow: 0 16px 40px rgba(11,27,51,.18);
+  padding: 1.1rem 1.25rem; font-size: .92rem;
+}
+.cookies__title { margin: 0 0 .35rem; font-weight: 600; color: var(--ink); }
+.cookies p { max-width: none; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+.cookies a { color: var(--signal); }
+.cookies__actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .9rem; }
+.cookies .btn { min-height: 2.6rem; padding: 0 1.1rem; font-size: .95rem; }
+@media (prefers-reduced-motion: no-preference) { .cookies { animation: rise .3s var(--ease) both; } }
+
 /* Responsive */
 @media (max-width: 64rem) {
   .stats__grid { grid-template-columns: 1fr 1fr; row-gap: var(--s-4); }
@@ -518,7 +533,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* Impresión: solo la constancia o el contenido legal, sin navegación */
 @media print {
-  .nav, .footer, .wa, .skip, .no-print, .legal__aside { display: none !important; }
+  .nav, .footer, .wa, .cookies, .skip, .no-print, .legal__aside { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .legal { padding: 0; }
   .legal__grid { display: block; }
