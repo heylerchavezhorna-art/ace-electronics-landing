@@ -25,7 +25,7 @@
   <link rel="icon" href="img/favicon-64.png" sizes="64x64" type="image/png">
   <link rel="icon" href="img/favicon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=26">
+  <link rel="stylesheet" href="css/styles.css?v=27">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -346,25 +346,25 @@
         <form class="form" id="contactForm" novalidate>
           <div class="form__row">
             <label for="f-nombre">Nombre <span class="req">*</span></label>
-            <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+            <input id="f-nombre" name="nombre" type="text" autocomplete="name" maxlength="120" required>
           </div>
           <div class="form__row">
             <label for="f-empresa">Empresa</label>
-            <input id="f-empresa" name="empresa" type="text" autocomplete="organization">
+            <input id="f-empresa" name="empresa" type="text" autocomplete="organization" maxlength="120">
           </div>
           <div class="form__grid">
             <div class="form__row">
               <label for="f-correo">Correo <span class="req">*</span></label>
-              <input id="f-correo" name="email" type="email" autocomplete="email" required>
+              <input id="f-correo" name="email" type="email" autocomplete="email" maxlength="120" required>
             </div>
             <div class="form__row">
               <label for="f-tel">Teléfono</label>
-              <input id="f-tel" name="telefono" type="tel" autocomplete="tel">
+              <input id="f-tel" name="telefono" type="tel" autocomplete="tel" maxlength="30">
             </div>
           </div>
           <div class="form__row">
             <label for="f-msg">¿Qué equipo o carga necesitas proteger? <span class="req">*</span></label>
-            <textarea id="f-msg" name="mensaje" rows="5" required></textarea>
+            <textarea id="f-msg" name="mensaje" rows="5" maxlength="2000" required></textarea>
             <p class="form__hint">Potencia aproximada, tiempo de autonomía y ciudad nos ayudan a cotizar más rápido.</p>
           </div>
           <label class="form__check">
@@ -374,6 +374,7 @@
           <div class="form__hp" aria-hidden="true"><label for="f-hp">No completes este campo</label><input id="f-hp" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
           <p class="form__error" id="formError" hidden role="alert"></p>
           <button class="btn btn--primary" type="submit" id="formSubmit">Enviar solicitud</button>
+          <p class="form__hint">Al enviar pasarás por una verificación breve contra robots y volverás a esta página.</p>
         </form>
 
         <div class="form__done" id="formDone" hidden tabindex="-1" aria-live="polite">
@@ -385,14 +386,6 @@
           </div>
         </div>
 
-        <div class="form__done" id="formFail" hidden tabindex="-1" aria-live="polite">
-          <h3>No pudimos enviar tu solicitud desde la web</h3>
-          <p>Puedes enviarla por correo con un clic (se abre tu programa de correo con los datos ya escritos) o escribirnos por WhatsApp.</p>
-          <div class="form__actions">
-            <a class="btn btn--primary" id="failMail" href="#">Enviar por correo</a>
-            <a class="btn btn--ghost" href="https://wa.me/51950091893?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n%20de%20UPS" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-            <button class="btn btn--ghost" type="button" data-retry>Volver al formulario</button>
-          </div>
         </div>
       </div>
     </div>

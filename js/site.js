@@ -2,25 +2,34 @@
    menú, borde del header, globo de WhatsApp y envío de formularios. */
 
 // ---------- Envío de formularios ----------
-// Servicio de envío (FormSubmit): cada dirección de destino se activa con un clic
-// en el correo que le llega la primera vez que alguien envía un formulario. Si el
-// servicio no responde, cada formulario ofrece enviar por correo (mailto) o WhatsApp.
+// Servicio de envío (FormSubmit): cada dirección de destino se activa con un clic en el
+// correo que le llega la primera vez que alguien envía un formulario desde un dominio.
 const CORREO_VENTAS = 'ventas@aceelectronicsperu.com';                 // cotizaciones
 const CORREO_RECLAMOS = 'libro.reclamaciones@aceelectronicsperu.com';  // Libro de Reclamaciones
 const CORREO_COPIA_RECLAMOS = 'admin@aceelectronicsperu.com';          // recibe copia de cada hoja
 
-async function enviarFormulario(destino, payload) {
-  try {
-    const res = await fetch(`https://formsubmit.co/ajax/${destino}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    const data = await res.json().catch(() => ({}));
-    return res.ok && (data.success === true || data.success === 'true');
-  } catch (e) {
-    return false;
-  }
+
+// Frases que FormSubmit descarta como spam (evita que el formulario sirva para enviar enlaces a terceros)
+const LISTA_NEGRA = 'http://, https://, www., bit.ly, tinyurl, t.me/, wa.me/, .onion';
+const TIENE_ENLACE = /https?:\/\/|www\.|bit\.ly|tinyurl|t\.me\/|wa\.me\//i;
+// Campos de texto libre no deben contener enlaces web
+function sinEnlaces(form, err) {
+  const campo = [...form.querySelectorAll('textarea, input[type="text"]')].find(el => !el.disabled && TIENE_ENLACE.test(el.value));
+  if (!campo) return true;
+  err.textContent = 'Por seguridad no se aceptan enlaces web en el formulario. Describe el equipo, número de cotización o factura con texto.';
+  err.hidden = false; campo.focus(); return false;
+}
+const addHidden = (form, name, value) => { const i = document.createElement('input'); i.type = 'hidden'; i.name = name; i.value = value; form.append(i); };
+// Envío "clásico" a FormSubmit: reCAPTCHA de FormSubmit, copias (_cc) y acuse (_autoresponse) funcionan solo en este modo
+function enviarClasico(form, destino, pares, extra) {
+  [...form.elements].forEach(el => { if (el.name && el.name !== '_honey') el.disabled = true; });
+  pares.forEach(([k, v]) => addHidden(form, k, v));
+  Object.entries(extra).forEach(([k, v]) => addHidden(form, k, v));
+  addHidden(form, '_template', 'table');
+  addHidden(form, '_blacklist', LISTA_NEGRA);
+  form.action = `https://formsubmit.co/${destino}`;
+  form.method = 'post';
+  form.submit();
 }
 
 // Texto plano con los pares etiqueta: valor (para el cuerpo del correo de respaldo)
@@ -49,59 +58,49 @@ function estadoEnvio(btn, enviando) {
 }
 
 // ---------- Formulario de cotización (inicio) ----------
+// Se envía en modo clásico: FormSubmit muestra su reCAPTCHA y vuelve a la página con #enviado.
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   const err = document.getElementById('formError');
   const done = document.getElementById('formDone');
-  const fail = document.getElementById('formFail');
   const btn = document.getElementById('formSubmit');
 
-  const mostrar = (panel) => {
-    contactForm.hidden = panel !== contactForm;
-    done.hidden = panel !== done;
-    fail.hidden = panel !== fail;
-    if (panel !== contactForm) panel.focus();
-  };
-
-  contactForm.addEventListener('submit', async (e) => {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!validar(contactForm, err)) return;
+    if (!validar(contactForm, err) || !sinEnlaces(contactForm, err)) return;
     const d = Object.fromEntries(new FormData(contactForm).entries());
     const t = (v) => (v || '').trim();
+    const email = t(d.email);
     const pares = [
       ['Nombre', t(d.nombre)],
       ['Empresa', t(d.empresa)],
-      ['Correo', t(d.email)],
+      ['Correo', email],
       ['Teléfono', t(d.telefono)],
       ['Mensaje', t(d.mensaje)],
       ['Consentimiento de datos', 'Sí, aceptó la política de privacidad'],
       ['Fecha', fechaLarga(new Date())]
     ];
-    const asunto = `Solicitud de cotización — ${t(d.nombre)}${t(d.empresa) ? ' (' + t(d.empresa) + ')' : ''}`;
-
+    try { sessionStorage.setItem('cot-ultima', JSON.stringify({ email, t: Date.now() })); } catch (e) {}
     estadoEnvio(btn, true);
-    const ok = await enviarFormulario(CORREO_VENTAS, {
-      _subject: asunto,
-      _template: 'table',
-      _captcha: 'false',
-      _honey: d._honey || '',
-      email: t(d.email),
-      _replyto: t(d.email),
-      ...Object.fromEntries(pares)
+    enviarClasico(contactForm, CORREO_VENTAS, pares, {
+      _subject: `Solicitud de cotización — ${t(d.nombre)}${t(d.empresa) ? ' (' + t(d.empresa) + ')' : ''}`,
+      email, _replyto: email,
+      _autoresponse: 'Gracias por escribir a ACE Electronics. Recibimos tu solicitud de cotización y un ingeniero te responderá en un día hábil. Si es urgente, escríbenos por WhatsApp al +51 950 091 893. Este es un mensaje automático; no incluye datos de tu solicitud.',
+      _next: location.href.split('#')[0].split('?')[0] + '#enviado'
     });
-    estadoEnvio(btn, false);
-
-    if (ok) {
-      document.getElementById('doneEmail').textContent = t(d.email);
-      mostrar(done);
-    } else {
-      document.getElementById('failMail').href = mailto(CORREO_VENTAS, asunto, aTexto(pares));
-      mostrar(fail);
-    }
   });
 
-  document.getElementById('formAgain').addEventListener('click', () => { contactForm.reset(); mostrar(contactForm); contactForm.querySelector('input').focus(); });
-  fail.querySelector('[data-retry]').addEventListener('click', () => { mostrar(contactForm); btn.focus(); });
+  // Al volver del servicio de envío
+  if (location.hash === '#enviado') {
+    let data = null;
+    try { data = JSON.parse(sessionStorage.getItem('cot-ultima') || 'null'); sessionStorage.removeItem('cot-ultima'); } catch (e) {}
+    document.getElementById('doneEmail').textContent = (data && data.email) || 'tu correo';
+    contactForm.hidden = true;
+    done.hidden = false;
+    document.getElementById('contacto').scrollIntoView();
+    done.focus();
+  }
+  document.getElementById('formAgain').addEventListener('click', () => { location.href = location.pathname + '#contacto'; location.reload(); });
 }
 
 // ---------- Libro de Reclamaciones ----------
@@ -126,7 +125,6 @@ if (lrForm) {
 
   const pad = (n) => String(n).padStart(2, '0');
   const numeroHoja = (d) => `LR-${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
-  const addHidden = (name, value) => { const i = document.createElement('input'); i.type = 'hidden'; i.name = name; i.value = value; lrForm.append(i); };
 
   const mostrarConstancia = ({ num, fecha, email, pares }) => {
     document.getElementById('lrNum').textContent = num;
@@ -148,7 +146,7 @@ if (lrForm) {
 
   lrForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!validar(lrForm, err)) return;
+    if (!validar(lrForm, err) || !sinEnlaces(lrForm, err)) return;
     const d = Object.fromEntries(new FormData(lrForm).entries());
     const ahora = new Date();
     const num = numeroHoja(ahora);
@@ -181,20 +179,14 @@ if (lrForm) {
 
     try { sessionStorage.setItem('lr-ultima', JSON.stringify({ num, fecha, email, pares })); } catch (e) {}
 
-    // Los campos originales se desactivan y se envían las etiquetas legibles (así llega la hoja ordenada)
-    [...lrForm.elements].forEach(el => { if (el.name && el.name !== '_honey') el.disabled = true; });
-    pares.forEach(([k, v]) => addHidden(k, v));
-    addHidden('_subject', asunto);
-    addHidden('_template', 'table');
-    addHidden('_captcha', 'false');
-    addHidden('email', email);
-    addHidden('_replyto', email);
-    addHidden('_cc', `${email},${CORREO_COPIA_RECLAMOS}`);
-    addHidden('_next', location.href.split('#')[0].split('?')[0] + '#registrada');
-    lrForm.action = `https://formsubmit.co/${CORREO_RECLAMOS}`;
-    lrForm.method = 'post';
     estadoEnvio(btn, true);
-    lrForm.submit();
+    enviarClasico(lrForm, CORREO_RECLAMOS, pares, {
+      _subject: asunto,
+      email, _replyto: email,
+      _cc: `${email},${CORREO_COPIA_RECLAMOS}`,
+      _autoresponse: `ACE Electronics S.A.C. (RUC 20501940195) registró su Hoja de Reclamación N.º ${num} el ${fecha}. Recibirá la copia completa de la hoja en un correo aparte y nuestra respuesta en un plazo máximo de quince (15) días hábiles. La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI. Mensaje automático: no responda a este correo.`,
+      _next: location.href.split('#')[0].split('?')[0] + '#registrada'
+    });
   });
 
   // Al volver del servicio de envío

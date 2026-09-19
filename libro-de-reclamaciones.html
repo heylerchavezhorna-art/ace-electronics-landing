@@ -25,7 +25,7 @@
   <link rel="icon" href="img/favicon-64.png" sizes="64x64" type="image/png">
   <link rel="icon" href="img/favicon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=26">
+  <link rel="stylesheet" href="css/styles.css?v=27">
 </head>
 <body>
 
@@ -89,7 +89,7 @@
             <div class="form__fields">
               <div class="form__row">
                 <label for="lr-nombre">Nombre completo <span class="req">*</span></label>
-                <input id="lr-nombre" name="nombre" type="text" autocomplete="name" required>
+                <input id="lr-nombre" name="nombre" type="text" autocomplete="name" maxlength="120" required>
               </div>
               <div class="form__grid">
                 <div class="form__row">
@@ -103,21 +103,21 @@
                 </div>
                 <div class="form__row">
                   <label for="lr-numdoc">Número de documento <span class="req">*</span></label>
-                  <input id="lr-numdoc" name="numero_documento" type="text" inputmode="numeric" autocomplete="off" required>
+                  <input id="lr-numdoc" name="numero_documento" type="text" inputmode="numeric" autocomplete="off" maxlength="20" required>
                 </div>
               </div>
               <div class="form__row">
                 <label for="lr-domicilio">Domicilio <span class="req">*</span></label>
-                <input id="lr-domicilio" name="domicilio" type="text" autocomplete="street-address" required>
+                <input id="lr-domicilio" name="domicilio" type="text" autocomplete="street-address" maxlength="200" required>
               </div>
               <div class="form__grid">
                 <div class="form__row">
                   <label for="lr-tel">Teléfono</label>
-                  <input id="lr-tel" name="telefono" type="tel" autocomplete="tel">
+                  <input id="lr-tel" name="telefono" type="tel" autocomplete="tel" maxlength="30">
                 </div>
                 <div class="form__row">
                   <label for="lr-email">Correo electrónico <span class="req">*</span></label>
-                  <input id="lr-email" name="email" type="email" autocomplete="email" required>
+                  <input id="lr-email" name="email" type="email" autocomplete="email" maxlength="120" required>
                 </div>
               </div>
               <label class="form__check">
@@ -127,11 +127,11 @@
               <div class="form__fields" id="lrApoderado" hidden>
                 <div class="form__row">
                   <label for="lr-apo-nombre">Nombre del padre, madre o apoderado <span class="req">*</span></label>
-                  <input id="lr-apo-nombre" name="apoderado_nombre" type="text" disabled>
+                  <input id="lr-apo-nombre" name="apoderado_nombre" type="text" maxlength="120" disabled>
                 </div>
                 <div class="form__row">
                   <label for="lr-apo-dom">Domicilio del padre, madre o apoderado <span class="req">*</span></label>
-                  <input id="lr-apo-dom" name="apoderado_domicilio" type="text" disabled>
+                  <input id="lr-apo-dom" name="apoderado_domicilio" type="text" maxlength="200" disabled>
                 </div>
               </div>
             </div>
@@ -149,12 +149,12 @@
               <div class="form__grid">
                 <div class="form__row">
                   <label for="lr-monto">Monto reclamado (S/)</label>
-                  <input id="lr-monto" name="monto" type="text" inputmode="decimal" placeholder="Opcional">
+                  <input id="lr-monto" name="monto" type="text" inputmode="decimal" placeholder="Opcional" maxlength="20">
                 </div>
               </div>
               <div class="form__row">
                 <label for="lr-bien">Descripción <span class="req">*</span></label>
-                <textarea id="lr-bien" name="descripcion_bien" rows="3" required></textarea>
+                <textarea id="lr-bien" name="descripcion_bien" rows="3" maxlength="1000" required></textarea>
                 <p class="form__hint">Equipo o servicio, marca y modelo, número de cotización, orden o factura y fecha.</p>
               </div>
             </div>
@@ -172,11 +172,11 @@
               </fieldset>
               <div class="form__row">
                 <label for="lr-detalle">Detalle <span class="req">*</span></label>
-                <textarea id="lr-detalle" name="detalle" rows="5" required></textarea>
+                <textarea id="lr-detalle" name="detalle" rows="5" maxlength="3000" required></textarea>
               </div>
               <div class="form__row">
                 <label for="lr-pedido">Pedido <span class="req">*</span></label>
-                <textarea id="lr-pedido" name="pedido" rows="3" required></textarea>
+                <textarea id="lr-pedido" name="pedido" rows="3" maxlength="1000" required></textarea>
                 <p class="form__hint">Qué esperas que hagamos: cambio, reparación, devolución, explicación, etc.</p>
               </div>
             </div>
@@ -196,6 +196,7 @@
           <div class="form__hp" aria-hidden="true"><label for="lr-hp">No completes este campo</label><input id="lr-hp" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
           <p class="form__error" id="lrError" hidden role="alert"></p>
           <button class="btn btn--primary" type="submit" id="lrSubmit">Registrar hoja de reclamación</button>
+          <p class="form__hint">Al registrar pasarás por una verificación breve contra robots y volverás a esta página con tu constancia.</p>
         </form>
 
         <div class="sheet" id="lrDone" hidden tabindex="-1" aria-live="polite">

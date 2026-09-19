@@ -45,6 +45,6 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # Archivos que no deben servirse
-<FilesMatch "^(\.gitignore|\.htaccess|README.*)$">
+<FilesMatch "^(\.gitignore|\.htaccess|\.ftp-deploy-sync-state\.json|README.*)$">
   Require all denied
 </FilesMatch>
