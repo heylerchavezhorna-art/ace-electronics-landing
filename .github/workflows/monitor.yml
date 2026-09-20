@@ -53,4 +53,10 @@ jobs:
           dias=$(( ( $(date -d "$fin" +%s) - $(date +%s) ) / 86400 ))
           check "$([ "$dias" -ge 10 ] && echo ok)" "Certificado SSL vigente $dias días más (vence $fin)"
 
+          if [ "$fallo" = 1 ]; then
+            echo "::group::Diagnóstico: cabeceras y primeras líneas recibidas"
+            cat /tmp/h.txt | head -20
+            head -c 1500 /tmp/index.html; echo
+            echo "::endgroup::"
+          fi
           exit $fallo
