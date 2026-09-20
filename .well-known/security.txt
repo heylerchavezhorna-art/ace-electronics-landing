@@ -1,0 +1,7 @@
+# Contacto para reportar vulnerabilidades de aceelectronicsperu.com (RFC 9116)
+Contact: mailto:admin@aceelectronicsperu.com
+Contact: https://aceelectronicsperu.com/index.html#contacto
+Preferred-Languages: es, en
+Canonical: https://aceelectronicsperu.com/.well-known/security.txt
+Policy: https://aceelectronicsperu.com/politica-de-privacidad.html
+Expires: 2027-09-19T05:00:00.000Z

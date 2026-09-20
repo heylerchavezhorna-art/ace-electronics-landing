@@ -1,0 +1,56 @@
+# Vigilante de aceelectronicsperu.com: cada 30 minutos comprueba que el sitio
+# responde por HTTPS, con el título correcto y las cabeceras de seguridad.
+# Si algo falla, la ejecución falla y GitHub avisa por correo al dueño del repositorio.
+name: Monitor del sitio
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Portada, título, cabeceras y formularios
+        run: |
+          set -e
+          U=https://aceelectronicsperu.com
+          fallo=0
+          check() { if [ "$1" != "ok" ]; then echo "::error::$2"; fallo=1; else echo "OK  $2"; fi; }
+
+          # Portada por HTTPS (certificado válido) en menos de 15 s
+          code=$(curl -sS -o /tmp/index.html -w '%{http_code}' -m 15 "$U/") || code=000
+          check "$([ "$code" = 200 ] && echo ok)" "Portada responde 200 (obtuvo $code)"
+
+          # Título esperado: si cambia, alguien modificó la web o el hosting muestra otra cosa
+          grep -q '<title>ACE Electronics' /tmp/index.html && t=ok || t=no
+          check "$t" "Título de la portada intacto"
+
+          # Cabeceras de seguridad
+          curl -sSI -m 15 "$U/" > /tmp/h.txt || true
+          grep -qi '^strict-transport-security' /tmp/h.txt && h1=ok || h1=no
+          grep -qi '^content-security-policy' /tmp/h.txt && h2=ok || h2=no
+          check "$h1" "Cabecera HSTS presente"
+          check "$h2" "Cabecera CSP presente"
+
+          # Redirección HTTP -> HTTPS
+          loc=$(curl -sS -o /dev/null -w '%{redirect_url}' -m 15 "http://aceelectronicsperu.com/" || true)
+          check "$([ "$loc" = "$U/" ] && echo ok)" "HTTP redirige a HTTPS (obtuvo '$loc')"
+
+          # Páginas legales y recursos clave
+          for p in libro-de-reclamaciones.html politica-de-privacidad.html terminos-y-condiciones.html js/site.js css/styles.css; do
+            c=$(curl -sS -o /dev/null -w '%{http_code}' -m 15 "$U/$p" || echo 000)
+            check "$([ "$c" = 200 ] && echo ok)" "/$p responde 200 (obtuvo $c)"
+          done
+
+          # Certificado: días restantes (aviso si quedan menos de 10)
+          fin=$(echo | openssl s_client -servername aceelectronicsperu.com -connect aceelectronicsperu.com:443 2>/dev/null | openssl x509 -noout -enddate | cut -d= -f2)
+          dias=$(( ( $(date -d "$fin" +%s) - $(date +%s) ) / 86400 ))
+          check "$([ "$dias" -ge 10 ] && echo ok)" "Certificado SSL vigente $dias días más (vence $fin)"
+
+          exit $fallo
