@@ -18,6 +18,17 @@ RewriteRule ^index\.html$ / [R=301,L]
 
 RewriteRule ^security\.txt$ /.well-known/security.txt [L]
 
+# Direcciones de la web anterior (tienda) que siguen en Google: se envían a la
+# sección equivalente para no perder al visitante ni el posicionamiento. [NE]
+# evita que la almohadilla del ancla se codifique.
+RewriteRule ^(UPS|Easy-UPS|Smart-UPS|Symmetra|Micro-Data|PDU|Bater|NP-NPX|CSB)[^/]*/?$ /#equipos [R=301,L,NE,NC]
+RewriteRule ^(productos|catalogo|equipos|tienda|shop)(\.(htm|html|php))?/?$ /#equipos [R=301,L,NE,NC]
+RewriteRule ^(servicios|servicio-tecnico|mantenimiento)(\.(htm|html|php))?/?$ /#servicio [R=301,L,NE,NC]
+RewriteRule ^(nosotros|empresa|quienes-somos|clientes)(\.(htm|html|php))?/?$ /#empresa [R=301,L,NE,NC]
+RewriteRule ^(contacto|contactenos|contactanos)(\.(htm|html|php))?/?$ /#contacto [R=301,L,NE,NC]
+RewriteRule ^(index|inicio|home)\.(htm|php)$ / [R=301,L,NC]
+RewriteRule ^(wb_cart|carrito|cart|checkout)(/.*)?$ / [R=301,L,NC]
+
 ErrorDocument 404 /404.html
 
 # Cabeceras de seguridad
