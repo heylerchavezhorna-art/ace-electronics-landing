@@ -218,6 +218,10 @@ menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   menu.classList.remove('is-open');
 }));
 
+// ---------- Desplazamiento suave ----------
+// Se activa cuando la página terminó de cargar y de encuadrar un posible ancla.
+addEventListener('load', () => setTimeout(() => document.documentElement.classList.add('scroll-suave'), 600));
+
 // ---------- Borde del header al hacer scroll ----------
 const nav = document.getElementById('nav');
 const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);

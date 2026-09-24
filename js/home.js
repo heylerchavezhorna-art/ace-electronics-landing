@@ -96,5 +96,6 @@ if (destinoInicial) {
   ['wheel', 'touchstart', 'keydown'].forEach(ev => addEventListener(ev, marcar, { once: true, passive: true }));
   const encuadrar = () => { if (!tocado) destinoInicial.scrollIntoView({ block: 'start', behavior: 'instant' }); };
   encuadrar();
-  addEventListener('load', () => { encuadrar(); setTimeout(encuadrar, 250); });
+  addEventListener('load', () => { encuadrar(); setTimeout(encuadrar, 200); });
+  document.fonts && document.fonts.ready.then(encuadrar);
 }

@@ -42,7 +42,9 @@
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
 a, button, summary { -webkit-tap-highlight-color: transparent; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; }
+/* Suave solo tras la carga: durante el arranque estorba al salto a un ancla */
+html.scroll-suave { scroll-behavior: smooth; }
 body {
   margin: 0; overflow-x: clip;
   font-family: var(--font);
@@ -548,6 +550,6 @@ section[id], main [id] { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html.scroll-suave { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0s !important; animation: none !important; }
 }
