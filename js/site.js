@@ -91,7 +91,7 @@ if (contactForm) {
   });
 
   // Al volver del servicio de envío
-  if (location.hash === '#enviado') {
+  if ((location.hash || '').split(/[?&]/)[0] === '#enviado') {
     let data = null;
     try { data = JSON.parse(sessionStorage.getItem('cot-ultima') || 'null'); sessionStorage.removeItem('cot-ultima'); } catch (e) {}
     document.getElementById('doneEmail').textContent = (data && data.email) || 'tu correo';
@@ -190,7 +190,7 @@ if (lrForm) {
   });
 
   // Al volver del servicio de envío
-  if (location.hash === '#registrada') {
+  if ((location.hash || '').split(/[?&]/)[0] === '#registrada') {
     let data = null;
     try { data = JSON.parse(sessionStorage.getItem('lr-ultima') || 'null'); } catch (e) {}
     if (data && data.pares) mostrarConstancia(data);
