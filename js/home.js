@@ -79,3 +79,23 @@ if (reduced.matches) {
   }, { threshold: .15, rootMargin: '0px 0px -8% 0px' });
   revealTargets.forEach(el => io.observe(el));
 }
+
+// Llegada directa a una sección (p. ej. /#equipos desde Google o desde una
+// dirección antigua redirigida): el navegador salta al ancla antes de que la
+// página termine de componerse, así que se muestra todo el contenido sin
+// animación y se vuelve a encuadrar la sección cuando la carga finaliza.
+let destinoInicial = null;
+try {
+  if (location.hash && location.hash.length > 1 && location.hash !== '#enviado') destinoInicial = document.querySelector(location.hash);
+} catch (e) {}
+if (destinoInicial) {
+  revealTargets.forEach(el => el.classList.add('is-in'));
+  // Si la persona ya empezó a desplazarse por su cuenta, no se le mueve la página
+  let tocado = false;
+  const marcar = () => { tocado = true; };
+  ['wheel', 'touchstart', 'keydown'].forEach(ev => addEventListener(ev, marcar, { once: true, passive: true }));
+  const encuadrar = () => { if (!tocado) destinoInicial.scrollIntoView({ block: 'start', behavior: 'instant' }); };
+  encuadrar();
+  addEventListener('load', () => { encuadrar(); setTimeout(encuadrar, 200); });
+  document.fonts && document.fonts.ready.then(encuadrar);
+}
