@@ -86,7 +86,8 @@ if (reduced.matches) {
 // animación y se vuelve a encuadrar la sección cuando la carga finaliza.
 let destinoInicial = null;
 try {
-  if (location.hash && location.hash.length > 1 && location.hash !== '#enviado') destinoInicial = document.querySelector(location.hash);
+  const ancla = (location.hash || '').split(/[?&]/)[0];
+  if (ancla.length > 1 && ancla !== '#enviado') destinoInicial = document.querySelector(ancla);
 } catch (e) {}
 if (destinoInicial) {
   revealTargets.forEach(el => el.classList.add('is-in'));
