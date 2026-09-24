@@ -63,6 +63,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .container { width: calc(100% - 2 * var(--gutter)); margin-inline: auto; }
 
+/* Al llegar con un ancla, la sección no queda debajo del encabezado fijo */
+section[id], main [id] { scroll-margin-top: calc(var(--nav-h) + 1rem); }
+
 :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
 
 .skip {
