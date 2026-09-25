@@ -100,3 +100,19 @@ if (destinoInicial) {
   addEventListener('load', () => { encuadrar(); setTimeout(encuadrar, 200); });
   document.fonts && document.fonts.ready.then(encuadrar);
 }
+
+// ---------- "Cotizar este modelo" ----------
+// Lleva al formulario con el equipo ya escrito y la necesidad marcada.
+document.querySelectorAll('[data-cotizar]').forEach(btn => btn.addEventListener('click', () => {
+  const equipo = btn.dataset.cotizar;
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  const compra = form.querySelector('[name="necesidad"][value="Comprar un equipo"]');
+  if (compra) compra.checked = true;
+  const msg = form.mensaje;
+  const texto = `Quisiera cotizar: ${equipo}.`;
+  msg.value = msg.value.includes(equipo) ? msg.value : (msg.value ? msg.value.trim() + '\n' + texto : texto);
+  if (typeof medir === 'function') medir('cotizar_modelo', { equipo });
+  document.getElementById('contacto').scrollIntoView({ block: 'start', behavior: document.documentElement.classList.contains('scroll-suave') ? 'smooth' : 'auto' });
+  setTimeout(() => { form.nombre.value ? msg.focus() : form.nombre.focus(); }, 500);
+}));

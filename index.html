@@ -25,7 +25,7 @@
   <link rel="icon" href="img/favicon-64.png" sizes="64x64" type="image/png">
   <link rel="icon" href="img/favicon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=31">
+  <link rel="stylesheet" href="css/styles.css?v=32">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,6 +47,70 @@
     "contactPoint": [
       { "@type": "ContactPoint", "contactType": "sales", "telephone": "+51-950-091-893", "email": "ventas@aceelectronicsperu.com", "availableLanguage": "es" },
       { "@type": "ContactPoint", "contactType": "technical support", "email": "soportetecnico@aceelectronicsperu.com", "availableLanguage": "es" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cómo sé qué potencia de UPS necesito?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sumamos la carga real de los equipos que quieres proteger (en vatios o kVA) y añadimos un margen de 20 a 30 % para crecimiento y factor de potencia. Un ingeniero puede medir en sitio si no tienes el dato exacto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo de autonomía da un UPS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende de la carga y del banco de baterías. Un UPS estándar da entre 5 y 15 minutos a plena carga, suficiente para un apagado ordenado o el arranque de un grupo electrógeno. Con bancos externos se llega a una hora o más."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cada cuánto se cambian las baterías?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las baterías VRLA duran entre 3 y 5 años según temperatura y ciclos de descarga; las de ion-litio, entre 8 y 10. En cada mantenimiento medimos su estado y te avisamos con anticipación cuando conviene reemplazarlas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dan mantenimiento a UPS de otras marcas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Somos Centro Autorizado de Servicio Schneider Electric y APC, y además atendemos equipos Eaton, Vertiv, CDP, Salicru, Forza y Smartbitt, entre otros, con repuestos originales."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué incluye un contrato de mantenimiento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Visitas preventivas programadas, atención correctiva 7×24 con tiempos de respuesta definidos, informe técnico después de cada visita, repuestos originales y monitoreo remoto opcional. Se dimensiona según la cantidad de equipos y sedes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Atienden fuera de Lima?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Tenemos oficinas en Piura, Trujillo, Arequipa y Puno, y personal que se desplaza a cualquier ciudad del país para instalaciones y contratos de servicio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto demora una cotización?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para equipos de catálogo, el mismo día hábil. Para proyectos con ingeniería o visita técnica, entre 2 y 5 días según la complejidad."
+        }
+      }
     ]
   }
   </script>
@@ -75,6 +139,7 @@
       <a href="#empresa">Empresa</a>
       <a href="#preguntas">Preguntas</a>
       <a href="#contacto">Contacto</a>
+      <a class="nav__tel" href="tel:+5115000383"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2Z"/></svg>Llamar (01) 500 0383</a>
       <a class="btn btn--primary btn--nav" href="#contacto">Solicitar cotización</a>
     </nav>
   </div>
@@ -97,7 +162,7 @@
           Escribir por WhatsApp
         </a>
       </div>
-      <p class="hero__phone">WhatsApp <a href="https://wa.me/51950091893" target="_blank" rel="noopener">+51 950 091 893</a> · Central <a href="tel:+5115000383">(01) 500 0383</a></p>
+      <p class="hero__phone"><span class="promesa">Te respondemos en 1 día hábil</span>WhatsApp <a href="https://wa.me/51950091893" target="_blank" rel="noopener">+51 950 091 893</a> · Central <a href="tel:+5115000383">(01) 500 0383</a></p>
     </div>
   </section>
 
@@ -108,6 +173,17 @@
       <div class="stat"><strong>+<span class="num" data-count="1200">1 200</span></strong><span>equipos UPS instalados y en mantenimiento</span></div>
       <div class="stat"><strong><span class="num" data-count="5">5</span></strong><span>sedes: Lima, Piura, Trujillo, Arequipa y Puno</span></div>
       <div class="stat"><strong><span class="num" data-count="7">7</span>×<span class="num" data-count="24">24</span></strong><span>mesa de ayuda y técnicos en campo</span></div>
+    </div>
+  </section>
+
+  <!-- Emergencias -->
+  <section class="urgencia" aria-labelledby="urg-title">
+    <div class="container urgencia__inner">
+      <p class="urgencia__texto"><span class="urgencia__pulso" aria-hidden="true"></span><strong id="urg-title">¿UPS en falla ahora?</strong><span>Atención de emergencia 7×24 para clientes con contrato. En Lima y provincias.</span></p>
+      <div class="urgencia__acciones">
+        <a class="btn btn--primary" href="tel:+5115000383" data-evento="llamada-urgencia">Llamar (01) 500 0383</a>
+        <a class="btn btn--ghost" href="https://wa.me/51950091893?text=Hola%2C%20tengo%20una%20emergencia%20con%20un%20UPS" target="_blank" rel="noopener" data-evento="whatsapp-urgencia">WhatsApp de emergencia</a>
+      </div>
     </div>
   </section>
 
@@ -142,14 +218,14 @@
   <section class="brands" id="marcas" aria-labelledby="br-title">
     <div class="container brands__inner">
       <div class="brands__intro">
-        <h2 id="br-title">Marcas autorizadas</h2>
-        <p>Trabajamos con fabricantes líderes en energía crítica para garantizar repuestos, garantía y soporte de fábrica.</p>
+        <h2 id="br-title">Marcas que representamos y atendemos</h2>
+        <p>Centro Autorizado de Servicio <strong>Schneider Electric / APC</strong>. Vendemos y damos mantenimiento a los equipos de los principales fabricantes de energía crítica, con repuestos originales.</p>
       </div>
       <div class="carousel" id="brandCarousel">
         <button class="carousel__btn" type="button" data-dir="-1" aria-label="Marcas anteriores">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
         </button>
-        <ul class="carousel__track" aria-label="Marcas que representamos">
+        <ul class="carousel__track" aria-label="Marcas que representamos y atendemos">
           <li><img src="img/marcas/schneider-apc.png" width="114" height="60" alt="Schneider Electric · APC"></li>
           <li><img src="img/marcas/eaton.png" width="186" height="60" alt="Eaton"></li>
           <li><img src="img/marcas/vertiv.png" width="243" height="60" alt="Vertiv"></li>
@@ -174,7 +250,7 @@
       <div class="split__body">
         <h2 id="serv-title">Servicio técnico certificado por Schneider Electric</h2>
         <p>Somos Centro Autorizado de Servicio. Eso significa repuestos originales, procedimientos de fábrica y garantía respaldada por la marca, con un equipo propio que atiende en Lima y provincias.</p>
-        <ul class="list">
+        <ul class="list list--check">
           <li>Mantenimiento preventivo y correctivo en campo</li>
           <li>Contratos de garantía y soporte 7×24</li>
           <li>Integración, puesta en marcha y pruebas de carga</li>
@@ -222,21 +298,25 @@
           <div class="product__media"><img src="img/equipos/srtg10kxli.webp" width="1077" height="1400" alt="APC Smart-UPS SRT 10 kVA torre" loading="lazy"></div>
           <h3>Smart-UPS SRT 10 kVA</h3>
           <p>Torre / rack · online doble conversión · para salas de cómputo y clínicas</p>
+                  <button class="product__cta" type="button" data-cotizar="Smart-UPS SRT 10 kVA (torre/rack)">Cotizar este modelo</button>
         </li>
         <li class="product">
           <div class="product__media"><img src="img/equipos/srt10krmxli.webp" width="677" height="628" alt="APC Smart-UPS SRT 10 kVA para rack" loading="lazy"></div>
           <h3>Smart-UPS SRT 10 kVA rack</h3>
           <p>Formato rack 6U · online doble conversión · data center y racks de comunicaciones</p>
+                  <button class="product__cta" type="button" data-cotizar="Smart-UPS SRT 10 kVA rack 6U">Cotizar este modelo</button>
         </li>
         <li class="product">
           <div class="product__media"><img src="img/equipos/srt192rmbp2.webp" width="724" height="282" alt="Módulo de baterías APC SRT 192 V para rack" loading="lazy"></div>
           <h3>Módulo de baterías SRT 192 V</h3>
           <p>Rack 3U · amplía la autonomía de los Smart-UPS SRT de 8 y 10 kVA</p>
+                  <button class="product__cta" type="button" data-cotizar="Módulo de baterías SRT 192 V">Cotizar este modelo</button>
         </li>
         <li class="product">
           <div class="product__media"><img src="img/equipos/apdu10000.webp" width="598" height="1400" alt="PDU de rack APC NetShelter con pantalla y puertos de sensores" loading="lazy"></div>
           <h3>PDU de rack NetShelter</h3>
           <p>Distribución con medición y monitoreo por red · puertos para sensores de temperatura y humedad</p>
+                  <button class="product__cta" type="button" data-cotizar="PDU de rack NetShelter">Cotizar este modelo</button>
         </li>
       </ul>
       <h3 class="products__more">Otras líneas</h3>
@@ -249,18 +329,19 @@
               <th scope="col">Batería</th>
               <th scope="col">Formato</th>
               <th scope="col">Uso típico</th>
+              <th scope="col"><span class="visually-hidden">Cotizar</span></th>
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Smart-UPS SRT 2200XLI</th><td>2.2 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Servidores, redes, oficinas</td></tr>
-            <tr><th scope="row">Smart-UPS SRT 5KXLI</th><td>5 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Salas de cómputo, clínicas</td></tr>
-            <tr><th scope="row">Smart-UPS SRT 10KXLI</th><td>10 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Data center pequeño</td></tr>
-            <tr><th scope="row">Smart-UPS SRTG 20KXLI</th><td>20 kVA</td><td>VRLA</td><td>Torre</td><td>Data center, industria</td></tr>
-            <tr><th scope="row">Smart-UPS SRTL 3KRM1UINC</th><td>3 kVA</td><td>Ion-litio</td><td>Rack 1U</td><td>Edge, espacios reducidos</td></tr>
-            <tr><th scope="row">Easy UPS 3S</th><td>10 – 40 kVA</td><td>VRLA</td><td>Torre trifásica</td><td>Industria, hospitales</td></tr>
-            <tr><th scope="row">Symmetra LX</th><td>2 – 20 kVA</td><td>VRLA modular</td><td>Torre / rack</td><td>Redundancia N+1</td></tr>
-            <tr><th scope="row">Micro Data Center</th><td>Según diseño</td><td>Integrada</td><td>Gabinete cerrado</td><td>Sucursales, edge</td></tr>
-            <tr><th scope="row">Baterías CSB · NP / NPX</th><td>12 V</td><td>VRLA AGM</td><td>Bloque</td><td>Reemplazo y bancos</td></tr>
+            <tr><th scope="row">Smart-UPS SRT 2200XLI</th><td>2.2 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Servidores, redes, oficinas</td><td><button class="product__cta" type="button" data-cotizar="Smart-UPS SRT 2200XLI">Cotizar</button></td></tr>
+            <tr><th scope="row">Smart-UPS SRT 5KXLI</th><td>5 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Salas de cómputo, clínicas</td><td><button class="product__cta" type="button" data-cotizar="Smart-UPS SRT 5KXLI">Cotizar</button></td></tr>
+            <tr><th scope="row">Smart-UPS SRT 10KXLI</th><td>10 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Data center pequeño</td><td><button class="product__cta" type="button" data-cotizar="Smart-UPS SRT 10KXLI">Cotizar</button></td></tr>
+            <tr><th scope="row">Smart-UPS SRTG 20KXLI</th><td>20 kVA</td><td>VRLA</td><td>Torre</td><td>Data center, industria</td><td><button class="product__cta" type="button" data-cotizar="Smart-UPS SRTG 20KXLI">Cotizar</button></td></tr>
+            <tr><th scope="row">Smart-UPS SRTL 3KRM1UINC</th><td>3 kVA</td><td>Ion-litio</td><td>Rack 1U</td><td>Edge, espacios reducidos</td><td><button class="product__cta" type="button" data-cotizar="Smart-UPS SRTL 3KRM1UINC">Cotizar</button></td></tr>
+            <tr><th scope="row">Easy UPS 3S</th><td>10 – 40 kVA</td><td>VRLA</td><td>Torre trifásica</td><td>Industria, hospitales</td><td><button class="product__cta" type="button" data-cotizar="Easy UPS 3S">Cotizar</button></td></tr>
+            <tr><th scope="row">Symmetra LX</th><td>2 – 20 kVA</td><td>VRLA modular</td><td>Torre / rack</td><td>Redundancia N+1</td><td><button class="product__cta" type="button" data-cotizar="Symmetra LX">Cotizar</button></td></tr>
+            <tr><th scope="row">Micro Data Center</th><td>Según diseño</td><td>Integrada</td><td>Gabinete cerrado</td><td>Sucursales, edge</td><td><button class="product__cta" type="button" data-cotizar="Micro Data Center">Cotizar</button></td></tr>
+            <tr><th scope="row">Baterías CSB · NP / NPX</th><td>12 V</td><td>VRLA AGM</td><td>Bloque</td><td>Reemplazo y bancos</td><td><button class="product__cta" type="button" data-cotizar="Baterías CSB · NP / NPX">Cotizar</button></td></tr>
           </tbody>
         </table>
       </div>
@@ -281,7 +362,8 @@
         <dl class="meta">
           <div><dt>Sectores</dt><dd>Banca, minería, salud, telecomunicaciones, gobierno e industria</dd></div>
           <div><dt>Sedes</dt><dd>Lima (Jesús María), Piura, Trujillo, Arequipa y Puno</dd></div>
-          <div><dt>Partners</dt><dd>Schneider Electric, APC, CSB, Yuasa</dd></div>
+          <div><dt>Servicio autorizado</dt><dd>Schneider Electric y APC (Centro Autorizado de Servicio)</dd></div>
+          <div><dt>También atendemos</dt><dd>Eaton, Vertiv, CDP, Salicru, Forza, Smartbitt y baterías CSB y Yuasa</dd></div>
         </dl>
       </div>
     </div>
@@ -309,7 +391,7 @@
         </details>
         <details class="faq__item">
           <summary>¿Dan mantenimiento a UPS de otras marcas?</summary>
-          <div class="faq__body"><p>Sí. Somos Centro Autorizado de Servicio Schneider Electric y APC, y además atendemos equipos Eaton, Vertiv, CDP, Salicru, Forza y Smartbitt, entre otros.</p></div>
+          <div class="faq__body"><p>Sí. Somos Centro Autorizado de Servicio Schneider Electric y APC, y además atendemos equipos Eaton, Vertiv, CDP, Salicru, Forza y Smartbitt, entre otros, con repuestos originales.</p></div>
         </details>
         <details class="faq__item">
           <summary>¿Qué incluye un contrato de mantenimiento?</summary>
@@ -343,7 +425,17 @@
       </div>
 
       <div class="contact__form">
-        <form class="form" id="contactForm" novalidate>
+        <form class="form" id="contactForm" enctype="multipart/form-data" novalidate>
+          <fieldset class="form__group">
+            <legend>¿Qué necesitas? <span class="req">*</span></legend>
+            <div class="form__radios">
+              <label class="form__radio"><input type="radio" name="necesidad" value="Comprar un equipo" required> Comprar un equipo</label>
+              <label class="form__radio"><input type="radio" name="necesidad" value="Mantenimiento o reparación" required> Mantenimiento o reparación</label>
+              <label class="form__radio"><input type="radio" name="necesidad" value="Emergencia: equipo caído" required> Emergencia</label>
+              <label class="form__radio"><input type="radio" name="necesidad" value="Repuestos o baterías" required> Repuestos o baterías</label>
+              <label class="form__radio"><input type="radio" name="necesidad" value="Proyecto de data center" required> Proyecto de data center</label>
+            </div>
+          </fieldset>
           <div class="form__row">
             <label for="f-nombre">Nombre <span class="req">*</span></label>
             <input id="f-nombre" name="nombre" type="text" autocomplete="name" maxlength="120" required>
@@ -362,10 +454,42 @@
               <input id="f-tel" name="telefono" type="tel" autocomplete="tel" maxlength="30">
             </div>
           </div>
+          <div class="form__grid">
+            <div class="form__row">
+              <label for="f-ciudad">Ciudad <span class="req">*</span></label>
+              <select id="f-ciudad" name="ciudad" required>
+                <option value="">Elige una</option>
+                <option>Lima</option>
+                <option>Callao</option>
+                <option>Piura</option>
+                <option>Trujillo</option>
+                <option>Arequipa</option>
+                <option>Puno</option>
+                <option>Otra ciudad del Perú</option>
+              </select>
+            </div>
+            <div class="form__row">
+              <label for="f-potencia">Potencia aproximada</label>
+              <select id="f-potencia" name="potencia">
+                <option value="">No estoy seguro</option>
+                <option>Hasta 1 kVA</option>
+                <option>1 a 3 kVA</option>
+                <option>3 a 10 kVA</option>
+                <option>10 a 20 kVA</option>
+                <option>20 a 40 kVA</option>
+                <option>Más de 40 kVA</option>
+              </select>
+            </div>
+          </div>
           <div class="form__row">
             <label for="f-msg">¿Qué equipo o carga necesitas proteger? <span class="req">*</span></label>
             <textarea id="f-msg" name="mensaje" rows="5" maxlength="2000" required></textarea>
-            <p class="form__hint">Potencia aproximada, tiempo de autonomía y ciudad nos ayudan a cotizar más rápido.</p>
+            <p class="form__hint">Cuéntanos el equipo, la carga a proteger y el tiempo de autonomía que necesitas.</p>
+          </div>
+          <div class="form__row">
+            <label for="f-foto">Foto de la placa del equipo <span class="form__opcional">(opcional)</span></label>
+            <input id="f-foto" name="adjunto" type="file" accept="image/*,.pdf" capture="environment">
+            <p class="form__hint">Si ya tienes un UPS, una foto de la etiqueta con el modelo acelera mucho la cotización. Máx. 10 MB.</p>
           </div>
           <label class="form__check">
             <input type="checkbox" name="consentimiento" value="Sí" required>
@@ -414,7 +538,7 @@
         <a href="#soluciones">Sistemas UPS y respaldo</a>
         <a href="#soluciones">Data center e instalaciones eléctricas</a>
         <a href="#servicio">Mantenimiento 7×24</a>
-        <a href="#marcas">Marcas autorizadas</a>
+        <a href="#marcas">Marcas que atendemos</a>
       </nav>
       <div class="footer__col footer__contact">
         <h2>Contacto</h2>
@@ -442,6 +566,10 @@
     </div>
   </div>
 </footer>
+
+<button class="arriba" id="volverArriba" type="button" aria-label="Volver al inicio de la página" hidden>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <div class="cookies" id="cookiesAviso" role="region" aria-labelledby="cookies-title" hidden>
   <p class="cookies__title" id="cookies-title">Cookies de medición</p>
@@ -482,7 +610,7 @@
   </button>
 </div>
 
-<script src="js/site.js?v=31"></script>
-<script src="js/home.js?v=31"></script>
+<script src="js/site.js?v=32"></script>
+<script src="js/home.js?v=32"></script>
 </body>
 </html>

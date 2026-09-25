@@ -4,6 +4,10 @@
 // ---------- Envío de formularios ----------
 // Servicio de envío (FormSubmit): cada dirección de destino se activa con un clic en el
 // correo que le llega la primera vez que alguien envía un formulario desde un dominio.
+// Registra en Analytics los momentos que importan (solicitudes, WhatsApp, llamadas).
+// Si la persona no aceptó las cookies, gtag no existe y la llamada no hace nada.
+const medir = (evento, datos) => { if (typeof window.gtag === 'function') gtag('event', evento, datos || {}); };
+
 const CORREO_VENTAS = 'ventas@aceelectronicsperu.com';                 // cotizaciones
 const CORREO_RECLAMOS = 'libro.reclamaciones@aceelectronicsperu.com';  // Libro de Reclamaciones
 const CORREO_COPIA_RECLAMOS = 'admin@aceelectronicsperu.com';          // recibe copia de cada hoja
@@ -22,7 +26,7 @@ function sinEnlaces(form, err) {
 const addHidden = (form, name, value) => { const i = document.createElement('input'); i.type = 'hidden'; i.name = name; i.value = value; form.append(i); };
 // Envío "clásico" a FormSubmit: reCAPTCHA de FormSubmit, copias (_cc) y acuse (_autoresponse) funcionan solo en este modo
 function enviarClasico(form, destino, pares, extra) {
-  [...form.elements].forEach(el => { if (el.name && el.name !== '_honey') el.disabled = true; });
+  [...form.elements].forEach(el => { if (el.name && el.name !== '_honey' && el.type !== 'file') el.disabled = true; });
   pares.forEach(([k, v]) => addHidden(form, k, v));
   Object.entries(extra).forEach(([k, v]) => addHidden(form, k, v));
   addHidden(form, '_template', 'table');
@@ -72,18 +76,21 @@ if (contactForm) {
     const t = (v) => (v || '').trim();
     const email = t(d.email);
     const pares = [
+      ['Necesidad', d.necesidad || '-'],
       ['Nombre', t(d.nombre)],
       ['Empresa', t(d.empresa)],
       ['Correo', email],
       ['Teléfono', t(d.telefono)],
+      ['Ciudad', d.ciudad || '-'],
+      ['Potencia aproximada', d.potencia || 'No indicada'],
       ['Mensaje', t(d.mensaje)],
       ['Consentimiento de datos', 'Sí, aceptó la política de privacidad'],
       ['Fecha', fechaLarga(new Date())]
     ];
-    try { sessionStorage.setItem('cot-ultima', JSON.stringify({ email, t: Date.now() })); } catch (e) {}
+    try { sessionStorage.setItem('cot-ultima', JSON.stringify({ email, necesidad: d.necesidad || '', ciudad: d.ciudad || '', t: Date.now() })); } catch (e) {}
     estadoEnvio(btn, true);
     enviarClasico(contactForm, CORREO_VENTAS, pares, {
-      _subject: `Solicitud de cotización — ${t(d.nombre)}${t(d.empresa) ? ' (' + t(d.empresa) + ')' : ''}`,
+      _subject: `${(d.necesidad || '').startsWith('Emergencia') ? '🔴 EMERGENCIA' : 'Solicitud de cotización'} — ${t(d.nombre)}${t(d.empresa) ? ' (' + t(d.empresa) + ')' : ''}${d.ciudad ? ' · ' + d.ciudad : ''}`,
       email, _replyto: email,
       _autoresponse: 'Gracias por escribir a ACE Electronics. Recibimos tu solicitud de cotización y un ingeniero te responderá en un día hábil. Si es urgente, escríbenos por WhatsApp al +51 950 091 893. Este es un mensaje automático; no incluye datos de tu solicitud.',
       _next: location.href.split('#')[0].split('?')[0] + '#enviado'
@@ -95,6 +102,7 @@ if (contactForm) {
     let data = null;
     try { data = JSON.parse(sessionStorage.getItem('cot-ultima') || 'null'); sessionStorage.removeItem('cot-ultima'); } catch (e) {}
     document.getElementById('doneEmail').textContent = (data && data.email) || 'tu correo';
+    medir('generate_lead', { tipo: (data && data.necesidad) || 'cotización', ciudad: (data && data.ciudad) || '' });
     contactForm.hidden = true;
     done.hidden = false;
     document.getElementById('contacto').scrollIntoView();
@@ -138,6 +146,7 @@ if (lrForm) {
       const dd = document.createElement('dd'); dd.textContent = v || '-';
       div.append(dt, dd); resumen.append(div);
     });
+    medir('libro_reclamaciones', { hoja: num });
     document.title = `Hoja de Reclamación ${num} — ACE Electronics`;
     lrForm.hidden = true;
     sheet.hidden = false;
@@ -271,4 +280,21 @@ if (GA_ID && banner) {
   const eleccion = leer();
   if (eleccion === 'si') cargarGA();
   else if (eleccion === null && !navigator.globalPrivacyControl) banner.hidden = false;   // GPC activo = rechazo silencioso
+}
+
+// ---------- Medición de conversiones (solo si hay consentimiento) ----------
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a[href^="https://wa.me/"], a[href^="tel:"]');
+  if (!a) return;
+  const esWhatsApp = a.href.startsWith('https://wa.me/');
+  medir(esWhatsApp ? 'contacto_whatsapp' : 'contacto_telefono', { origen: a.dataset.evento || a.closest('section')?.id || 'pie' });
+});
+
+// ---------- Volver arriba ----------
+const arriba = document.getElementById('volverArriba');
+if (arriba) {
+  const verArriba = () => { arriba.hidden = false; arriba.classList.toggle('is-visible', window.scrollY > 900); };
+  verArriba();
+  addEventListener('scroll', verArriba, { passive: true });
+  arriba.addEventListener('click', () => window.scrollTo({ top: 0, behavior: document.documentElement.classList.contains('scroll-suave') ? 'smooth' : 'auto' }));
 }
