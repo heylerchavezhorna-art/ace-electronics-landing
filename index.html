@@ -2,16 +2,17 @@
 <html lang="es-PE">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://formsubmit.co https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>ACE Electronics — Sistemas UPS y energía crítica en Perú</title>
-  <meta name="description" content="Diseño, instalación y mantenimiento de sistemas UPS, baterías y respaldo eléctrico para data centers, industria, banca y salud. Centro Autorizado de Servicio Schneider Electric en Perú desde 2001.">
+  <title>ACE Electronics — UPS, climatización de precisión y tableros en el Perú</title>
+  <meta name="description" content="Suministro, instalación y mantenimiento de sistemas UPS de 1 kVA a 500 kW, climatización de precisión y tableros, transformadores y estabilizadores de fabricación propia. Centro Autorizado de Servicio Schneider Electric / APC desde 2001.">
   <link rel="canonical" href="https://aceelectronicsperu.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_PE">
   <meta property="og:site_name" content="ACE Electronics">
   <meta property="og:url" content="https://aceelectronicsperu.com/">
-  <meta property="og:title" content="ACE Electronics — Sistemas UPS y energía crítica en Perú">
-  <meta property="og:description" content="Diseño, instalación y mantenimiento de sistemas UPS, baterías y respaldo eléctrico para data centers, industria, banca y salud. Centro Autorizado de Servicio Schneider Electric en Perú desde 2001.">
+  <meta property="og:title" content="ACE Electronics — UPS, climatización de precisión y tableros en el Perú">
+  <meta property="og:description" content="Suministro, instalación y mantenimiento de sistemas UPS de 1 kVA a 500 kW, climatización de precisión y tableros, transformadores y estabilizadores de fabricación propia. Centro Autorizado de Servicio Schneider Electric / APC desde 2001.">
   <meta property="og:image" content="https://aceelectronicsperu.com/img/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -25,103 +26,16 @@
   <link rel="icon" href="img/favicon-64.png" sizes="64x64" type="image/png">
   <link rel="icon" href="img/favicon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=32">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://aceelectronicsperu.com/#empresa",
-    "name": "ACE Electronics S.A.C.",
-    "alternateName": "Ace Electronics",
-    "url": "https://aceelectronicsperu.com/",
-    "logo": "https://aceelectronicsperu.com/img/logo/ae-logo.png",
-    "image": "https://aceelectronicsperu.com/img/og.png",
-    "description": "Venta, instalación y mantenimiento de sistemas UPS, baterías y soluciones para data center en el Perú. Centro Autorizado de Servicio Schneider Electric / APC desde 2001.",
-    "taxID": "20501940195",
-    "foundingDate": "2001-03-14",
-    "telephone": "+51-1-5000383",
-    "email": "ventas@aceelectronicsperu.com",
-    "address": { "@type": "PostalAddress", "streetAddress": "Av. Cayetano Heredia 381", "addressLocality": "Jesús María", "addressRegion": "Lima", "addressCountry": "PE" },
-    "areaServed": "PE",
-    "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:30", "closes": "17:30" },
-    "contactPoint": [
-      { "@type": "ContactPoint", "contactType": "sales", "telephone": "+51-950-091-893", "email": "ventas@aceelectronicsperu.com", "availableLanguage": "es" },
-      { "@type": "ContactPoint", "contactType": "technical support", "email": "soportetecnico@aceelectronicsperu.com", "availableLanguage": "es" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Cómo sé qué potencia de UPS necesito?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sumamos la carga real de los equipos que quieres proteger (en vatios o kVA) y añadimos un margen de 20 a 30 % para crecimiento y factor de potencia. Un ingeniero puede medir en sitio si no tienes el dato exacto."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto tiempo de autonomía da un UPS?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Depende de la carga y del banco de baterías. Un UPS estándar da entre 5 y 15 minutos a plena carga, suficiente para un apagado ordenado o el arranque de un grupo electrógeno. Con bancos externos se llega a una hora o más."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cada cuánto se cambian las baterías?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Las baterías VRLA duran entre 3 y 5 años según temperatura y ciclos de descarga; las de ion-litio, entre 8 y 10. En cada mantenimiento medimos su estado y te avisamos con anticipación cuando conviene reemplazarlas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Dan mantenimiento a UPS de otras marcas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí. Somos Centro Autorizado de Servicio Schneider Electric y APC, y además atendemos equipos Eaton, Vertiv, CDP, Salicru, Forza y Smartbitt, entre otros, con repuestos originales."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué incluye un contrato de mantenimiento?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Visitas preventivas programadas, atención correctiva 7×24 con tiempos de respuesta definidos, informe técnico después de cada visita, repuestos originales y monitoreo remoto opcional. Se dimensiona según la cantidad de equipos y sedes."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Atienden fuera de Lima?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí. Tenemos oficinas en Piura, Trujillo, Arequipa y Puno, y personal que se desplaza a cualquier ciudad del país para instalaciones y contratos de servicio."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto demora una cotización?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Para equipos de catálogo, el mismo día hábil. Para proyectos con ingeniería o visita técnica, entre 2 y 5 días según la complejidad."
-        }
-      }
-    ]
-  }
-  </script>
-</head>
-<body>
+  <link rel="stylesheet" href="css/styles.css?v=33">
 
-<a class="skip" href="#soluciones">Ir al contenido</a>
+</head>
+<body class="">
+
+<a class="skip" href="#contenido">Ir al contenido</a>
 
 <header class="nav" id="nav">
   <div class="container nav__inner">
-    <a class="brand" href="#" aria-label="ACE Electronics, inicio">
+    <a class="brand" href="index.html" aria-label="ACE Electronics, inicio">
       <img class="brand__mark" src="img/logo/ae-logo.webp" alt="" width="555" height="480" decoding="async"><span class="brand__text">Ace Electronics</span>
     </a>
 
@@ -133,19 +47,130 @@
     </button>
 
     <nav class="nav__menu" id="navMenu" aria-label="Principal">
-      <a href="#soluciones">Soluciones</a>
-      <a href="#servicio">Servicio técnico</a>
-      <a href="#equipos">Equipos</a>
-      <a href="#empresa">Empresa</a>
-      <a href="#preguntas">Preguntas</a>
-      <a href="#contacto">Contacto</a>
+      <div class="nav__item">
+        <a class="nav__link" href="index.html" data-seccion="inicio" aria-current="page">Inicio</a>
+      </div>
+
+      <div class="nav__item nav__item--menu">
+        <button class="nav__link nav__link--btn" type="button" aria-expanded="false" aria-controls="panel-nosotros" data-seccion="nosotros">Nosotros<svg class="nav__flecha" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="panel" id="panel-nosotros" hidden>
+          <div class="container panel__inner">
+            <div class="panel__cols">
+              <a class="panel__link" href="nosotros.html"><strong>Quiénes somos</strong><span>25 años protegiendo energía crítica en el Perú</span></a>
+              <a class="panel__link" href="nosotros.html#fabricacion"><strong>Fabricación propia</strong><span>Tableros, transformadores y estabilizadores hechos en nuestro taller</span></a>
+              <a class="panel__link" href="nosotros.html#certificaciones"><strong>Certificaciones y marcas</strong><span>Centro Autorizado de Servicio Schneider Electric / APC</span></a>
+              <a class="panel__link" href="nosotros.html#sedes"><strong>Sedes y cobertura</strong><span>Lima, Piura, Trujillo, Arequipa y Puno</span></a>
+            </div>
+            <div class="panel__destacado">
+              <p class="panel__kicker">Lo que nos diferencia</p>
+              <p class="panel__texto">Fabricamos los tableros y transformadores que otros solo revenden, y respondemos por la instalación con personal propio capacitado en fábrica.</p>
+              <a class="link" href="nosotros.html#fabricacion">Conocer el taller</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__item nav__item--menu">
+        <button class="nav__link nav__link--btn" type="button" aria-expanded="false" aria-controls="panel-soluciones" data-seccion="soluciones">Soluciones<svg class="nav__flecha" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="panel" id="panel-soluciones" hidden>
+          <div class="container panel__inner">
+            <div class="panel__cols">
+              <a class="panel__link" href="soluciones.html#ups"><strong>Sistemas UPS y respaldo</strong><span>De 1 kVA a 500 kW, monofásicos y trifásicos</span></a>
+              <a class="panel__link" href="soluciones.html#clima"><strong>Climatización de precisión</strong><span>Vertiv Liebert CRV en fila, de 10 a 66 kW</span></a>
+              <a class="panel__link" href="soluciones.html#datacenter"><strong>Data center e infraestructura</strong><span>Micro data centers, racks, PDU y monitoreo</span></a>
+              <a class="panel__link" href="soluciones.html#electricas"><strong>Instalaciones eléctricas</strong><span>Tableros, bypass, transformadores y pozos a tierra</span></a>
+              <a class="panel__link" href="soluciones.html#sectores"><strong>Por sector</strong><span>Banca, minería, salud, telecomunicaciones e industria</span></a>
+            </div>
+            <div class="panel__destacado">
+              <p class="panel__kicker">Sala técnica completa</p>
+              <p class="panel__texto">Energía, clima y distribución con un solo responsable: menos proveedores, una sola garantía.</p>
+              <a class="link" href="contacto.html">Solicitar asesoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__item nav__item--menu">
+        <button class="nav__link nav__link--btn" type="button" aria-expanded="false" aria-controls="panel-servicios" data-seccion="servicios">Servicios<svg class="nav__flecha" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="panel" id="panel-servicios" hidden>
+          <div class="container panel__inner">
+            <div class="panel__cols panel__cols--dos">
+              <div>
+                <p class="panel__grupo">Instalación y montaje</p>
+                <a class="panel__link" href="servicios.html#instalacion-ups"><strong>Instalación de UPS</strong><span>Montaje, puesta en marcha y pruebas de carga</span></a>
+                <a class="panel__link" href="servicios.html#aire"><strong>Aire acondicionado de precisión</strong><span>Instalación y mantenimiento de equipos en fila</span></a>
+                <a class="panel__link" href="servicios.html#tableros"><strong>Tableros con bypass</strong><span>Manuales y automáticos hasta 400 A</span></a>
+                <a class="panel__link" href="servicios.html#transformadores"><strong>Transformadores y estabilizadores</strong><span>Fabricación propia hasta 60 kVA</span></a>
+              </div>
+              <div>
+                <p class="panel__grupo">Mantenimiento y soporte</p>
+                <a class="panel__link" href="servicios.html#preventivo"><strong>Mantenimiento preventivo</strong><span>Visitas programadas con informe técnico</span></a>
+                <a class="panel__link" href="servicios.html#emergencias"><strong>Emergencias 7×24</strong><span>Atención correctiva para clientes con contrato</span></a>
+                <a class="panel__link" href="servicios.html#baterias"><strong>Cambio de baterías</strong><span>Medición, reemplazo y disposición del banco</span></a>
+                <a class="panel__link" href="servicios.html#contratos"><strong>Contratos de servicio</strong><span>Planes según equipos, sedes y tiempo de respuesta</span></a>
+              </div>
+            </div>
+            <div class="panel__destacado panel__destacado--urgente">
+              <p class="panel__kicker">¿Equipo en falla?</p>
+              <p class="panel__texto">Atención de emergencia 7×24 en Lima y provincias.</p>
+              <a class="link" href="tel:+5115000383">Llamar (01) 500 0383</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__item nav__item--menu">
+        <button class="nav__link nav__link--btn" type="button" aria-expanded="false" aria-controls="panel-equipos" data-seccion="equipos">Equipos<svg class="nav__flecha" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="panel" id="panel-equipos" hidden>
+          <div class="container panel__inner">
+            <div class="panel__cols">
+              <a class="panel__link" href="equipos.html#schneider"><strong>UPS Schneider Electric</strong><span>Línea Galaxy VS y VL, de 10 a 500 kW</span></a>
+              <a class="panel__link" href="equipos.html#apc"><strong>UPS APC</strong><span>Smart-UPS SRT, ion-litio, Symmetra y Easy UPS 3S</span></a>
+              <a class="panel__link" href="equipos.html#clima"><strong>Climatización de precisión</strong><span>Vertiv Liebert CRV de 10 a 66 kW</span></a>
+              <a class="panel__link" href="equipos.html#fabricados"><strong>Tableros y transformadores</strong><span>De fabricación propia, a medida del proyecto</span></a>
+              <a class="panel__link" href="equipos.html#baterias"><strong>Baterías y repuestos</strong><span>CSB, Yuasa y módulos originales</span></a>
+              <a class="panel__link" href="equipos.html#accesorios"><strong>PDU y accesorios</strong><span>Distribución, medición y sensores de rack</span></a>
+            </div>
+            <div class="panel__destacado">
+              <p class="panel__kicker">¿No sabes qué potencia necesitas?</p>
+              <p class="panel__texto">Cuéntanos qué equipos vas a proteger y te proponemos la configuración.</p>
+              <a class="link" href="contacto.html">Pedir cotización</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__item nav__item--menu">
+        <button class="nav__link nav__link--btn" type="button" aria-expanded="false" aria-controls="panel-soporte" data-seccion="soporte">Soporte<svg class="nav__flecha" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="panel" id="panel-soporte" hidden>
+          <div class="container panel__inner">
+            <div class="panel__cols">
+              <a class="panel__link" href="soporte.html#servicio"><strong>Solicitar servicio técnico</strong><span>Visita, diagnóstico o atención de emergencia</span></a>
+              <a class="panel__link" href="soporte.html#preguntas"><strong>Preguntas frecuentes</strong><span>Potencia, autonomía, baterías y contratos</span></a>
+              <a class="panel__link" href="soporte.html#guias"><strong>Guías y recursos</strong><span>Cómo dimensionar y mantener tu respaldo</span></a>
+              <a class="panel__link" href="libro-de-reclamaciones.html"><strong>Libro de Reclamaciones</strong><span>Registra tu reclamo o queja en línea</span></a>
+            </div>
+            <div class="panel__destacado">
+              <p class="panel__kicker">Clientes con contrato</p>
+              <p class="panel__texto">Mesa de ayuda 7×24 y tiempos de respuesta comprometidos.</p>
+              <a class="link" href="servicios.html#contratos">Ver planes de servicio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <a class="nav__link" href="contacto.html" data-seccion="contacto">Contáctenos</a>
+      </div>
+
       <a class="nav__tel" href="tel:+5115000383"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2Z"/></svg>Llamar (01) 500 0383</a>
-      <a class="btn btn--primary btn--nav" href="#contacto">Solicitar cotización</a>
+      <a class="btn btn--primary btn--nav" href="contacto.html">Solicitar cotización</a>
     </nav>
   </div>
 </header>
 
-<main>
+
+<main id="contenido">
 
   <!-- Hero -->
   <section class="hero" aria-labelledby="hero-title">
@@ -153,11 +178,12 @@
       <img src="img/hero.webp" width="1672" height="941" alt="Sala eléctrica con gabinetes UPS y bancos de baterías industriales" fetchpriority="high">
     </div>
     <div class="container hero__content">
+      <p class="hero__kicker">Centro Autorizado de Servicio Schneider Electric / APC</p>
       <h1 id="hero-title">Energía que no se interrumpe.</h1>
-      <p class="hero__lead">Diseñamos, instalamos y mantenemos sistemas UPS y de respaldo eléctrico para data centers, industria, banca y salud en todo el Perú. Centro Autorizado de Servicio Schneider Electric.</p>
+      <p class="hero__lead">Diseñamos, instalamos y mantenemos la sala técnica completa: sistemas UPS de 1 kVA a 500 kW, climatización de precisión y tableros, transformadores y estabilizadores de fabricación propia.</p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#contacto">Solicitar cotización</a>
-        <a class="btn btn--ghost" href="https://wa.me/51950091893?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n%20de%20UPS" target="_blank" rel="noopener">
+        <a class="btn btn--primary" href="contacto.html">Solicitar cotización</a>
+        <a class="btn btn--ghost" href="https://wa.me/51950091893?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.5 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2l-.5-.3Z"/></svg>
           Escribir por WhatsApp
         </a>
@@ -167,12 +193,12 @@
   </section>
 
   <!-- Cifras -->
-  <section class="stats" id="cifras" aria-label="Cifras de la empresa">
+  <section class="stats" id="cifras" aria-label="Capacidades de la empresa">
     <div class="container stats__grid">
       <div class="stat"><strong><span class="num" data-count="25">25</span></strong><span>años protegiendo cargas críticas en el Perú</span></div>
-      <div class="stat"><strong>+<span class="num" data-count="1200">1 200</span></strong><span>equipos UPS instalados y en mantenimiento</span></div>
+      <div class="stat"><strong>hasta <span class="num" data-count="500">500</span> kW</strong><span>de respaldo con la línea Galaxy de Schneider Electric</span></div>
+      <div class="stat"><strong><span class="num" data-count="60">60</span> kVA</strong><span>de fabricación propia en tableros y transformadores</span></div>
       <div class="stat"><strong><span class="num" data-count="5">5</span></strong><span>sedes: Lima, Piura, Trujillo, Arequipa y Puno</span></div>
-      <div class="stat"><strong><span class="num" data-count="7">7</span>×<span class="num" data-count="24">24</span></strong><span>mesa de ayuda y técnicos en campo</span></div>
     </div>
   </section>
 
@@ -187,29 +213,66 @@
     </div>
   </section>
 
-  <!-- Soluciones -->
+  <!-- Qué hacemos -->
   <section class="section" id="soluciones" aria-labelledby="sol-title">
     <div class="container">
       <div class="section__head">
-        <h2 id="sol-title">Lo que hacemos</h2>
-        <p>Tres frentes que cubren la energía de una operación crítica: el equipo, la instalación y su continuidad en el tiempo.</p>
+        <h2 id="sol-title">Todo lo que necesita una sala técnica</h2>
+        <p>Energía, clima y distribución eléctrica con un solo responsable: menos proveedores, una sola garantía y un único número al que llamar cuando algo falla.</p>
       </div>
-      <div class="solutions">
-        <article class="solution">
-          <img src="img/ups-rack.webp" width="1024" height="683" alt="Tres UPS de torre junto a un rack de servidores" loading="lazy">
+      <div class="pilares">
+        <article class="pilar">
+          <span class="pilar__icono" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="20" height="26" rx="2"/><path d="M17 9l-4 7h6l-4 7"/><path d="M10 25h12"/></svg>
+          </span>
           <h3>Sistemas UPS y respaldo</h3>
-          <p>Equipos monofásicos y trifásicos de 1 a 40 kVA, con redundancia N+1 y baterías VRLA o de ion-litio. Dimensionamos según la carga, el tiempo de autonomía y las condiciones eléctricas de tu sede.</p>
+          <p>De 1 kVA a 500 kW, monofásicos y trifásicos. Línea Galaxy de Schneider Electric, APC Smart-UPS y Easy UPS 3S, con baterías VRLA o de ion-litio y redundancia N+1.</p>
+          <a class="link" href="soluciones.html#ups">Ver soluciones de respaldo</a>
         </article>
-        <article class="solution">
-          <img src="img/datacenter.webp" width="1344" height="768" alt="Fila de gabinetes en un centro de datos con técnicos trabajando" loading="lazy">
-          <h3>Data center e instalaciones eléctricas</h3>
-          <p>Micro data centers, tableros, transformadores, estabilizadores y redes. Ingeniería, montaje, pruebas de carga y puesta en marcha cumpliendo las normas de instalación eléctrica vigentes.</p>
+        <article class="pilar">
+          <span class="pilar__icono" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="26" height="14" rx="2"/><path d="M8 25v3M16 25v3M24 25v3M8 12h16M8 16h16"/></svg>
+          </span>
+          <h3>Climatización de precisión</h3>
+          <p>Equipos en fila Vertiv Liebert CRV de 10 a 66 kW para racks de alta densidad, con control de pasillo frío y caliente. Los suministramos, instalamos y mantenemos.</p>
+          <a class="link" href="soluciones.html#clima">Ver climatización</a>
         </article>
-        <article class="solution">
-          <img src="img/tecnico.webp" width="1400" height="931" alt="Técnico midiendo con pinza amperimétrica en un tablero eléctrico Schneider" loading="lazy">
+        <article class="pilar">
+          <span class="pilar__icono" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h24v20H4z"/><path d="M10 12h5M10 17h5M21 11v10"/><circle cx="21" cy="14" r="1.6"/></svg>
+          </span>
+          <h3>Tableros de fabricación propia</h3>
+          <p>Tableros de transferencia y bypass manuales y automáticos hasta 400 A, transformadores y estabilizadores hasta 60 kVA, ensamblados en nuestro taller a la medida del proyecto.</p>
+          <a class="link" href="nosotros.html#fabricacion">Conocer el taller</a>
+        </article>
+        <article class="pilar">
+          <span class="pilar__icono" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4.5a6 6 0 0 0-8 8L4 20.5v6h6l8-8a6 6 0 0 0 8-8l-4 4-4-1-1-4z"/></svg>
+          </span>
           <h3>Servicio técnico y mantenimiento</h3>
-          <p>Personal capacitado en fábrica. Mantenimiento preventivo y correctivo, cambio de baterías, repuestos originales y monitoreo remoto para que la falla nunca llegue a la carga.</p>
+          <p>Personal propio capacitado en fábrica. Mantenimiento preventivo, correctivo y emergencias 7×24 para equipos de cualquier marca, con repuestos originales.</p>
+          <a class="link" href="servicios.html">Ver servicios</a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fabricación propia -->
+  <section class="section section--tint" id="fabricacion" aria-labelledby="fab-title">
+    <div class="container split">
+      <figure class="split__media">
+        <img src="img/pruebas-tablero.webp" width="1400" height="1050" alt="Tablero de distribución abierto con interruptores Schneider durante las pruebas" loading="lazy">
+      </figure>
+      <div class="split__body">
+        <p class="section__kicker">Lo que nos diferencia</p>
+        <h2 id="fab-title">Fabricamos lo que otros solo revenden</h2>
+        <p>Los UPS y los equipos de climatización los adquirimos a los fabricantes y mayoristas líderes, pero los <strong>tableros, transformadores y estabilizadores los fabricamos nosotros</strong>. Eso significa equipos a la medida exacta de tu instalación, plazos más cortos y un responsable único cuando hay que ajustar algo.</p>
+        <dl class="datos">
+          <div><dt>Tableros de transferencia y bypass</dt><dd>Manuales y automáticos, hasta 400 A</dd></div>
+          <div><dt>Transformadores y estabilizadores</dt><dd>Monofásicos y trifásicos, hasta 60 kVA</dd></div>
+          <div><dt>Diseño</dt><dd>A medida, según la carga y las normas de tu sede</dd></div>
+        </dl>
+        <a class="btn btn--primary" href="contacto.html">Cotizar un tablero a medida</a>
       </div>
     </div>
   </section>
@@ -219,20 +282,20 @@
     <div class="container brands__inner">
       <div class="brands__intro">
         <h2 id="br-title">Marcas que representamos y atendemos</h2>
-        <p>Centro Autorizado de Servicio <strong>Schneider Electric / APC</strong>. Vendemos y damos mantenimiento a los equipos de los principales fabricantes de energía crítica, con repuestos originales.</p>
+        <p>Centro Autorizado de Servicio <strong>Schneider Electric / APC</strong>. Suministramos e instalamos equipos de los principales fabricantes de energía crítica y damos mantenimiento multimarca con repuestos originales.</p>
       </div>
       <div class="carousel" id="brandCarousel">
         <button class="carousel__btn" type="button" data-dir="-1" aria-label="Marcas anteriores">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
         </button>
         <ul class="carousel__track" aria-label="Marcas que representamos y atendemos">
-          <li><img src="img/marcas/schneider-apc.png" width="114" height="60" alt="Schneider Electric · APC"></li>
-          <li><img src="img/marcas/eaton.png" width="186" height="60" alt="Eaton"></li>
-          <li><img src="img/marcas/vertiv.png" width="243" height="60" alt="Vertiv"></li>
-          <li><img src="img/marcas/cdp.png" width="154" height="60" alt="CDP Chicago Digital Power"></li>
-          <li><img src="img/marcas/salicru.png" width="431" height="60" alt="Salicru"></li>
-          <li><img src="img/marcas/forza.png" width="256" height="60" alt="Forza Power Technologies"></li>
-          <li><img src="img/marcas/smartbitt.png" width="142" height="60" alt="Smartbitt"></li>
+          <li><img src="img/marcas/schneider-apc.png" width="114" height="60" alt="Schneider Electric · APC" loading="lazy"></li>
+          <li><img src="img/marcas/eaton.png" width="186" height="60" alt="Eaton" loading="lazy"></li>
+          <li><img src="img/marcas/vertiv.png" width="243" height="60" alt="Vertiv" loading="lazy"></li>
+          <li><img src="img/marcas/cdp.png" width="154" height="60" alt="CDP Chicago Digital Power" loading="lazy"></li>
+          <li><img src="img/marcas/salicru.png" width="431" height="60" alt="Salicru" loading="lazy"></li>
+          <li><img src="img/marcas/forza.png" width="256" height="60" alt="Forza Power Technologies" loading="lazy"></li>
+          <li><img src="img/marcas/smartbitt.png" width="142" height="60" alt="Smartbitt" loading="lazy"></li>
         </ul>
         <button class="carousel__btn" type="button" data-dir="1" aria-label="Marcas siguientes">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
@@ -241,276 +304,118 @@
     </div>
   </section>
 
-  <!-- Servicio técnico -->
-  <section class="section section--tint" id="servicio" aria-labelledby="serv-title">
-    <div class="container split">
+  <!-- Servicios -->
+  <section class="section" id="servicios" aria-labelledby="serv-title">
+    <div class="container split split--reverse">
       <figure class="split__media split__media--full">
         <img src="img/easy-ups.webp" width="1000" height="1772" alt="Técnico de ACE Electronics junto a un Easy UPS 3S de Schneider Electric recién instalado" loading="lazy">
       </figure>
       <div class="split__body">
-        <h2 id="serv-title">Servicio técnico certificado por Schneider Electric</h2>
-        <p>Somos Centro Autorizado de Servicio. Eso significa repuestos originales, procedimientos de fábrica y garantía respaldada por la marca, con un equipo propio que atiende en Lima y provincias.</p>
+        <p class="section__kicker">Servicio técnico</p>
+        <h2 id="serv-title">El equipo se compra una vez; se mantiene durante años</h2>
+        <p>Somos Centro Autorizado de Servicio: repuestos originales, procedimientos de fábrica y garantía respaldada por la marca, con un equipo propio que atiende en Lima y provincias.</p>
         <ul class="list list--check">
-          <li>Mantenimiento preventivo y correctivo en campo</li>
-          <li>Contratos de garantía y soporte 7×24</li>
-          <li>Integración, puesta en marcha y pruebas de carga</li>
-          <li>Reemplazo de baterías y repuestos originales</li>
+          <li>Instalación, puesta en marcha y pruebas de carga</li>
+          <li>Mantenimiento preventivo con informe técnico</li>
+          <li>Emergencias 7×24 para clientes con contrato</li>
+          <li>Instalación y mantenimiento de aire de precisión</li>
+          <li>Cambio de baterías y repuestos originales</li>
           <li>Monitoreo remoto y capacitación al personal de planta</li>
         </ul>
-        <a class="link" href="#contacto">Coordinar una visita técnica</a>
+        <div class="acciones">
+          <a class="btn btn--primary" href="servicios.html">Ver todos los servicios</a>
+          <a class="link" href="servicios.html#contratos">Planes de mantenimiento</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- En campo -->
-  <section class="section" id="campo" aria-labelledby="campo-title">
-    <div class="container">
-      <div class="section__head">
-        <h2 id="campo-title">En campo</h2>
-        <p>Instalaciones, pruebas y puestas en marcha hechas por nuestro propio equipo técnico.</p>
-      </div>
-      <div class="gallery">
-        <figure class="gallery__item">
-          <img src="img/pruebas-tablero.webp" width="1400" height="1050" alt="Tablero de distribución abierto con interruptores Schneider y laptop registrando mediciones de calidad de energía" loading="lazy">
-          <figcaption>Pruebas de calidad de energía en tablero de distribución antes de conectar la carga.</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="img/sala-servidores.webp" width="1400" height="1111" alt="Sala de servidores con gabinetes sobre piso técnico elevado" loading="lazy">
-          <figcaption>Sala de servidores con piso técnico y gabinetes listos para equipamiento.</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="img/tecnico-datacenter.webp" width="1400" height="875" alt="Técnico operando el panel de un UPS trifásico en un centro de datos" loading="lazy">
-          <figcaption>Configuración y arranque de UPS trifásico en centro de datos.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- Equipos -->
-  <section class="section" id="equipos" aria-labelledby="eq-title">
+  <!-- Equipos destacados -->
+  <section class="section section--tint" id="equipos" aria-labelledby="eq-title">
     <div class="container">
       <div class="section__head">
         <h2 id="eq-title">Equipos que instalamos a diario</h2>
-        <p>Líneas APC by Schneider Electric con mayor demanda en el Perú. Todas con tecnología online de doble conversión y respaldo del Centro Autorizado de Servicio.</p>
+        <p>Desde un UPS de 1 kVA para una oficina hasta 500 kW de respaldo en un data center, con la climatización y los tableros que necesita la instalación.</p>
       </div>
-      <ul class="products">
-        <li class="product">
-          <div class="product__media"><img src="img/equipos/srtg10kxli.webp" width="1077" height="1400" alt="APC Smart-UPS SRT 10 kVA torre" loading="lazy"></div>
-          <h3>Smart-UPS SRT 10 kVA</h3>
-          <p>Torre / rack · online doble conversión · para salas de cómputo y clínicas</p>
-                  <button class="product__cta" type="button" data-cotizar="Smart-UPS SRT 10 kVA (torre/rack)">Cotizar este modelo</button>
+      <ul class="familias">
+        <li class="familia">
+          <h3>UPS Schneider Electric</h3>
+          <p>Línea Galaxy VS (10 – 150 kW) y Galaxy VL (200 – 500 kW): modulares, eficiencia de hasta 99 % en modo eConversion.</p>
+          <a class="link" href="equipos.html#schneider">Ver línea Galaxy</a>
         </li>
-        <li class="product">
-          <div class="product__media"><img src="img/equipos/srt10krmxli.webp" width="677" height="628" alt="APC Smart-UPS SRT 10 kVA para rack" loading="lazy"></div>
-          <h3>Smart-UPS SRT 10 kVA rack</h3>
-          <p>Formato rack 6U · online doble conversión · data center y racks de comunicaciones</p>
-                  <button class="product__cta" type="button" data-cotizar="Smart-UPS SRT 10 kVA rack 6U">Cotizar este modelo</button>
+        <li class="familia">
+          <h3>UPS APC</h3>
+          <p>Smart-UPS SRT, SRTL de ion-litio, Symmetra LX y Easy UPS 3S de 10 a 40 kVA para salas de cómputo, clínicas e industria.</p>
+          <a class="link" href="equipos.html#apc">Ver equipos APC</a>
         </li>
-        <li class="product">
-          <div class="product__media"><img src="img/equipos/srt192rmbp2.webp" width="724" height="282" alt="Módulo de baterías APC SRT 192 V para rack" loading="lazy"></div>
-          <h3>Módulo de baterías SRT 192 V</h3>
-          <p>Rack 3U · amplía la autonomía de los Smart-UPS SRT de 8 y 10 kVA</p>
-                  <button class="product__cta" type="button" data-cotizar="Módulo de baterías SRT 192 V">Cotizar este modelo</button>
+        <li class="familia">
+          <h3>Climatización de precisión</h3>
+          <p>Vertiv Liebert CRV en fila, de 10 a 66 kW, para racks de alta densidad con contención de pasillo.</p>
+          <a class="link" href="equipos.html#clima">Ver climatización</a>
         </li>
-        <li class="product">
-          <div class="product__media"><img src="img/equipos/apdu10000.webp" width="598" height="1400" alt="PDU de rack APC NetShelter con pantalla y puertos de sensores" loading="lazy"></div>
-          <h3>PDU de rack NetShelter</h3>
-          <p>Distribución con medición y monitoreo por red · puertos para sensores de temperatura y humedad</p>
-                  <button class="product__cta" type="button" data-cotizar="PDU de rack NetShelter">Cotizar este modelo</button>
+        <li class="familia">
+          <h3>Tableros y transformadores</h3>
+          <p>De fabricación propia: transferencia y bypass hasta 400 A, transformadores y estabilizadores hasta 60 kVA.</p>
+          <a class="link" href="equipos.html#fabricados">Ver fabricación propia</a>
+        </li>
+        <li class="familia">
+          <h3>Baterías y repuestos</h3>
+          <p>CSB y Yuasa, módulos originales SRT y bancos externos para ampliar la autonomía.</p>
+          <a class="link" href="equipos.html#baterias">Ver baterías</a>
+        </li>
+        <li class="familia">
+          <h3>PDU y accesorios</h3>
+          <p>Distribución de rack con medición y monitoreo por red, sensores de temperatura y humedad.</p>
+          <a class="link" href="equipos.html#accesorios">Ver accesorios</a>
         </li>
       </ul>
-      <h3 class="products__more">Otras líneas</h3>
-      <div class="table-wrap">
-        <table class="spec">
-          <thead>
-            <tr>
-              <th scope="col">Equipo</th>
-              <th scope="col">Potencia</th>
-              <th scope="col">Batería</th>
-              <th scope="col">Formato</th>
-              <th scope="col">Uso típico</th>
-              <th scope="col"><span class="visually-hidden">Cotizar</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Smart-UPS SRT 2200XLI</th><td>2.2 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Servidores, redes, oficinas</td><td><button class="product__cta" type="button" data-cotizar="Smart-UPS SRT 2200XLI">Cotizar</button></td></tr>
-            <tr><th scope="row">Smart-UPS SRT 5KXLI</th><td>5 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Salas de cómputo, clínicas</td><td><button class="product__cta" type="button" data-cotizar="Smart-UPS SRT 5KXLI">Cotizar</button></td></tr>
-            <tr><th scope="row">Smart-UPS SRT 10KXLI</th><td>10 kVA</td><td>VRLA</td><td>Torre / rack</td><td>Data center pequeño</td><td><button class="product__cta" type="button" data-cotizar="Smart-UPS SRT 10KXLI">Cotizar</button></td></tr>
-            <tr><th scope="row">Smart-UPS SRTG 20KXLI</th><td>20 kVA</td><td>VRLA</td><td>Torre</td><td>Data center, industria</td><td><button class="product__cta" type="button" data-cotizar="Smart-UPS SRTG 20KXLI">Cotizar</button></td></tr>
-            <tr><th scope="row">Smart-UPS SRTL 3KRM1UINC</th><td>3 kVA</td><td>Ion-litio</td><td>Rack 1U</td><td>Edge, espacios reducidos</td><td><button class="product__cta" type="button" data-cotizar="Smart-UPS SRTL 3KRM1UINC">Cotizar</button></td></tr>
-            <tr><th scope="row">Easy UPS 3S</th><td>10 – 40 kVA</td><td>VRLA</td><td>Torre trifásica</td><td>Industria, hospitales</td><td><button class="product__cta" type="button" data-cotizar="Easy UPS 3S">Cotizar</button></td></tr>
-            <tr><th scope="row">Symmetra LX</th><td>2 – 20 kVA</td><td>VRLA modular</td><td>Torre / rack</td><td>Redundancia N+1</td><td><button class="product__cta" type="button" data-cotizar="Symmetra LX">Cotizar</button></td></tr>
-            <tr><th scope="row">Micro Data Center</th><td>Según diseño</td><td>Integrada</td><td>Gabinete cerrado</td><td>Sucursales, edge</td><td><button class="product__cta" type="button" data-cotizar="Micro Data Center">Cotizar</button></td></tr>
-            <tr><th scope="row">Baterías CSB · NP / NPX</th><td>12 V</td><td>VRLA AGM</td><td>Bloque</td><td>Reemplazo y bancos</td><td><button class="product__cta" type="button" data-cotizar="Baterías CSB · NP / NPX">Cotizar</button></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note">¿Otra potencia, marca o configuración? <a class="link" href="#contacto">Cotizamos a medida</a>.</p>
+      <p class="note">¿Otra potencia, marca o configuración? <a class="link" href="contacto.html">Cotizamos a medida</a>.</p>
     </div>
   </section>
 
-  <!-- Empresa -->
-  <section class="section section--tint" id="empresa" aria-labelledby="emp-title">
-    <div class="container split split--reverse">
-      <figure class="split__media">
-        <img src="img/rack.webp" width="1000" height="1333" alt="Rack de comunicaciones ordenado con UPS APC en la base" loading="lazy">
-      </figure>
-      <div class="split__body">
-        <h2 id="emp-title">Desde 2001 en el sector eléctrico peruano</h2>
-        <p>ACE Electronics es una empresa 100% peruana. Empezamos el 14 de marzo de 2001 y desde entonces protegemos la energía de bancos, mineras, hospitales, operadores de telecomunicaciones y plantas industriales.</p>
-        <p>Cada proyecto se dimensiona según voltaje, frecuencia y normas de instalación del cliente, y lo ejecuta personal propio capacitado en fábrica. Ensamblamos y adaptamos los equipos de nuestros partners a especificaciones a medida.</p>
-        <dl class="meta">
-          <div><dt>Sectores</dt><dd>Banca, minería, salud, telecomunicaciones, gobierno e industria</dd></div>
-          <div><dt>Sedes</dt><dd>Lima (Jesús María), Piura, Trujillo, Arequipa y Puno</dd></div>
-          <div><dt>Servicio autorizado</dt><dd>Schneider Electric y APC (Centro Autorizado de Servicio)</dd></div>
-          <div><dt>También atendemos</dt><dd>Eaton, Vertiv, CDP, Salicru, Forza, Smartbitt y baterías CSB y Yuasa</dd></div>
-        </dl>
+  <!-- Sectores -->
+  <section class="section" id="sectores" aria-labelledby="sec-title">
+    <div class="container">
+      <div class="section__head">
+        <h2 id="sec-title">Sectores que atendemos</h2>
+        <p>Cada actividad tiene su propia definición de "no puede parar". Conocemos la de estas.</p>
+      </div>
+      <ul class="sectores">
+        <li><a href="soluciones.html#sectores"><strong>Banca y finanzas</strong><span>Continuidad de oficinas, bóvedas y centros de proceso</span></a></li>
+        <li><a href="soluciones.html#sectores"><strong>Minería e industria</strong><span>Salas eléctricas en operaciones alejadas y exigentes</span></a></li>
+        <li><a href="soluciones.html#sectores"><strong>Salud</strong><span>Quirófanos, laboratorios y equipos de diagnóstico</span></a></li>
+        <li><a href="soluciones.html#sectores"><strong>Telecomunicaciones</strong><span>Nodos, radiobases y salas de transmisión</span></a></li>
+        <li><a href="soluciones.html#sectores"><strong>Gobierno</strong><span>Centros de datos y servicios al ciudadano</span></a></li>
+        <li><a href="soluciones.html#sectores"><strong>Retail y oficinas</strong><span>Puntos de venta, servidores y redes</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Confianza -->
+  <section class="section section--tint" id="confianza" aria-labelledby="conf-title">
+    <div class="container">
+      <div class="section__head">
+        <h2 id="conf-title">Por qué confían en nosotros</h2>
+      </div>
+      <div class="razones">
+        <div class="razon"><strong>Centro Autorizado de Servicio</strong><p>Schneider Electric y APC respaldan nuestro servicio técnico: repuestos originales y procedimientos de fábrica.</p></div>
+        <div class="razon"><strong>Personal propio</strong><p>No subcontratamos la instalación ni el mantenimiento. Nuestros técnicos están capacitados en fábrica.</p></div>
+        <div class="razon"><strong>Empresa peruana desde 2001</strong><p>25 años de operación continua y clientes en banca, minería, salud y telecomunicaciones.</p></div>
+        <div class="razon"><strong>Cobertura nacional</strong><p>Sedes en Lima, Piura, Trujillo, Arequipa y Puno, con desplazamiento a cualquier ciudad del país.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Preguntas frecuentes -->
-  <section class="section" id="preguntas" aria-labelledby="faq-title">
-    <div class="container faq">
-      <div class="faq__intro">
-        <h2 id="faq-title">Preguntas frecuentes</h2>
-        <p>Lo que más nos consultan antes de comprar o contratar un mantenimiento. Si tu caso no está aquí, escríbenos.</p>
+  <!-- Cierre -->
+  <section class="cierre" aria-labelledby="cta-title">
+    <div class="container cierre__inner">
+      <div>
+        <h2 id="cta-title">Cuéntanos qué necesitas proteger</h2>
+        <p>Un ingeniero revisa tu caso y te responde con una propuesta técnica en un día hábil. Sin compromiso.</p>
       </div>
-      <div class="faq__list">
-        <details class="faq__item">
-          <summary>¿Cómo sé qué potencia de UPS necesito?</summary>
-          <div class="faq__body"><p>Sumamos la carga real de los equipos que quieres proteger (en vatios o kVA) y añadimos un margen de 20 a 30 % para crecimiento y factor de potencia. Un ingeniero puede medir en sitio si no tienes el dato exacto.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>¿Cuánto tiempo de autonomía da un UPS?</summary>
-          <div class="faq__body"><p>Depende de la carga y del banco de baterías. Un UPS estándar da entre 5 y 15 minutos a plena carga, suficiente para un apagado ordenado o el arranque de un grupo electrógeno. Con bancos externos se llega a una hora o más.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>¿Cada cuánto se cambian las baterías?</summary>
-          <div class="faq__body"><p>Las baterías VRLA duran entre 3 y 5 años según temperatura y ciclos de descarga; las de ion-litio, entre 8 y 10. En cada mantenimiento medimos su estado y te avisamos con anticipación cuando conviene reemplazarlas.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>¿Dan mantenimiento a UPS de otras marcas?</summary>
-          <div class="faq__body"><p>Sí. Somos Centro Autorizado de Servicio Schneider Electric y APC, y además atendemos equipos Eaton, Vertiv, CDP, Salicru, Forza y Smartbitt, entre otros, con repuestos originales.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>¿Qué incluye un contrato de mantenimiento?</summary>
-          <div class="faq__body"><p>Visitas preventivas programadas, atención correctiva 7×24 con tiempos de respuesta definidos, informe técnico después de cada visita, repuestos originales y monitoreo remoto opcional. Se dimensiona según la cantidad de equipos y sedes.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>¿Atienden fuera de Lima?</summary>
-          <div class="faq__body"><p>Sí. Tenemos oficinas en Piura, Trujillo, Arequipa y Puno, y personal que se desplaza a cualquier ciudad del país para instalaciones y contratos de servicio.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>¿Cuánto demora una cotización?</summary>
-          <div class="faq__body"><p>Para equipos de catálogo, el mismo día hábil. Para proyectos con ingeniería o visita técnica, entre 2 y 5 días según la complejidad.</p></div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section class="section section--tint" id="contacto" aria-labelledby="con-title">
-    <div class="container contact">
-      <div class="contact__intro">
-        <h2 id="con-title">Cuéntanos qué necesitas proteger</h2>
-        <p>Un ingeniero revisa tu consulta y te responde con una propuesta técnica. Si es urgente, escríbenos por WhatsApp.</p>
-        <address class="contact__data">
-          <p><span>Teléfono</span><a href="tel:+5115000383">(01) 500 0383</a></p>
-          <p><span>WhatsApp</span><a href="https://wa.me/51950091893" target="_blank" rel="noopener">+51 950 091 893</a></p>
-          <p><span>Ventas</span><a href="mailto:ventas@aceelectronicsperu.com">ventas@aceelectronicsperu.com</a></p>
-          <p><span>Soporte</span><a href="mailto:soportetecnico@aceelectronicsperu.com">soportetecnico@aceelectronicsperu.com</a></p>
-          <p><span>Oficina</span><a href="https://maps.app.goo.gl/yHYduNvwiDocKw8E7" target="_blank" rel="noopener">Av. Cayetano Heredia 381, Jesús María, Lima</a></p>
-        </address>
-      </div>
-
-      <div class="contact__form">
-        <form class="form" id="contactForm" enctype="multipart/form-data" novalidate>
-          <fieldset class="form__group">
-            <legend>¿Qué necesitas? <span class="req">*</span></legend>
-            <div class="form__radios">
-              <label class="form__radio"><input type="radio" name="necesidad" value="Comprar un equipo" required> Comprar un equipo</label>
-              <label class="form__radio"><input type="radio" name="necesidad" value="Mantenimiento o reparación" required> Mantenimiento o reparación</label>
-              <label class="form__radio"><input type="radio" name="necesidad" value="Emergencia: equipo caído" required> Emergencia</label>
-              <label class="form__radio"><input type="radio" name="necesidad" value="Repuestos o baterías" required> Repuestos o baterías</label>
-              <label class="form__radio"><input type="radio" name="necesidad" value="Proyecto de data center" required> Proyecto de data center</label>
-            </div>
-          </fieldset>
-          <div class="form__row">
-            <label for="f-nombre">Nombre <span class="req">*</span></label>
-            <input id="f-nombre" name="nombre" type="text" autocomplete="name" maxlength="120" required>
-          </div>
-          <div class="form__row">
-            <label for="f-empresa">Empresa</label>
-            <input id="f-empresa" name="empresa" type="text" autocomplete="organization" maxlength="120">
-          </div>
-          <div class="form__grid">
-            <div class="form__row">
-              <label for="f-correo">Correo <span class="req">*</span></label>
-              <input id="f-correo" name="email" type="email" autocomplete="email" maxlength="120" required>
-            </div>
-            <div class="form__row">
-              <label for="f-tel">Teléfono</label>
-              <input id="f-tel" name="telefono" type="tel" autocomplete="tel" maxlength="30">
-            </div>
-          </div>
-          <div class="form__grid">
-            <div class="form__row">
-              <label for="f-ciudad">Ciudad <span class="req">*</span></label>
-              <select id="f-ciudad" name="ciudad" required>
-                <option value="">Elige una</option>
-                <option>Lima</option>
-                <option>Callao</option>
-                <option>Piura</option>
-                <option>Trujillo</option>
-                <option>Arequipa</option>
-                <option>Puno</option>
-                <option>Otra ciudad del Perú</option>
-              </select>
-            </div>
-            <div class="form__row">
-              <label for="f-potencia">Potencia aproximada</label>
-              <select id="f-potencia" name="potencia">
-                <option value="">No estoy seguro</option>
-                <option>Hasta 1 kVA</option>
-                <option>1 a 3 kVA</option>
-                <option>3 a 10 kVA</option>
-                <option>10 a 20 kVA</option>
-                <option>20 a 40 kVA</option>
-                <option>Más de 40 kVA</option>
-              </select>
-            </div>
-          </div>
-          <div class="form__row">
-            <label for="f-msg">¿Qué equipo o carga necesitas proteger? <span class="req">*</span></label>
-            <textarea id="f-msg" name="mensaje" rows="5" maxlength="2000" required></textarea>
-            <p class="form__hint">Cuéntanos el equipo, la carga a proteger y el tiempo de autonomía que necesitas.</p>
-          </div>
-          <div class="form__row">
-            <label for="f-foto">Foto de la placa del equipo <span class="form__opcional">(opcional)</span></label>
-            <input id="f-foto" name="adjunto" type="file" accept="image/*,.pdf" capture="environment">
-            <p class="form__hint">Si ya tienes un UPS, una foto de la etiqueta con el modelo acelera mucho la cotización. Máx. 10 MB.</p>
-          </div>
-          <label class="form__check">
-            <input type="checkbox" name="consentimiento" value="Sí" required>
-            <span>He leído la <a href="politica-de-privacidad.html" target="_blank" rel="noopener">Política de privacidad</a> y autorizo a ACE Electronics S.A.C. a usar mis datos para atender esta solicitud. <span class="req">*</span></span>
-          </label>
-          <div class="form__hp" aria-hidden="true"><label for="f-hp">No completes este campo</label><input id="f-hp" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
-          <p class="form__error" id="formError" hidden role="alert"></p>
-          <button class="btn btn--primary" type="submit" id="formSubmit">Enviar solicitud</button>
-          <p class="form__hint">Al enviar pasarás por una verificación breve contra robots y volverás a esta página.</p>
-        </form>
-
-        <div class="form__done" id="formDone" hidden tabindex="-1" aria-live="polite">
-          <h3>Recibimos tu solicitud</h3>
-          <p>Un ingeniero revisará los datos y te responderá a <strong id="doneEmail"></strong> en un día hábil. Si es urgente, escríbenos por WhatsApp.</p>
-          <div class="form__actions">
-            <a class="btn btn--ghost" href="https://wa.me/51950091893?text=Hola%2C%20acabo%20de%20enviar%20una%20solicitud%20de%20cotizaci%C3%B3n" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-            <button class="btn btn--ghost" type="button" id="formAgain">Enviar otra solicitud</button>
-          </div>
-        </div>
-
-        </div>
+      <div class="cierre__acciones">
+        <a class="btn btn--primary" href="contacto.html">Solicitar cotización</a>
+        <a class="btn btn--ghost" href="https://wa.me/51950091893?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">Escribir por WhatsApp</a>
       </div>
     </div>
   </section>
@@ -523,22 +428,23 @@
       <div class="footer__brand">
         <p class="footer__name brand"><img class="brand__mark" src="img/logo/ae-logo.webp" alt="" width="555" height="480" decoding="async"><span class="brand__text">Ace Electronics</span></p>
         <p class="footer__tag">Energía crítica y respaldo</p>
-        <p class="footer__desc">Venta, instalación y mantenimiento de UPS, baterías y soluciones para data center en el Perú. Centro Autorizado de Servicio Schneider Electric / APC desde 2001.</p>
+        <p class="footer__desc">Suministro, instalación y mantenimiento de UPS, climatización de precisión y tableros de fabricación propia. Centro Autorizado de Servicio Schneider Electric / APC desde 2001.</p>
       </div>
       <nav class="footer__col" aria-label="Secciones">
         <h2>Secciones</h2>
-        <a href="#empresa">Empresa</a>
-        <a href="#servicio">Servicio técnico</a>
-        <a href="#equipos">Equipos</a>
-        <a href="#preguntas">Preguntas</a>
-        <a href="#contacto">Contacto</a>
+        <a href="nosotros.html">Quiénes somos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="equipos.html">Equipos</a>
+        <a href="soporte.html#preguntas">Preguntas frecuentes</a>
+        <a href="contacto.html">Contáctenos</a>
       </nav>
       <nav class="footer__col" aria-label="Soluciones">
         <h2>Soluciones</h2>
-        <a href="#soluciones">Sistemas UPS y respaldo</a>
-        <a href="#soluciones">Data center e instalaciones eléctricas</a>
-        <a href="#servicio">Mantenimiento 7×24</a>
-        <a href="#marcas">Marcas que atendemos</a>
+        <a href="soluciones.html#ups">Sistemas UPS y respaldo</a>
+        <a href="soluciones.html#clima">Climatización de precisión</a>
+        <a href="soluciones.html#datacenter">Data center e infraestructura</a>
+        <a href="servicios.html#emergencias">Mantenimiento y emergencias 7×24</a>
+        <a href="nosotros.html#fabricacion">Fabricación propia</a>
       </nav>
       <div class="footer__col footer__contact">
         <h2>Contacto</h2>
@@ -566,6 +472,7 @@
     </div>
   </div>
 </footer>
+
 
 <button class="arriba" id="volverArriba" type="button" aria-label="Volver al inicio de la página" hidden>
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
@@ -610,7 +517,7 @@
   </button>
 </div>
 
-<script src="js/site.js?v=32"></script>
-<script src="js/home.js?v=32"></script>
+<script src="js/site.js?v=33"></script>
+<script src="js/home.js?v=33"></script>
 </body>
 </html>

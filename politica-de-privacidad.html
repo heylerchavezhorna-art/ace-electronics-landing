@@ -2,6 +2,7 @@
 <html lang="es-PE">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://formsubmit.co https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Política de privacidad — ACE Electronics</title>
   <meta name="description" content="Cómo ACE Electronics S.A.C. recoge, usa y protege tus datos personales, y cómo ejercer tus derechos ARCO conforme a la Ley N.º 29733.">
@@ -25,9 +26,10 @@
   <link rel="icon" href="img/favicon-64.png" sizes="64x64" type="image/png">
   <link rel="icon" href="img/favicon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=32">
+  <link rel="stylesheet" href="css/styles.css?v=33">
+
 </head>
-<body>
+<body class="">
 
 <a class="skip" href="#contenido">Ir al contenido</a>
 
@@ -45,16 +47,128 @@
     </button>
 
     <nav class="nav__menu" id="navMenu" aria-label="Principal">
-      <a href="index.html#soluciones">Soluciones</a>
-      <a href="index.html#servicio">Servicio técnico</a>
-      <a href="index.html#equipos">Equipos</a>
-      <a href="index.html#empresa">Empresa</a>
-      <a href="index.html#preguntas">Preguntas</a>
-      <a href="index.html#contacto">Contacto</a>
-      <a class="btn btn--primary btn--nav" href="index.html#contacto">Solicitar cotización</a>
+      <div class="nav__item">
+        <a class="nav__link" href="index.html" data-seccion="inicio">Inicio</a>
+      </div>
+
+      <div class="nav__item nav__item--menu">
+        <button class="nav__link nav__link--btn" type="button" aria-expanded="false" aria-controls="panel-nosotros" data-seccion="nosotros">Nosotros<svg class="nav__flecha" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="panel" id="panel-nosotros" hidden>
+          <div class="container panel__inner">
+            <div class="panel__cols">
+              <a class="panel__link" href="nosotros.html"><strong>Quiénes somos</strong><span>25 años protegiendo energía crítica en el Perú</span></a>
+              <a class="panel__link" href="nosotros.html#fabricacion"><strong>Fabricación propia</strong><span>Tableros, transformadores y estabilizadores hechos en nuestro taller</span></a>
+              <a class="panel__link" href="nosotros.html#certificaciones"><strong>Certificaciones y marcas</strong><span>Centro Autorizado de Servicio Schneider Electric / APC</span></a>
+              <a class="panel__link" href="nosotros.html#sedes"><strong>Sedes y cobertura</strong><span>Lima, Piura, Trujillo, Arequipa y Puno</span></a>
+            </div>
+            <div class="panel__destacado">
+              <p class="panel__kicker">Lo que nos diferencia</p>
+              <p class="panel__texto">Fabricamos los tableros y transformadores que otros solo revenden, y respondemos por la instalación con personal propio capacitado en fábrica.</p>
+              <a class="link" href="nosotros.html#fabricacion">Conocer el taller</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__item nav__item--menu">
+        <button class="nav__link nav__link--btn" type="button" aria-expanded="false" aria-controls="panel-soluciones" data-seccion="soluciones">Soluciones<svg class="nav__flecha" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="panel" id="panel-soluciones" hidden>
+          <div class="container panel__inner">
+            <div class="panel__cols">
+              <a class="panel__link" href="soluciones.html#ups"><strong>Sistemas UPS y respaldo</strong><span>De 1 kVA a 500 kW, monofásicos y trifásicos</span></a>
+              <a class="panel__link" href="soluciones.html#clima"><strong>Climatización de precisión</strong><span>Vertiv Liebert CRV en fila, de 10 a 66 kW</span></a>
+              <a class="panel__link" href="soluciones.html#datacenter"><strong>Data center e infraestructura</strong><span>Micro data centers, racks, PDU y monitoreo</span></a>
+              <a class="panel__link" href="soluciones.html#electricas"><strong>Instalaciones eléctricas</strong><span>Tableros, bypass, transformadores y pozos a tierra</span></a>
+              <a class="panel__link" href="soluciones.html#sectores"><strong>Por sector</strong><span>Banca, minería, salud, telecomunicaciones e industria</span></a>
+            </div>
+            <div class="panel__destacado">
+              <p class="panel__kicker">Sala técnica completa</p>
+              <p class="panel__texto">Energía, clima y distribución con un solo responsable: menos proveedores, una sola garantía.</p>
+              <a class="link" href="contacto.html">Solicitar asesoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__item nav__item--menu">
+        <button class="nav__link nav__link--btn" type="button" aria-expanded="false" aria-controls="panel-servicios" data-seccion="servicios">Servicios<svg class="nav__flecha" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="panel" id="panel-servicios" hidden>
+          <div class="container panel__inner">
+            <div class="panel__cols panel__cols--dos">
+              <div>
+                <p class="panel__grupo">Instalación y montaje</p>
+                <a class="panel__link" href="servicios.html#instalacion-ups"><strong>Instalación de UPS</strong><span>Montaje, puesta en marcha y pruebas de carga</span></a>
+                <a class="panel__link" href="servicios.html#aire"><strong>Aire acondicionado de precisión</strong><span>Instalación y mantenimiento de equipos en fila</span></a>
+                <a class="panel__link" href="servicios.html#tableros"><strong>Tableros con bypass</strong><span>Manuales y automáticos hasta 400 A</span></a>
+                <a class="panel__link" href="servicios.html#transformadores"><strong>Transformadores y estabilizadores</strong><span>Fabricación propia hasta 60 kVA</span></a>
+              </div>
+              <div>
+                <p class="panel__grupo">Mantenimiento y soporte</p>
+                <a class="panel__link" href="servicios.html#preventivo"><strong>Mantenimiento preventivo</strong><span>Visitas programadas con informe técnico</span></a>
+                <a class="panel__link" href="servicios.html#emergencias"><strong>Emergencias 7×24</strong><span>Atención correctiva para clientes con contrato</span></a>
+                <a class="panel__link" href="servicios.html#baterias"><strong>Cambio de baterías</strong><span>Medición, reemplazo y disposición del banco</span></a>
+                <a class="panel__link" href="servicios.html#contratos"><strong>Contratos de servicio</strong><span>Planes según equipos, sedes y tiempo de respuesta</span></a>
+              </div>
+            </div>
+            <div class="panel__destacado panel__destacado--urgente">
+              <p class="panel__kicker">¿Equipo en falla?</p>
+              <p class="panel__texto">Atención de emergencia 7×24 en Lima y provincias.</p>
+              <a class="link" href="tel:+5115000383">Llamar (01) 500 0383</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__item nav__item--menu">
+        <button class="nav__link nav__link--btn" type="button" aria-expanded="false" aria-controls="panel-equipos" data-seccion="equipos">Equipos<svg class="nav__flecha" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="panel" id="panel-equipos" hidden>
+          <div class="container panel__inner">
+            <div class="panel__cols">
+              <a class="panel__link" href="equipos.html#schneider"><strong>UPS Schneider Electric</strong><span>Línea Galaxy VS y VL, de 10 a 500 kW</span></a>
+              <a class="panel__link" href="equipos.html#apc"><strong>UPS APC</strong><span>Smart-UPS SRT, ion-litio, Symmetra y Easy UPS 3S</span></a>
+              <a class="panel__link" href="equipos.html#clima"><strong>Climatización de precisión</strong><span>Vertiv Liebert CRV de 10 a 66 kW</span></a>
+              <a class="panel__link" href="equipos.html#fabricados"><strong>Tableros y transformadores</strong><span>De fabricación propia, a medida del proyecto</span></a>
+              <a class="panel__link" href="equipos.html#baterias"><strong>Baterías y repuestos</strong><span>CSB, Yuasa y módulos originales</span></a>
+              <a class="panel__link" href="equipos.html#accesorios"><strong>PDU y accesorios</strong><span>Distribución, medición y sensores de rack</span></a>
+            </div>
+            <div class="panel__destacado">
+              <p class="panel__kicker">¿No sabes qué potencia necesitas?</p>
+              <p class="panel__texto">Cuéntanos qué equipos vas a proteger y te proponemos la configuración.</p>
+              <a class="link" href="contacto.html">Pedir cotización</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__item nav__item--menu">
+        <button class="nav__link nav__link--btn" type="button" aria-expanded="false" aria-controls="panel-soporte" data-seccion="soporte">Soporte<svg class="nav__flecha" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="panel" id="panel-soporte" hidden>
+          <div class="container panel__inner">
+            <div class="panel__cols">
+              <a class="panel__link" href="soporte.html#servicio"><strong>Solicitar servicio técnico</strong><span>Visita, diagnóstico o atención de emergencia</span></a>
+              <a class="panel__link" href="soporte.html#preguntas"><strong>Preguntas frecuentes</strong><span>Potencia, autonomía, baterías y contratos</span></a>
+              <a class="panel__link" href="soporte.html#guias"><strong>Guías y recursos</strong><span>Cómo dimensionar y mantener tu respaldo</span></a>
+              <a class="panel__link" href="libro-de-reclamaciones.html"><strong>Libro de Reclamaciones</strong><span>Registra tu reclamo o queja en línea</span></a>
+            </div>
+            <div class="panel__destacado">
+              <p class="panel__kicker">Clientes con contrato</p>
+              <p class="panel__texto">Mesa de ayuda 7×24 y tiempos de respuesta comprometidos.</p>
+              <a class="link" href="servicios.html#contratos">Ver planes de servicio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <a class="nav__link" href="contacto.html" data-seccion="contacto">Contáctenos</a>
+      </div>
+
+      <a class="nav__tel" href="tel:+5115000383"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2Z"/></svg>Llamar (01) 500 0383</a>
+      <a class="btn btn--primary btn--nav" href="contacto.html">Solicitar cotización</a>
     </nav>
   </div>
 </header>
+
 
 <main class="legal" id="contenido">
   <div class="container">
@@ -161,22 +275,23 @@
       <div class="footer__brand">
         <p class="footer__name brand"><img class="brand__mark" src="img/logo/ae-logo.webp" alt="" width="555" height="480" decoding="async"><span class="brand__text">Ace Electronics</span></p>
         <p class="footer__tag">Energía crítica y respaldo</p>
-        <p class="footer__desc">Venta, instalación y mantenimiento de UPS, baterías y soluciones para data center en el Perú. Centro Autorizado de Servicio Schneider Electric / APC desde 2001.</p>
+        <p class="footer__desc">Suministro, instalación y mantenimiento de UPS, climatización de precisión y tableros de fabricación propia. Centro Autorizado de Servicio Schneider Electric / APC desde 2001.</p>
       </div>
       <nav class="footer__col" aria-label="Secciones">
         <h2>Secciones</h2>
-        <a href="index.html#empresa">Empresa</a>
-        <a href="index.html#servicio">Servicio técnico</a>
-        <a href="index.html#equipos">Equipos</a>
-        <a href="index.html#preguntas">Preguntas</a>
-        <a href="index.html#contacto">Contacto</a>
+        <a href="nosotros.html">Quiénes somos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="equipos.html">Equipos</a>
+        <a href="soporte.html#preguntas">Preguntas frecuentes</a>
+        <a href="contacto.html">Contáctenos</a>
       </nav>
       <nav class="footer__col" aria-label="Soluciones">
         <h2>Soluciones</h2>
-        <a href="index.html#soluciones">Sistemas UPS y respaldo</a>
-        <a href="index.html#soluciones">Data center e instalaciones eléctricas</a>
-        <a href="index.html#servicio">Mantenimiento 7×24</a>
-        <a href="index.html#marcas">Marcas autorizadas</a>
+        <a href="soluciones.html#ups">Sistemas UPS y respaldo</a>
+        <a href="soluciones.html#clima">Climatización de precisión</a>
+        <a href="soluciones.html#datacenter">Data center e infraestructura</a>
+        <a href="servicios.html#emergencias">Mantenimiento y emergencias 7×24</a>
+        <a href="nosotros.html#fabricacion">Fabricación propia</a>
       </nav>
       <div class="footer__col footer__contact">
         <h2>Contacto</h2>
@@ -204,6 +319,11 @@
     </div>
   </div>
 </footer>
+
+
+<button class="arriba" id="volverArriba" type="button" aria-label="Volver al inicio de la página" hidden>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <div class="cookies" id="cookiesAviso" role="region" aria-labelledby="cookies-title" hidden>
   <p class="cookies__title" id="cookies-title">Cookies de medición</p>
@@ -244,6 +364,6 @@
   </button>
 </div>
 
-<script src="js/site.js?v=32"></script>
+<script src="js/site.js?v=33"></script>
 </body>
 </html>

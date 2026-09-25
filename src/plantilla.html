@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://formsubmit.co https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{titulo}}</title>
+  <meta name="description" content="{{descripcion}}">{{robots}}
+  <link rel="canonical" href="{{canonical}}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="ACE Electronics">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:title" content="{{titulo}}">
+  <meta property="og:description" content="{{descripcion}}">
+  <meta property="og:image" content="https://aceelectronicsperu.com/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo de ACE Electronics: energía que no se interrumpe">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0B1B33">
+  <link rel="preload" href="fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="img/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="img/favicon-64.png" sizes="64x64" type="image/png">
+  <link rel="icon" href="img/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css?v={{version}}">
+{{extra_head}}
+</head>
+<body class="{{clase}}">
+
+<a class="skip" href="#contenido">Ir al contenido</a>
+
+{{nav}}
+
+{{contenido}}
+
+{{pie}}
+
+{{flotantes}}
+<script src="js/site.js?v={{version}}"></script>{{scripts}}
+</body>
+</html>

@@ -10,3 +10,5 @@ Thumbs.db
 
 # Notas privadas con accesos: nunca al repositorio
 pendientes.txt
+
+# Archivos de trabajo del sitio (se compilan con build.py)

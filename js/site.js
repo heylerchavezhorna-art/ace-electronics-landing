@@ -213,23 +213,59 @@ if (lrForm) {
   });
 }
 
-// ---------- Menú móvil ----------
+// ---------- Menú principal ----------
 const toggle = document.getElementById('navToggle');
 const menu = document.getElementById('navMenu');
+const anchoEscritorio = window.matchMedia('(min-width: 64.0625rem)');
+
 toggle.addEventListener('click', () => {
-  const open = toggle.getAttribute('aria-expanded') === 'true';
-  toggle.setAttribute('aria-expanded', String(!open));
-  toggle.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
-  menu.classList.toggle('is-open', !open);
+  const abierto = toggle.getAttribute('aria-expanded') === 'true';
+  toggle.setAttribute('aria-expanded', String(!abierto));
+  toggle.setAttribute('aria-label', abierto ? 'Abrir menú' : 'Cerrar menú');
+  menu.classList.toggle('is-open', !abierto);
+  if (abierto) cerrarPaneles();
 });
+
+// Paneles desplegables: clic (y hover en escritorio), accesibles con teclado
+const items = [...document.querySelectorAll('.nav__item--menu')];
+const cerrarPaneles = (excepto) => items.forEach(item => {
+  if (item === excepto) return;
+  item.classList.remove('nav__item--abierto');
+  item.querySelector('.nav__link--btn').setAttribute('aria-expanded', 'false');
+  item.querySelector('.panel').hidden = true;
+});
+const abrirPanel = (item) => {
+  cerrarPaneles(item);
+  item.classList.add('nav__item--abierto');
+  item.querySelector('.nav__link--btn').setAttribute('aria-expanded', 'true');
+  item.querySelector('.panel').hidden = false;
+};
+
+items.forEach(item => {
+  const boton = item.querySelector('.nav__link--btn');
+  const panel = item.querySelector('.panel');
+  boton.addEventListener('click', () => {
+    panel.hidden ? abrirPanel(item) : cerrarPaneles();
+  });
+  let salir = null;
+  item.addEventListener('mouseenter', () => { if (anchoEscritorio.matches) { clearTimeout(salir); abrirPanel(item); } });
+  item.addEventListener('mouseleave', () => { if (anchoEscritorio.matches) salir = setTimeout(cerrarPaneles, 180); });
+  item.addEventListener('focusout', (e) => { if (anchoEscritorio.matches && !item.contains(e.relatedTarget)) cerrarPaneles(); });
+});
+
+// Cerrar con Escape o al pulsar fuera; al elegir un enlace se cierra todo el menú
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  const abierto = items.find(i => i.classList.contains('nav__item--abierto'));
+  if (abierto) { abierto.querySelector('.nav__link--btn').focus(); cerrarPaneles(); }
+});
+document.addEventListener('click', (e) => { if (!e.target.closest('.nav__menu')) cerrarPaneles(); });
 menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   toggle.setAttribute('aria-expanded', 'false');
   menu.classList.remove('is-open');
+  cerrarPaneles();
 }));
-
-// ---------- Desplazamiento suave ----------
-// Se activa cuando la página terminó de cargar y de encuadrar un posible ancla.
-addEventListener('load', () => setTimeout(() => document.documentElement.classList.add('scroll-suave'), 600));
+anchoEscritorio.addEventListener('change', () => { cerrarPaneles(); menu.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); });
 
 // ---------- Borde del header al hacer scroll ----------
 const nav = document.getElementById('nav');

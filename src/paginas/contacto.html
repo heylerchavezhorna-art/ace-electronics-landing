@@ -1,0 +1,138 @@
+<!--
+ruta: contacto.html
+seccion: contacto
+titulo: Contáctenos — ACE Electronics
+descripcion: Solicita una cotización de UPS, climatización de precisión o tableros a medida. Respuesta de un ingeniero en un día hábil. Central (01) 500 0383 y WhatsApp +51 950 091 893.
+-->
+<main id="contenido">
+
+  <section class="cabecera">
+    <div class="container">
+      <p class="section__kicker">Contáctenos</p>
+      <h1>Cuéntanos qué necesitas proteger</h1>
+      <p class="cabecera__lead">Respondemos con una propuesta técnica en un día hábil. Si tu equipo está en falla ahora, llámanos: atendemos emergencias 7×24 para clientes con contrato.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contacto" aria-labelledby="con-title">
+    <div class="container contact">
+      <div class="contact__intro">
+        <h2 id="con-title">Cuéntanos qué necesitas proteger</h2>
+        <p>Un ingeniero revisa tu consulta y te responde con una propuesta técnica. Si es urgente, escríbenos por WhatsApp.</p>
+        <address class="contact__data">
+          <p><span>Teléfono</span><a href="tel:+5115000383">(01) 500 0383</a></p>
+          <p><span>WhatsApp</span><a href="https://wa.me/51950091893" target="_blank" rel="noopener">+51 950 091 893</a></p>
+          <p><span>Ventas</span><a href="mailto:ventas@aceelectronicsperu.com">ventas@aceelectronicsperu.com</a></p>
+          <p><span>Soporte</span><a href="mailto:soportetecnico@aceelectronicsperu.com">soportetecnico@aceelectronicsperu.com</a></p>
+          <p><span>Oficina</span><a href="https://maps.app.goo.gl/yHYduNvwiDocKw8E7" target="_blank" rel="noopener">Av. Cayetano Heredia 381, Jesús María, Lima</a></p>
+        </address>
+      </div>
+
+      <div class="contact__form">
+        <form class="form" id="contactForm" enctype="multipart/form-data" novalidate>
+          <fieldset class="form__group">
+            <legend>¿Qué necesitas? <span class="req">*</span></legend>
+            <div class="form__radios">
+              <label class="form__radio"><input type="radio" name="necesidad" value="Comprar un equipo" required> Comprar un equipo</label>
+              <label class="form__radio"><input type="radio" name="necesidad" value="Mantenimiento o reparación" required> Mantenimiento o reparación</label>
+              <label class="form__radio"><input type="radio" name="necesidad" value="Emergencia: equipo caído" required> Emergencia</label>
+              <label class="form__radio"><input type="radio" name="necesidad" value="Repuestos o baterías" required> Repuestos o baterías</label>
+              <label class="form__radio"><input type="radio" name="necesidad" value="Proyecto de data center" required> Proyecto de data center</label>
+            </div>
+          </fieldset>
+          <div class="form__row">
+            <label for="f-nombre">Nombre <span class="req">*</span></label>
+            <input id="f-nombre" name="nombre" type="text" autocomplete="name" maxlength="120" required>
+          </div>
+          <div class="form__row">
+            <label for="f-empresa">Empresa</label>
+            <input id="f-empresa" name="empresa" type="text" autocomplete="organization" maxlength="120">
+          </div>
+          <div class="form__grid">
+            <div class="form__row">
+              <label for="f-correo">Correo <span class="req">*</span></label>
+              <input id="f-correo" name="email" type="email" autocomplete="email" maxlength="120" required>
+            </div>
+            <div class="form__row">
+              <label for="f-tel">Teléfono</label>
+              <input id="f-tel" name="telefono" type="tel" autocomplete="tel" maxlength="30">
+            </div>
+          </div>
+          <div class="form__grid">
+            <div class="form__row">
+              <label for="f-ciudad">Ciudad <span class="req">*</span></label>
+              <select id="f-ciudad" name="ciudad" required>
+                <option value="">Elige una</option>
+                <option>Lima</option>
+                <option>Callao</option>
+                <option>Piura</option>
+                <option>Trujillo</option>
+                <option>Arequipa</option>
+                <option>Puno</option>
+                <option>Otra ciudad del Perú</option>
+              </select>
+            </div>
+            <div class="form__row">
+              <label for="f-potencia">Potencia aproximada</label>
+              <select id="f-potencia" name="potencia">
+                <option value="">No estoy seguro</option>
+                <option>Hasta 1 kVA</option>
+                <option>1 a 3 kVA</option>
+                <option>3 a 10 kVA</option>
+                <option>10 a 20 kVA</option>
+                <option>20 a 40 kVA</option>
+                <option>Más de 40 kVA</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__row">
+            <label for="f-msg">¿Qué equipo o carga necesitas proteger? <span class="req">*</span></label>
+            <textarea id="f-msg" name="mensaje" rows="5" maxlength="2000" required></textarea>
+            <p class="form__hint">Cuéntanos el equipo, la carga a proteger y el tiempo de autonomía que necesitas.</p>
+          </div>
+          <div class="form__row">
+            <label for="f-foto">Foto de la placa del equipo <span class="form__opcional">(opcional)</span></label>
+            <input id="f-foto" name="adjunto" type="file" accept="image/*,.pdf" capture="environment">
+            <p class="form__hint">Si ya tienes un UPS, una foto de la etiqueta con el modelo acelera mucho la cotización. Máx. 10 MB.</p>
+          </div>
+          <label class="form__check">
+            <input type="checkbox" name="consentimiento" value="Sí" required>
+            <span>He leído la <a href="politica-de-privacidad.html" target="_blank" rel="noopener">Política de privacidad</a> y autorizo a ACE Electronics S.A.C. a usar mis datos para atender esta solicitud. <span class="req">*</span></span>
+          </label>
+          <div class="form__hp" aria-hidden="true"><label for="f-hp">No completes este campo</label><input id="f-hp" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+          <p class="form__error" id="formError" hidden role="alert"></p>
+          <button class="btn btn--primary" type="submit" id="formSubmit">Enviar solicitud</button>
+          <p class="form__hint">Al enviar pasarás por una verificación breve contra robots y volverás a esta página.</p>
+        </form>
+
+        <div class="form__done" id="formDone" hidden tabindex="-1" aria-live="polite">
+          <h3>Recibimos tu solicitud</h3>
+          <p>Un ingeniero revisará los datos y te responderá a <strong id="doneEmail"></strong> en un día hábil. Si es urgente, escríbenos por WhatsApp.</p>
+          <div class="form__actions">
+            <a class="btn btn--ghost" href="https://wa.me/51950091893?text=Hola%2C%20acabo%20de%20enviar%20una%20solicitud%20de%20cotizaci%C3%B3n" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+            <button class="btn btn--ghost" type="button" id="formAgain">Enviar otra solicitud</button>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section--tint" aria-labelledby="sedes-title">
+    <div class="container">
+      <div class="section__head">
+        <h2 id="sedes-title">Nuestras sedes</h2>
+        <p>Atendemos todo el Perú desde cinco sedes, con desplazamiento a cualquier ciudad del país.</p>
+      </div>
+      <ul class="sedes">
+        <li><strong>Lima (principal)</strong><span>Av. Cayetano Heredia 381, Jesús María</span><a href="tel:+5115000383">(01) 500 0383</a></li>
+        <li><strong>Piura</strong><span>Cobertura norte</span></li>
+        <li><strong>Trujillo</strong><span>Cobertura norte</span></li>
+        <li><strong>Arequipa</strong><span>Cobertura sur</span></li>
+        <li><strong>Puno</strong><span>Cobertura sur y altiplano</span></li>
+      </ul>
+      <p class="note">Horario de oficina: lunes a viernes, 8:30 a. m. – 5:30 p. m. Soporte 7×24 para clientes con contrato.</p>
+    </div>
+  </section>
+
+</main>

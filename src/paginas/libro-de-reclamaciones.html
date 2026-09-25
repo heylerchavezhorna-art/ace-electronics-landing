@@ -1,0 +1,169 @@
+<!--
+ruta: libro-de-reclamaciones.html
+seccion: soporte
+titulo: Libro de Reclamaciones — ACE Electronics S.A.C.
+descripcion: Registra tu reclamo o queja en el Libro de Reclamaciones virtual de ACE Electronics S.A.C., conforme al Código de Protección y Defensa del Consumidor. Respuesta en un máximo de 15 días hábiles.
+-->
+<main class="legal" id="contenido">
+  <div class="container">
+    <div class="legal__head">
+      <h1>Libro de Reclamaciones</h1>
+      <p>Hoja de Reclamación virtual de ACE Electronics S.A.C. Si tienes una disconformidad con un producto, un servicio o la atención recibida, regístrala aquí. Te responderemos en un plazo máximo de quince (15) días hábiles.</p>
+      <p class="legal__meta"><span>Ley N.º 29571, Código de Protección y Defensa del Consumidor</span><span>Reglamento del Libro de Reclamaciones, D.S. N.º 011-2011-PCM y modificatorias</span></p>
+    </div>
+
+    <div class="legal__grid">
+      <aside class="legal__aside">
+        <dl class="meta">
+          <div><dt>Proveedor</dt><dd>ACE Electronics S.A.C.</dd></div>
+          <div><dt>RUC</dt><dd>20501940195</dd></div>
+          <div><dt>Domicilio</dt><dd>Av. Cayetano Heredia 381, Jesús María, Lima, Perú</dd></div>
+          <div><dt>Teléfono</dt><dd><a href="tel:+5115000383">(01) 500 0383</a></dd></div>
+          <div><dt>Correo</dt><dd><a href="mailto:libro.reclamaciones@aceelectronicsperu.com">libro.reclamaciones@aceelectronicsperu.com</a></dd></div>
+        </dl>
+        <ul class="form__notes legal__notes">
+          <li><strong>Reclamo:</strong> disconformidad relacionada a los productos o servicios.</li>
+          <li><strong>Queja:</strong> disconformidad no relacionada a los productos o servicios, o malestar o descontento respecto a la atención al público.</li>
+          <li>La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI.</li>
+          <li>El proveedor debe dar respuesta al reclamo o queja en un plazo no mayor a quince (15) días hábiles improrrogables.</li>
+          <li>Recibirás una copia de esta hoja en el correo que indiques. También puedes imprimirla o guardarla en PDF al terminar.</li>
+        </ul>
+      </aside>
+
+      <div class="legal__body">
+        <form class="form" id="lrForm" novalidate>
+          <fieldset class="form__set">
+            <legend>1. Identificación del consumidor <small>Los campos con <span class="req">*</span> son obligatorios.</small></legend>
+            <div class="form__fields">
+              <div class="form__row">
+                <label for="lr-nombre">Nombre completo <span class="req">*</span></label>
+                <input id="lr-nombre" name="nombre" type="text" autocomplete="name" maxlength="120" required>
+              </div>
+              <div class="form__grid">
+                <div class="form__row">
+                  <label for="lr-tipodoc">Tipo de documento <span class="req">*</span></label>
+                  <select id="lr-tipodoc" name="tipo_documento" required>
+                    <option value="DNI">DNI</option>
+                    <option value="Carné de extranjería">Carné de extranjería</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="RUC">RUC (empresa)</option>
+                  </select>
+                </div>
+                <div class="form__row">
+                  <label for="lr-numdoc">Número de documento <span class="req">*</span></label>
+                  <input id="lr-numdoc" name="numero_documento" type="text" inputmode="numeric" autocomplete="off" maxlength="20" required>
+                </div>
+              </div>
+              <div class="form__row">
+                <label for="lr-domicilio">Domicilio <span class="req">*</span></label>
+                <input id="lr-domicilio" name="domicilio" type="text" autocomplete="street-address" maxlength="200" required>
+              </div>
+              <div class="form__grid">
+                <div class="form__row">
+                  <label for="lr-tel">Teléfono</label>
+                  <input id="lr-tel" name="telefono" type="tel" autocomplete="tel" maxlength="30">
+                </div>
+                <div class="form__row">
+                  <label for="lr-email">Correo electrónico <span class="req">*</span></label>
+                  <input id="lr-email" name="email" type="email" autocomplete="email" maxlength="120" required>
+                </div>
+              </div>
+              <label class="form__check">
+                <input type="checkbox" id="lr-menor" name="menor" value="Sí">
+                <span>El consumidor es menor de edad (se registran los datos del padre, madre o apoderado).</span>
+              </label>
+              <div class="form__fields" id="lrApoderado" hidden>
+                <div class="form__row">
+                  <label for="lr-apo-nombre">Nombre del padre, madre o apoderado <span class="req">*</span></label>
+                  <input id="lr-apo-nombre" name="apoderado_nombre" type="text" maxlength="120" disabled>
+                </div>
+                <div class="form__row">
+                  <label for="lr-apo-dom">Domicilio del padre, madre o apoderado <span class="req">*</span></label>
+                  <input id="lr-apo-dom" name="apoderado_domicilio" type="text" maxlength="200" disabled>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="form__set">
+            <legend>2. Identificación del bien contratado</legend>
+            <div class="form__fields">
+              <fieldset class="form__group">
+                <legend>¿Qué contrataste? <span class="req">*</span></legend>
+                <div class="form__radios">
+                  <label class="form__radio"><input type="radio" name="tipo_bien" value="Producto" required> Producto</label>
+                  <label class="form__radio"><input type="radio" name="tipo_bien" value="Servicio" required> Servicio</label>
+                </div>
+              </fieldset>
+              <div class="form__grid">
+                <div class="form__row">
+                  <label for="lr-monto">Monto reclamado (S/)</label>
+                  <input id="lr-monto" name="monto" type="text" inputmode="decimal" placeholder="Opcional" maxlength="20">
+                </div>
+              </div>
+              <div class="form__row">
+                <label for="lr-bien">Descripción <span class="req">*</span></label>
+                <textarea id="lr-bien" name="descripcion_bien" rows="3" maxlength="1000" required></textarea>
+                <p class="form__hint">Equipo o servicio, marca y modelo, número de cotización, orden o factura y fecha.</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__set">
+            <legend>3. Detalle de la reclamación y pedido del consumidor</legend>
+            <div class="form__fields">
+              <fieldset class="form__group">
+                <legend>Tipo <span class="req">*</span></legend>
+                <div class="form__radios">
+                  <label class="form__radio"><input type="radio" name="tipo_reclamo" value="Reclamo" required> Reclamo (sobre el producto o servicio)</label>
+                  <label class="form__radio"><input type="radio" name="tipo_reclamo" value="Queja" required> Queja (sobre la atención recibida)</label>
+                </div>
+              </fieldset>
+              <div class="form__row">
+                <label for="lr-detalle">Detalle <span class="req">*</span></label>
+                <textarea id="lr-detalle" name="detalle" rows="5" maxlength="3000" required></textarea>
+              </div>
+              <div class="form__row">
+                <label for="lr-pedido">Pedido <span class="req">*</span></label>
+                <textarea id="lr-pedido" name="pedido" rows="3" maxlength="1000" required></textarea>
+                <p class="form__hint">Qué esperas que hagamos: cambio, reparación, devolución, explicación, etc.</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__set">
+            <legend>4. Observaciones y acciones adoptadas por el proveedor</legend>
+            <div class="form__fields">
+              <p class="form__hint">Este espacio lo completa ACE Electronics S.A.C. en su respuesta, que recibirás en el correo indicado dentro del plazo legal.</p>
+            </div>
+          </fieldset>
+
+          <label class="form__check">
+            <input type="checkbox" name="consentimiento" value="Sí" required>
+            <span>Declaro que la información es verdadera y he leído la <a href="politica-de-privacidad.html" target="_blank" rel="noopener">Política de privacidad</a>. Autorizo a ACE Electronics S.A.C. a tratar mis datos para gestionar este reclamo o queja. <span class="req">*</span></span>
+          </label>
+          <div class="form__hp" aria-hidden="true"><label for="lr-hp">No completes este campo</label><input id="lr-hp" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+          <p class="form__error" id="lrError" hidden role="alert"></p>
+          <button class="btn btn--primary" type="submit" id="lrSubmit">Registrar hoja de reclamación</button>
+          <p class="form__hint">Al registrar pasarás por una verificación breve contra robots y volverás a esta página con tu constancia.</p>
+        </form>
+
+        <div class="sheet" id="lrDone" hidden tabindex="-1" aria-live="polite">
+          <div class="sheet__head">
+            <div>
+              <p class="sheet__kicker">Libro de Reclamaciones · Hoja de Reclamación</p>
+              <p class="sheet__num">N.º <span id="lrNum"></span></p>
+            </div>
+            <p class="sheet__prov"><strong>ACE Electronics S.A.C.</strong><br>RUC 20501940195<br>Av. Cayetano Heredia 381, Jesús María, Lima</p>
+          </div>
+          <p class="sheet__msg">Registramos tu hoja el <span id="lrFecha"></span> y enviamos una copia a <strong id="lrEmail"></strong>. Responderemos en un plazo máximo de quince (15) días hábiles. Imprime o guarda esta constancia.</p>
+          <dl class="meta" id="lrResumen"></dl>
+          <div class="form__actions no-print">
+            <button class="btn btn--ghost" type="button" id="lrPrint">Imprimir o guardar en PDF</button>
+            <button class="btn btn--ghost" type="button" id="lrBack">Volver al formulario</button>
+            <a class="btn btn--ghost" href="index.html">Ir al inicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
