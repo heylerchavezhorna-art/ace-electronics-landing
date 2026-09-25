@@ -241,7 +241,7 @@ if (waToggle) {
 // ---------- Analítica (Google Analytics 4) con aviso de cookies ----------
 // La medición solo se carga si el visitante acepta. GA_ID vacío = analítica apagada
 // (no se muestra el aviso ni el enlace "Cookies" del pie).
-const GA_ID = '';
+const GA_ID = 'G-5BCTF81TRZ';
 const CONSENT_KEY = 'ace-cookies';
 const banner = document.getElementById('cookiesAviso');
 if (GA_ID && banner) {
